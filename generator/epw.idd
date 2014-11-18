@@ -1,0 +1,248 @@
+!ESP(r)/EnergyPlus Weather Format
+!April 2002
+
+LOCATION,
+	A1, \field city
+	\type alpha
+	A2, \field State Province Region
+	\type alpha
+	A3, \field Country
+	\type alpha
+	A4, \field Source
+	\type alpha
+	N1, \field WMO
+	\note usually a 6 digit field. Used as alpha in EnergyPlus
+	\type alpha
+	N2 , \field Latitude
+	\units deg
+	\minimum -90.0
+	\maximum +90.0
+	\default 0.0
+	\note + is North, - is South, degree minutes represented in decimal (i.e. 30 minutes is .5)
+	\type real
+	N3 , \field Longitude
+	\units deg
+	\minimum -180.0
+	\maximum +180.0
+	\default 0.0
+	\note - is West, + is East, degree minutes represented in decimal (i.e. 30 minutes is .5)
+	\type real
+	N4 , \field TimeZone
+	\units hr - not on standard units list???
+	\minimum -12.0
+	\maximum +12.0
+	\default 0.0
+	\note Time relative to GMT.
+	\type real
+	N5 ; \field Elevation
+	\units m
+	\minimum -1000.0
+	\maximum< +9999.9
+	\default 0.0
+	\type real
+
+TYPICAL/EXTREME PERIOD,
+	A1, \field Typical/Extreme Period Name
+	A2, \field Typical/Extreme Period  Type
+	A3, \field Period Start Day
+	A4, \field Period  End Day
+
+TYPICAL/EXTREME PERIODS,
+	L1; \list  TYPICAL/EXTREME PERIOD
+
+GROUND TEMPERATURE,
+	N2, \field Ground Temperature Depth
+	\units m
+	N3, \field Depth Soil Conductivity
+	\units W/m-K,
+	N4, \field Depth Soil Density
+	\units kg/m3
+	N5, \field Depth Soil Specific Heat
+	\units J/kg-K,
+	N6, \field Depth January Average Ground Temperature
+	\units C
+	N7, \field Depth February Average Ground Temperature
+	\units C
+	N8, \field Depth March Average Ground Temperature
+	\units C
+	N9, \field Depth April Average Ground Temperature
+	\units C
+	N10, \field Depth May Average Ground Temperature
+	\units C
+	N11, \field Depth June Average Ground Temperature
+	\units C
+	N12, \field Depth July Average Ground Temperature
+	\units C
+	N13, \field Depth August Average Ground Temperature
+	\units C
+	N14, \field Depth September Average Ground Temperature
+	\units C
+	N15, \field Depth October Average Ground Temperature
+	\units C
+	N16, \field Depth November Average Ground Temperature
+	\units C
+	N17, \field Depth December Average Ground Temperature
+	\units C
+
+GROUND TEMPERATURES,
+	L1; \list  GROUND TEMPERATURE
+
+HOLIDAY,
+	A4, \field Holiday Name
+	A5, \field Holiday Day
+
+HOLIDAYS/DAYLIGHT SAVING,
+	A1, \field LeapYear Observed
+	\type choice
+	\key Yes
+	\key No
+	\note Yes if Leap Year will be observed for this file
+	\note No if Leap Year days (29 Feb) should be ignored in this file
+	A2, \field Daylight Saving Start Day
+	A3, \field Daylight Saving End Day
+	L1; \list HOLIDAY
+
+COMMENTS 1,
+	A1, \field Comments_1
+	
+COMMENTS 2,
+	A1, \field Comments_2
+
+DATA PERIOD,
+	N2, \field Number of Records per hour
+	A1, \field Data Period Name/Description
+	A2, \field Data Period Start Day of Week
+	\type choice
+	\key Sunday
+	\key Monday
+	\key Tuesday
+	\key Wednesday
+	\key Thursday
+	\key Friday
+	\key Saturday
+	A3, \field Data Period Start Day
+	A4, \field Data Period End Day
+
+DATA PERIODS,
+	L1; \list DATA PERIOD
+
+ITEMS,
+	N1, \field Year
+	N2, \field Month
+	N3, \field Day
+	N4, \field Hour
+	N5, \field Minute
+	A1, \field Data Source and Uncertainty Flags
+	\note Initial day of weather file is checked by EnergyPlus for validity (as shown below)
+	\note Each field is checked for "missing" as shown below. Reasonable values, calculated
+	\note values or the last "good" value is substituted.
+	N6, \field Dry Bulb Temperature
+	\units C
+	\minimum> -70
+	\maximum< 70
+	\missing 99.9
+	N7, \field Dew Point Temperature
+	\units C
+	\minimum> -70
+	\maximum< 70
+	\missing 99.9
+	N8, \field Relative Humidity
+	\missing 999.
+	\minimum 0
+	\maximum 110
+	N9, \field Atmospheric Station Pressure
+	\units Pa
+	\missing 999999.
+	\minimum> 31000
+	\maximum< 120000
+	N10, \field Extraterrestrial Horizontal Radiation
+	\units Wh/m2
+	\missing 9999.
+	\minimum 0
+	N11, \field Extraterrestrial Direct Normal Radiation
+	\units Wh/m2
+	\missing 9999.
+	\minimum 0
+	N12, \field Horizontal Infrared Radiation Intensity
+	\units Wh/m2
+	\missing 9999.
+	\minimum 0
+	N13, \field Global Horizontal Radiation
+	\units Wh/m2
+	\missing 9999.
+	\minimum 0
+	N14, \field Direct Normal Radiation
+	\units Wh/m2
+	\missing 9999.
+	\minimum 0
+	N15, \field Diffuse Horizontal Radiation
+	\units Wh/m2
+	\missing 9999.
+	\minimum 0
+	N16, \field Global Horizontal Illuminance
+	\units lux
+	\missing 999999.
+	\note will be missing if >= 999900
+	\minimum 0
+	N17, \field Direct Normal Illuminance
+	\units lux
+	\missing 999999.
+	\note will be missing if >= 999900
+	\minimum 0
+	N18, \field Diffuse Horizontal Illuminance
+	\units lux
+	\missing 999999.
+	\note will be missing if >= 999900
+	\minimum 0
+	N19, \field Zenith Luminance
+	\units Cd/m2
+	\missing 9999.
+	\note will be missing if >= 9999
+	\minimum 0
+	N20, \field Wind Direction
+	\units degrees
+	\missing 999.
+	\minimum 0
+	\maximum 360
+	N21, \field Wind Speed
+	\units m/s
+	\missing 999.
+	\minimum 0
+	\maximum 40
+	N22, \field Total Sky Cover
+	\missing 99
+	\minimum 0
+	\maximum 10
+	N23, \field Opaque Sky Cover (used if Horizontal IR Intensity missing)
+	\missing 99
+	\minimum 0
+	\maximum 10
+	N24, \field Visibility
+	\units km
+	\missing 9999
+	N25, \field Ceiling Height
+	\units m
+	\missing 99999
+	N26, \field Present Weather Observation
+	N27, \field Present Weather Codes
+	N28, \field Precipitable Water
+	\units mm
+	\missing 999
+	N29, \field Aerosol Optical Depth
+	\units thousandths
+	\missing .999
+	N30, \field Snow Depth
+	\units cm
+	\missing 999
+	N31, \field Days Since Last Snowfall
+	\missing 99
+	N32, \field Albedo
+	\missing 999
+	N33, \field Liquid Precipitation Depth
+	\units mm
+	\missing 999
+	N34; \field Liquid Precipitation Quantity
+	\units hr
+	\missing 99
+
+	
