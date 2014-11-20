@@ -3,7 +3,7 @@ Created on Oct 30, 2014
 
 @author: rene
 '''
-
+import string
 IND = "    "
 
 
@@ -11,6 +11,12 @@ class EPWGenerator():
 
     def __init__(self):
         pass
+
+    def normalize_object_name(self, internal_name):
+        name = internal_name.replace('/', ' or ').strip()
+        name = string.capwords(name)
+        name = name.replace(' ', '')
+        return name
 
     def normalize_object_name2(self, internal_name):
         name = internal_name.strip().replace('/', ' or ').lower()
@@ -29,6 +35,16 @@ class EPWGenerator():
             return str(float(value))
         return value
 
+    def _value2pyconv(self, vtype):
+
+        if vtype == 'alpha':
+            return "str"
+        if vtype == 'integer':
+            return "int"
+        if vtype == 'real':
+            return "float"
+        return "str"
+
     def generate_class(self, obj):
         source = "class {}(object):\n".format(obj.name)
         source += IND + "\"\"\" Corresponds to EPW IDD object `{}`\n".format(
@@ -36,6 +52,7 @@ class EPWGenerator():
         source += IND + "\"\"\"\n"
 
         source += IND + "internal_name = \"{}\"\n".format(obj.internal_name)
+        source += IND + "_fields_count = {}\n".format(len(obj.fields))
 
         params = ""
         lists = []
@@ -68,6 +85,29 @@ class EPWGenerator():
                         if "type" in field.attributes:
                             val = self._value2py(val, field.attributes["type"])
                     source += IND + IND + "self._{} = {}\n".format(field.name, val)
+
+        source += IND + "def read(self, vals):\n"
+        source += IND + IND + "i = 0\n"
+
+        for field in obj.fields:
+            if not field.is_list:
+                conv = "str"
+                if "type" in field.attributes:
+                    conv = self._value2pyconv(field.attributes["type"])
+                source += IND + IND + "if len(vals[i]) == 0:\n"
+                source += IND + IND + IND + "self.{} = None\n".format(field.name)
+                source += IND + IND + "else:\n"
+                source += IND + IND + IND + "self.{} = {}(vals[i])\n".format(field.name,
+                                                                   conv)
+                source += IND + IND + "i += 1\n"
+            else:
+                source += IND + IND + "count = int(vals[i])\n"
+                source += IND + IND + "i += 1\n"
+                source += IND + IND + "for _ in xrange(count):\n"
+                source += IND + IND + IND + "obj = {}()\n".format(self.normalize_object_name(field.internal_name))
+                source += IND + IND + IND + "obj.read(vals[i:i+obj._fields_count])\n"
+                source += IND + IND + IND + "self._{}s.append(obj)\n".format(field.name)
+                source += IND + IND + IND + "i += obj._fields_count\n"
 
         for field in obj.fields:
             if field.is_list:
@@ -134,17 +174,17 @@ class EPWGenerator():
                 if "type" in field.attributes:
                     ftype = field.attributes["type"]
                     if ftype == 'alpha':
-                        asserts = IND + IND + "assert isinstance(value, {})\n".format(
+                        asserts = IND + IND + "assert value is None or isinstance(value, {})\n".format(
                             'str') + asserts
                     if ftype == 'integer':
-                        asserts = IND + IND + "assert isinstance(value, {})\n".format(
+                        asserts = IND + IND + "assert value is None or isinstance(value, {})\n".format(
                             'int') + asserts
                     if ftype == 'real':
-                        asserts = IND + IND + "assert isinstance(value, {})\n".format(
+                        asserts = IND + IND + "assert value is None or isinstance(value, {})\n".format(
                             'float') + asserts
                     if ftype == 'choice':
                         keys = "[" + ",".join("\"{}\"".format(k) for k in field.attributes["key"]) + "]"
-                        asserts = IND + IND + "assert value in {}\n".format(keys) + asserts
+                        asserts = IND + IND + "assert value is None or value in {}\n".format(keys) + asserts
 
                         source += IND + IND + "Accepted values:\n"
                         for key in field.attributes["key"]:
@@ -181,6 +221,9 @@ class EPWGenerator():
             else:
                 source += IND + IND + "out.append(self._to_str(self.{}))\n".format(field.name)
         source += IND + IND + "return \",\".join(out)\n\n"
+
+        source += IND + "def __str__(self):\n"
+        source += IND + IND + "return self.export(True)\n"
         return source
 
     def generate_epw(self, objs):
@@ -192,25 +235,55 @@ class EPWGenerator():
             for field in obj.fields:
                 if field.is_list:
                     list_objs.append(field.object_name)
-                    print field.object_name
-
         paras = ["self"]
-        for obj in objs:
+        for obj in objs[:-1]:
             if obj.name not in list_objs:
-                paras.append(self.normalize_object_name2(obj.internal_name))
+                paras.append("{}={}()".format(self.normalize_object_name2(obj.internal_name),
+                                            self.normalize_object_name(obj.internal_name)
+                                            ))
+        paras.append("items=[]")
         paras_str = ", ".join(paras)
 
-        source += IND + "def create({}):\n".format(paras_str)
+        source += IND + "def __init__({}):\n".format(paras_str)
+        source += IND + IND + "self._data = OrderedDict()\n"
+        for obj in objs[:-1]:
+            if obj.name not in list_objs:
+                source += IND + IND + "self._data[\"{}\"] = {}\n".format(obj.internal_name,
+                                                                         self.normalize_object_name2(obj.internal_name))
+        source += IND + IND + "self._data[\"ITEMS\"] = items\n"
+
+        source += IND + "def set(self, data_dictionary):\n"
+        source += IND + IND + "if not data_dictionary.internal_name == \"ITEMS\":\n"
+        source += IND + IND + IND + "self._data[data_dictionary.iternal_name] = data_dictionary\n".format(obj.internal_name)
+        source += IND + IND + "else:\n"
+        source += IND + IND + IND + "self._data[\"ITEMS\"].append(data_dictionary)\n".format(obj.internal_name)
+
+        source += IND + "def create(self):\n"
         source += IND + IND + "out = []\n"
 
         for obj in objs[:-1]:
             if obj.name not in list_objs:
-                obj_name = self.normalize_object_name2(obj.internal_name)
-                source += IND + IND + "out.append({}.export() + \"\\n\")\n".format(obj_name,
-                                                                                obj_name)
-        source += IND + IND + "for item in items:\n"
-        source += IND + IND + IND + "out.append(item.export(False))\n"
+                source += IND + IND + "out.append(self._data[\"{}\"].export() + \"\\n\")\n".format(obj.internal_name)
+        source += IND + IND + "for item in self._data[\"{}\"]:\n".format(objs[-1].internal_name)
+        source += IND + IND + IND + "out.append(item.export(False) + \"\\n\")\n"
         source += IND + IND + "return \"\".join(out)\n"
 
+        source += """
+    def read(self, path):
+        with open(path, "r") as f:
+            for line in f:
+                line = line.strip()
+                match_obj_name = re.search(r"^([A-Z][A-Z/ \d]+),", line)
+                if match_obj_name is not None:
+                    obj_name = match_obj_name.group(1)
+                    if obj_name in self._data:
+                        data_line = line[len(obj_name) + 1:]
+                        vals = data_line.strip().split(',')
+                        self._data[obj_name].read(vals)
+                else:
+                    item = Items()
+                    item.read(line.strip().split(','))
+                    self._data["ITEMS"].append(item)
+        """
         return source
 

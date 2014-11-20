@@ -20,6 +20,9 @@ if __name__ == '__main__':
     source_file += "Do not expect that it actually works!\n\n"
     source_file += "Generation date: {}\n\n".format(date.today())
     source_file += "\"\"\"\n"
+    source_file += "from collections import OrderedDict\n"
+    source_file += "import re\n"
+
     generator = EPWGenerator()
     for obj in objs:
         source_file += generator.generate_class(obj)
@@ -32,5 +35,5 @@ if __name__ == '__main__':
                                                   '--aggressive',
                                                   '']))
 
-    with open("../py-epw/epw.py", 'w') as f:
+    with open("../pyepw/epw.py", 'w') as f:
         f.write(source_file)

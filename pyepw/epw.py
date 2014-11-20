@@ -5,9 +5,11 @@ Auxiliary EnergyPlus Programs - Extra programs for EnergyPlus, Date: November 22
 
 Do not expect that it actually works!
 
-Generation date: 2014-11-18
+Generation date: 2014-11-20
 
 """
+from collections import OrderedDict
+import re
 
 
 class Location(object):
@@ -15,6 +17,7 @@ class Location(object):
     """ Corresponds to EPW IDD object `LOCATION`
     """
     internal_name = "LOCATION"
+    _fields_count = 9
 
     def __init__(self):
         self._city = None
@@ -27,6 +30,54 @@ class Location(object):
         self._timezone = None
         self._elevation = None
 
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.city = None
+        else:
+            self.city = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.state_province_region = None
+        else:
+            self.state_province_region = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.country = None
+        else:
+            self.country = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.source = None
+        else:
+            self.source = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wmo = None
+        else:
+            self.wmo = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.latitude = None
+        else:
+            self.latitude = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.longitude = None
+        else:
+            self.longitude = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.timezone = None
+        else:
+            self.timezone = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.elevation = None
+        else:
+            self.elevation = float(vals[i])
+        i += 1
+
     @property
     def city(self):
         """Get city"""
@@ -38,7 +89,7 @@ class Location(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._city = value
 
@@ -53,7 +104,7 @@ class Location(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._state_province_region = value
 
@@ -68,7 +119,7 @@ class Location(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._country = value
 
@@ -83,7 +134,7 @@ class Location(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._source = value
 
@@ -99,7 +150,7 @@ class Location(object):
         usually a 6 digit field. Used as alpha in EnergyPlus
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._wmo = value
 
@@ -119,7 +170,7 @@ class Location(object):
         Default: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= -90.0
         assert value <= 90.0
 
@@ -141,7 +192,7 @@ class Location(object):
         Default: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= -180.0
         assert value <= 180.0
 
@@ -163,7 +214,7 @@ class Location(object):
         Default: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= -12.0
         assert value <= 12.0
 
@@ -184,7 +235,7 @@ class Location(object):
         Default: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= -1000.0
         assert value < 9999.9
 
@@ -211,18 +262,45 @@ class Location(object):
         out.append(self._to_str(self.elevation))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class TypicalOrExtremePeriod(object):
 
     """ Corresponds to EPW IDD object `TYPICAL/EXTREME PERIOD`
     """
     internal_name = "TYPICAL/EXTREME PERIOD"
+    _fields_count = 4
 
     def __init__(self):
         self._typical_or_extreme_period_name = None
         self._typical_or_extreme_period__type = None
         self._period_start_day = None
         self._period__end_day = None
+
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.typical_or_extreme_period_name = None
+        else:
+            self.typical_or_extreme_period_name = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.typical_or_extreme_period__type = None
+        else:
+            self.typical_or_extreme_period__type = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.period_start_day = None
+        else:
+            self.period_start_day = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.period__end_day = None
+        else:
+            self.period__end_day = str(vals[i])
+        i += 1
 
     @property
     def typical_or_extreme_period_name(self):
@@ -235,7 +313,7 @@ class TypicalOrExtremePeriod(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._typical_or_extreme_period_name = value
 
@@ -250,7 +328,7 @@ class TypicalOrExtremePeriod(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._typical_or_extreme_period__type = value
 
@@ -265,7 +343,7 @@ class TypicalOrExtremePeriod(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._period_start_day = value
 
@@ -280,7 +358,7 @@ class TypicalOrExtremePeriod(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._period__end_day = value
 
@@ -300,15 +378,29 @@ class TypicalOrExtremePeriod(object):
         out.append(self._to_str(self.period__end_day))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class TypicalOrExtremePeriods(object):
 
     """ Corresponds to EPW IDD object `TYPICAL/EXTREME PERIODS`
     """
     internal_name = "TYPICAL/EXTREME PERIODS"
+    _fields_count = 1
 
     def __init__(self):
         self._typical_or_extreme_periods = []
+
+    def read(self, vals):
+        i = 0
+        count = int(vals[i])
+        i += 1
+        for _ in xrange(count):
+            obj = TypicalOrExtremePeriod()
+            obj.read(vals[i:i + obj._fields_count])
+            self._typical_or_extreme_periods.append(obj)
+            i += obj._fields_count
 
     def add_typical_or_extreme_period(self, value):
         """Add TypicalOrExtremePeriod"""
@@ -329,12 +421,16 @@ class TypicalOrExtremePeriods(object):
             out.append(obj.export(top=False))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class GroundTemperature(object):
 
     """ Corresponds to EPW IDD object `GROUND TEMPERATURE`
     """
     internal_name = "GROUND TEMPERATURE"
+    _fields_count = 16
 
     def __init__(self):
         self._ground_temperature_depth = None
@@ -354,6 +450,89 @@ class GroundTemperature(object):
         self._depth_november_average_ground_temperature = None
         self._depth_december_average_ground_temperature = None
 
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.ground_temperature_depth = None
+        else:
+            self.ground_temperature_depth = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_soil_conductivity = None
+        else:
+            self.depth_soil_conductivity = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_soil_density = None
+        else:
+            self.depth_soil_density = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_soil_specific_heat = None
+        else:
+            self.depth_soil_specific_heat = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_january_average_ground_temperature = None
+        else:
+            self.depth_january_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_february_average_ground_temperature = None
+        else:
+            self.depth_february_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_march_average_ground_temperature = None
+        else:
+            self.depth_march_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_april_average_ground_temperature = None
+        else:
+            self.depth_april_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_may_average_ground_temperature = None
+        else:
+            self.depth_may_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_june_average_ground_temperature = None
+        else:
+            self.depth_june_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_july_average_ground_temperature = None
+        else:
+            self.depth_july_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_august_average_ground_temperature = None
+        else:
+            self.depth_august_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_september_average_ground_temperature = None
+        else:
+            self.depth_september_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_october_average_ground_temperature = None
+        else:
+            self.depth_october_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_november_average_ground_temperature = None
+        else:
+            self.depth_november_average_ground_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.depth_december_average_ground_temperature = None
+        else:
+            self.depth_december_average_ground_temperature = float(vals[i])
+        i += 1
+
     @property
     def ground_temperature_depth(self):
         """Get ground_temperature_depth"""
@@ -366,7 +545,7 @@ class GroundTemperature(object):
         Unit: m
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._ground_temperature_depth = value
 
@@ -382,7 +561,7 @@ class GroundTemperature(object):
         Unit: W/m-K,
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_soil_conductivity = value
 
@@ -398,7 +577,7 @@ class GroundTemperature(object):
         Unit: kg/m3
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_soil_density = value
 
@@ -414,7 +593,7 @@ class GroundTemperature(object):
         Unit: J/kg-K,
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_soil_specific_heat = value
 
@@ -430,7 +609,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_january_average_ground_temperature = value
 
@@ -446,7 +625,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_february_average_ground_temperature = value
 
@@ -462,7 +641,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_march_average_ground_temperature = value
 
@@ -478,7 +657,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_april_average_ground_temperature = value
 
@@ -494,7 +673,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_may_average_ground_temperature = value
 
@@ -510,7 +689,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_june_average_ground_temperature = value
 
@@ -526,7 +705,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_july_average_ground_temperature = value
 
@@ -542,7 +721,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_august_average_ground_temperature = value
 
@@ -558,7 +737,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_september_average_ground_temperature = value
 
@@ -574,7 +753,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_october_average_ground_temperature = value
 
@@ -590,7 +769,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_november_average_ground_temperature = value
 
@@ -606,7 +785,7 @@ class GroundTemperature(object):
         Unit: C
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._depth_december_average_ground_temperature = value
 
@@ -646,15 +825,29 @@ class GroundTemperature(object):
                 self.depth_december_average_ground_temperature))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class GroundTemperatures(object):
 
     """ Corresponds to EPW IDD object `GROUND TEMPERATURES`
     """
     internal_name = "GROUND TEMPERATURES"
+    _fields_count = 1
 
     def __init__(self):
         self._ground_temperatures = []
+
+    def read(self, vals):
+        i = 0
+        count = int(vals[i])
+        i += 1
+        for _ in xrange(count):
+            obj = GroundTemperature()
+            obj.read(vals[i:i + obj._fields_count])
+            self._ground_temperatures.append(obj)
+            i += obj._fields_count
 
     def add_ground_temperature(self, value):
         """Add GroundTemperature"""
@@ -675,16 +868,33 @@ class GroundTemperatures(object):
             out.append(obj.export(top=False))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class Holiday(object):
 
     """ Corresponds to EPW IDD object `HOLIDAY`
     """
     internal_name = "HOLIDAY"
+    _fields_count = 2
 
     def __init__(self):
         self._holiday_name = None
         self._holiday_day = None
+
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.holiday_name = None
+        else:
+            self.holiday_name = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.holiday_day = None
+        else:
+            self.holiday_day = str(vals[i])
+        i += 1
 
     @property
     def holiday_name(self):
@@ -697,7 +907,7 @@ class Holiday(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._holiday_name = value
 
@@ -712,7 +922,7 @@ class Holiday(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._holiday_day = value
 
@@ -730,18 +940,47 @@ class Holiday(object):
         out.append(self._to_str(self.holiday_day))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class HolidaysOrDaylightSaving(object):
 
     """ Corresponds to EPW IDD object `HOLIDAYS/DAYLIGHT SAVING`
     """
     internal_name = "HOLIDAYS/DAYLIGHT SAVING"
+    _fields_count = 4
 
     def __init__(self):
         self._leapyear_observed = None
         self._daylight_saving_start_day = None
         self._daylight_saving_end_day = None
         self._holidays = []
+
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.leapyear_observed = None
+        else:
+            self.leapyear_observed = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.daylight_saving_start_day = None
+        else:
+            self.daylight_saving_start_day = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.daylight_saving_end_day = None
+        else:
+            self.daylight_saving_end_day = str(vals[i])
+        i += 1
+        count = int(vals[i])
+        i += 1
+        for _ in xrange(count):
+            obj = Holiday()
+            obj.read(vals[i:i + obj._fields_count])
+            self._holidays.append(obj)
+            i += obj._fields_count
 
     @property
     def leapyear_observed(self):
@@ -759,7 +998,7 @@ class HolidaysOrDaylightSaving(object):
          - No
         """
 
-        assert value in ["Yes", "No"]
+        assert value is None or value in ["Yes", "No"]
 
         self._leapyear_observed = value
 
@@ -774,7 +1013,7 @@ class HolidaysOrDaylightSaving(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._daylight_saving_start_day = value
 
@@ -789,7 +1028,7 @@ class HolidaysOrDaylightSaving(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._daylight_saving_end_day = value
 
@@ -815,15 +1054,27 @@ class HolidaysOrDaylightSaving(object):
             out.append(obj.export(top=False))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class Comments1(object):
 
     """ Corresponds to EPW IDD object `COMMENTS 1`
     """
     internal_name = "COMMENTS 1"
+    _fields_count = 1
 
     def __init__(self):
         self._comments_1 = None
+
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.comments_1 = None
+        else:
+            self.comments_1 = str(vals[i])
+        i += 1
 
     @property
     def comments_1(self):
@@ -836,7 +1087,7 @@ class Comments1(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._comments_1 = value
 
@@ -853,15 +1104,27 @@ class Comments1(object):
         out.append(self._to_str(self.comments_1))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class Comments2(object):
 
     """ Corresponds to EPW IDD object `COMMENTS 2`
     """
     internal_name = "COMMENTS 2"
+    _fields_count = 1
 
     def __init__(self):
         self._comments_2 = None
+
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.comments_2 = None
+        else:
+            self.comments_2 = str(vals[i])
+        i += 1
 
     @property
     def comments_2(self):
@@ -874,7 +1137,7 @@ class Comments2(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._comments_2 = value
 
@@ -891,12 +1154,16 @@ class Comments2(object):
         out.append(self._to_str(self.comments_2))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class DataPeriod(object):
 
     """ Corresponds to EPW IDD object `DATA PERIOD`
     """
     internal_name = "DATA PERIOD"
+    _fields_count = 5
 
     def __init__(self):
         self._number_of_records_per_hour = None
@@ -904,6 +1171,34 @@ class DataPeriod(object):
         self._data_period_start_day_of_week = None
         self._data_period_start_day = None
         self._data_period_end_day = None
+
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.number_of_records_per_hour = None
+        else:
+            self.number_of_records_per_hour = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.data_period_name_or_description = None
+        else:
+            self.data_period_name_or_description = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.data_period_start_day_of_week = None
+        else:
+            self.data_period_start_day_of_week = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.data_period_start_day = None
+        else:
+            self.data_period_start_day = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.data_period_end_day = None
+        else:
+            self.data_period_end_day = str(vals[i])
+        i += 1
 
     @property
     def number_of_records_per_hour(self):
@@ -916,7 +1211,7 @@ class DataPeriod(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._number_of_records_per_hour = value
 
@@ -931,7 +1226,7 @@ class DataPeriod(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._data_period_name_or_description = value
 
@@ -954,7 +1249,7 @@ class DataPeriod(object):
          - Saturday
         """
 
-        assert value in [
+        assert value is None or value in [
             "Sunday",
             "Monday",
             "Tuesday",
@@ -976,7 +1271,7 @@ class DataPeriod(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._data_period_start_day = value
 
@@ -991,7 +1286,7 @@ class DataPeriod(object):
 
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._data_period_end_day = value
 
@@ -1012,15 +1307,29 @@ class DataPeriod(object):
         out.append(self._to_str(self.data_period_end_day))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class DataPeriods(object):
 
     """ Corresponds to EPW IDD object `DATA PERIODS`
     """
     internal_name = "DATA PERIODS"
+    _fields_count = 1
 
     def __init__(self):
         self._data_periods = []
+
+    def read(self, vals):
+        i = 0
+        count = int(vals[i])
+        i += 1
+        for _ in xrange(count):
+            obj = DataPeriod()
+            obj.read(vals[i:i + obj._fields_count])
+            self._data_periods.append(obj)
+            i += obj._fields_count
 
     def add_data_period(self, value):
         """Add DataPeriod"""
@@ -1041,12 +1350,16 @@ class DataPeriods(object):
             out.append(obj.export(top=False))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class Items(object):
 
     """ Corresponds to EPW IDD object `ITEMS`
     """
     internal_name = "ITEMS"
+    _fields_count = 35
 
     def __init__(self):
         self._year = None
@@ -1085,6 +1398,185 @@ class Items(object):
         self._liquid_precipitation_depth = 999.0
         self._liquid_precipitation_quantity = 99.0
 
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.year = None
+        else:
+            self.year = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.month = None
+        else:
+            self.month = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.day = None
+        else:
+            self.day = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.hour = None
+        else:
+            self.hour = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.minute = None
+        else:
+            self.minute = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.data_source_and_uncertainty_flags = None
+        else:
+            self.data_source_and_uncertainty_flags = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dry_bulb_temperature = None
+        else:
+            self.dry_bulb_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dew_point_temperature = None
+        else:
+            self.dew_point_temperature = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.relative_humidity = None
+        else:
+            self.relative_humidity = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.atmospheric_station_pressure = None
+        else:
+            self.atmospheric_station_pressure = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.extraterrestrial_horizontal_radiation = None
+        else:
+            self.extraterrestrial_horizontal_radiation = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.extraterrestrial_direct_normal_radiation = None
+        else:
+            self.extraterrestrial_direct_normal_radiation = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.horizontal_infrared_radiation_intensity = None
+        else:
+            self.horizontal_infrared_radiation_intensity = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.global_horizontal_radiation = None
+        else:
+            self.global_horizontal_radiation = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.direct_normal_radiation = None
+        else:
+            self.direct_normal_radiation = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.diffuse_horizontal_radiation = None
+        else:
+            self.diffuse_horizontal_radiation = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.global_horizontal_illuminance = None
+        else:
+            self.global_horizontal_illuminance = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.direct_normal_illuminance = None
+        else:
+            self.direct_normal_illuminance = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.diffuse_horizontal_illuminance = None
+        else:
+            self.diffuse_horizontal_illuminance = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.zenith_luminance = None
+        else:
+            self.zenith_luminance = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wind_direction = None
+        else:
+            self.wind_direction = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wind_speed = None
+        else:
+            self.wind_speed = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.total_sky_cover = None
+        else:
+            self.total_sky_cover = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.opaque_sky_cover_used_if_horizontal_ir_intensity_missing = None
+        else:
+            self.opaque_sky_cover_used_if_horizontal_ir_intensity_missing = float(
+                vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.visibility = None
+        else:
+            self.visibility = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.ceiling_height = None
+        else:
+            self.ceiling_height = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.present_weather_observation = None
+        else:
+            self.present_weather_observation = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.present_weather_codes = None
+        else:
+            self.present_weather_codes = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.precipitable_water = None
+        else:
+            self.precipitable_water = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.aerosol_optical_depth = None
+        else:
+            self.aerosol_optical_depth = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.snow_depth = None
+        else:
+            self.snow_depth = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.days_since_last_snowfall = None
+        else:
+            self.days_since_last_snowfall = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.albedo = None
+        else:
+            self.albedo = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.liquid_precipitation_depth = None
+        else:
+            self.liquid_precipitation_depth = float(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.liquid_precipitation_quantity = None
+        else:
+            self.liquid_precipitation_quantity = float(vals[i])
+        i += 1
+
     @property
     def year(self):
         """Get year"""
@@ -1096,7 +1588,7 @@ class Items(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._year = value
 
@@ -1111,7 +1603,7 @@ class Items(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._month = value
 
@@ -1126,7 +1618,7 @@ class Items(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._day = value
 
@@ -1141,7 +1633,7 @@ class Items(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._hour = value
 
@@ -1156,7 +1648,7 @@ class Items(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._minute = value
 
@@ -1174,7 +1666,7 @@ class Items(object):
         values or the last "good" value is substituted.
         """
 
-        assert isinstance(value, str)
+        assert value is None or isinstance(value, str)
 
         self._data_source_and_uncertainty_flags = value
 
@@ -1192,7 +1684,7 @@ class Items(object):
         Maximum<: 70.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value > -70.0
         assert value < 70.0
 
@@ -1212,7 +1704,7 @@ class Items(object):
         Maximum<: 70.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value > -70.0
         assert value < 70.0
 
@@ -1231,7 +1723,7 @@ class Items(object):
         Maximum: 110.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
         assert value <= 110.0
 
@@ -1251,7 +1743,7 @@ class Items(object):
         Maximum<: 120000.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value > 31000.0
         assert value < 120000.0
 
@@ -1270,7 +1762,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._extraterrestrial_horizontal_radiation = value
@@ -1288,7 +1780,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._extraterrestrial_direct_normal_radiation = value
@@ -1306,7 +1798,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._horizontal_infrared_radiation_intensity = value
@@ -1324,7 +1816,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._global_horizontal_radiation = value
@@ -1342,7 +1834,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._direct_normal_radiation = value
@@ -1360,7 +1852,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._diffuse_horizontal_radiation = value
@@ -1379,7 +1871,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._global_horizontal_illuminance = value
@@ -1398,7 +1890,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._direct_normal_illuminance = value
@@ -1417,7 +1909,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._diffuse_horizontal_illuminance = value
@@ -1436,7 +1928,7 @@ class Items(object):
         Minimum: 0.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
 
         self._zenith_luminance = value
@@ -1455,7 +1947,7 @@ class Items(object):
         Maximum: 360.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
         assert value <= 360.0
 
@@ -1475,7 +1967,7 @@ class Items(object):
         Maximum: 40.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
         assert value <= 40.0
 
@@ -1494,7 +1986,7 @@ class Items(object):
         Maximum: 10.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
         assert value <= 10.0
 
@@ -1515,7 +2007,7 @@ class Items(object):
         Maximum: 10.0
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
         assert value >= 0.0
         assert value <= 10.0
 
@@ -1533,7 +2025,7 @@ class Items(object):
         Unit: km
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._visibility = value
 
@@ -1549,7 +2041,7 @@ class Items(object):
         Unit: m
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._ceiling_height = value
 
@@ -1564,7 +2056,7 @@ class Items(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._present_weather_observation = value
 
@@ -1579,7 +2071,7 @@ class Items(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._present_weather_codes = value
 
@@ -1595,7 +2087,7 @@ class Items(object):
         Unit: mm
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._precipitable_water = value
 
@@ -1611,7 +2103,7 @@ class Items(object):
         Unit: thousandths
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._aerosol_optical_depth = value
 
@@ -1627,7 +2119,7 @@ class Items(object):
         Unit: cm
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._snow_depth = value
 
@@ -1642,7 +2134,7 @@ class Items(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._days_since_last_snowfall = value
 
@@ -1657,7 +2149,7 @@ class Items(object):
 
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._albedo = value
 
@@ -1673,7 +2165,7 @@ class Items(object):
         Unit: mm
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._liquid_precipitation_depth = value
 
@@ -1689,7 +2181,7 @@ class Items(object):
         Unit: hr
         """
 
-        assert isinstance(value, float)
+        assert value is None or isinstance(value, float)
 
         self._liquid_precipitation_quantity = value
 
@@ -1742,27 +2234,63 @@ class Items(object):
         out.append(self._to_str(self.liquid_precipitation_quantity))
         return ",".join(out)
 
+    def __str__(self):
+        return self.export(True)
+
 
 class EPW(object):
 
-    def create(
+    def __init__(
             self,
-            location,
-            typical_or_extreme_periods,
-            ground_temperatures,
-            holidays_or_daylight_saving,
-            comments_1,
-            comments_2,
-            data_periods,
-            items):
+            location=Location(),
+            typical_or_extreme_periods=TypicalOrExtremePeriods(),
+            ground_temperatures=GroundTemperatures(),
+            holidays_or_daylight_saving=HolidaysOrDaylightSaving(),
+            comments_1=Comments1(),
+            comments_2=Comments2(),
+            data_periods=DataPeriods(),
+            items=[]):
+        self._data = OrderedDict()
+        self._data["LOCATION"] = location
+        self._data["TYPICAL/EXTREME PERIODS"] = typical_or_extreme_periods
+        self._data["GROUND TEMPERATURES"] = ground_temperatures
+        self._data["HOLIDAYS/DAYLIGHT SAVING"] = holidays_or_daylight_saving
+        self._data["COMMENTS 1"] = comments_1
+        self._data["COMMENTS 2"] = comments_2
+        self._data["DATA PERIODS"] = data_periods
+        self._data["ITEMS"] = items
+
+    def set(self, data_dictionary):
+        if not data_dictionary.internal_name == "ITEMS":
+            self._data[data_dictionary.iternal_name] = data_dictionary
+        else:
+            self._data["ITEMS"].append(data_dictionary)
+
+    def create(self):
         out = []
-        out.append(location.export() + "\n")
-        out.append(typical_or_extreme_periods.export() + "\n")
-        out.append(ground_temperatures.export() + "\n")
-        out.append(holidays_or_daylight_saving.export() + "\n")
-        out.append(comments_1.export() + "\n")
-        out.append(comments_2.export() + "\n")
-        out.append(data_periods.export() + "\n")
-        for item in items:
-            out.append(item.export(False))
+        out.append(self._data["LOCATION"].export() + "\n")
+        out.append(self._data["TYPICAL/EXTREME PERIODS"].export() + "\n")
+        out.append(self._data["GROUND TEMPERATURES"].export() + "\n")
+        out.append(self._data["HOLIDAYS/DAYLIGHT SAVING"].export() + "\n")
+        out.append(self._data["COMMENTS 1"].export() + "\n")
+        out.append(self._data["COMMENTS 2"].export() + "\n")
+        out.append(self._data["DATA PERIODS"].export() + "\n")
+        for item in self._data["ITEMS"]:
+            out.append(item.export(False) + "\n")
         return "".join(out)
+
+    def read(self, path):
+        with open(path, "r") as f:
+            for line in f:
+                line = line.strip()
+                match_obj_name = re.search(r"^([A-Z][A-Z/ \d]+),", line)
+                if match_obj_name is not None:
+                    obj_name = match_obj_name.group(1)
+                    if obj_name in self._data:
+                        data_line = line[len(obj_name) + 1:]
+                        vals = data_line.strip().split(',')
+                        self._data[obj_name].read(vals)
+                else:
+                    item = Items()
+                    item.read(line.strip().split(','))
+                    self._data["ITEMS"].append(item)
