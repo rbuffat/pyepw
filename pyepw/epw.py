@@ -1,5 +1,5 @@
 """
-WARNING: This is an automatic generated file.
+WARNING: This is an automatically generated file.
 It is based on the EPW IDD specification given in the document
 Auxiliary EnergyPlus Programs - Extra programs for EnergyPlus, Date: November 22 2013
 
@@ -447,7 +447,7 @@ class TypicalOrExtremePeriods(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = TypicalOrExtremePeriod()
             obj.read(vals[i:i + obj._field_count])
             self.add_typical_or_extreme_period(obj)
@@ -945,7 +945,7 @@ class GroundTemperatures(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = GroundTemperature()
             obj.read(vals[i:i + obj._field_count])
             self.add_ground_temperature(obj)
@@ -1085,7 +1085,7 @@ class HolidaysOrDaylightSavings(object):
         i += 1
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = Holiday()
             obj.read(vals[i:i + obj._field_count])
             self.add_holiday(obj)
@@ -1471,7 +1471,7 @@ class DataPeriods(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = DataPeriod()
             obj.read(vals[i:i + obj._field_count])
             self.add_data_period(obj)
