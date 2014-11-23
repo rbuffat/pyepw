@@ -91,7 +91,7 @@ HOLIDAY,
 	A4, \field Holiday Name
 	A5, \field Holiday Day
 
-HOLIDAYS/DAYLIGHT SAVING,
+HOLIDAYS/DAYLIGHT SAVINGS,
 	A1, \field LeapYear Observed
 	\type choice
 	\key Yes
@@ -126,7 +126,7 @@ DATA PERIOD,
 DATA PERIODS,
 	L1; \list DATA PERIOD
 
-ITEMS,
+WEATHER DATA,
 	N1, \field Year
 	N2, \field Month
 	N3, \field Day

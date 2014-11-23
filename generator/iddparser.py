@@ -11,19 +11,6 @@ from helper import DataObject, DataField, ListField
 
 class IDDParser():
 
-    def normalize_field_name(self, internal_name):
-        name = internal_name.strip().replace('/', ' or ').lower()
-        name = name.replace(' ', '_')
-        name = name.replace('(', '')
-        name = name.replace(')', '')
-        return name
-
-    def normalize_object_name(self, internal_name):
-        name = internal_name.replace('/', ' or ').strip()
-        name = string.capwords(name)
-        name = name.replace(' ', '')
-        return name
-
     def _is_new_field(self, line):
         return re.search(r"^\s*[AN]\d+\s*[,;]", line) is not None
 
@@ -44,9 +31,7 @@ class IDDParser():
         assert match_obj_name is not None
 
         internal_name = match_obj_name.group(1)
-
-        name = self.normalize_object_name(internal_name)
-        self.current_object = DataObject(name, internal_name)
+        self.current_object = DataObject(internal_name)
 
     def _parse_field_name(self, line):
         # print "NewField:\t", line
@@ -59,8 +44,9 @@ class IDDParser():
 
         ftype = match_field_type.group(1)
         internal_name = match_field_name.group(1).strip()
-        name = self.normalize_field_name(internal_name)
-        self.current_object.fields.append(DataField(name, internal_name, ftype))
+        if len(self.current_object.fields) > 0:
+            self.current_object.fields[-1].conv_vals()
+        self.current_object.fields.append(DataField(internal_name, ftype))
 
     def _parse_list(self, line):
         match_list_name = re.search(r"\\list\s(.*)$", line)
@@ -70,9 +56,7 @@ class IDDParser():
             return
 
         internal_name = match_list_name.group(1).strip()
-        object_name = self.normalize_object_name(internal_name)
-        name = self.normalize_field_name(internal_name)
-        df = ListField(name, internal_name, object_name)
+        df = ListField(internal_name)
         df.is_list = True
         self.current_object.fields.append(df)
 
@@ -86,7 +70,7 @@ class IDDParser():
             no_value_attributes = ["required-field"]
 
             if attribute_name in no_value_attributes:
-                last_field.attributes[attribute_name] = None
+                last_field.add_attribute(attribute_name, None)
 
             match_value = re.search(r"\s*\\[^\s]+\s?(.*)", line)
             if match_value is not None:
@@ -97,10 +81,10 @@ class IDDParser():
 
                 if attribute_name in multiple_value_attributes:
                     if attribute_name not in last_field.attributes:
-                        self.current_object.fields[-1].attributes[attribute_name] = []
+                        last_field.add_attribute(attribute_name, [])
                     last_field.attributes[attribute_name].append(value)
                 else:
-                    last_field.attributes[attribute_name] = value
+                    last_field.add_attribute(attribute_name, value)
             else:
                 print "found no field value for: ", line, attribute_name, match_value
         else:
@@ -122,6 +106,8 @@ class IDDParser():
                 if self._is_new_object(line):
                     # print "New Object! ", line
                     if self.current_object is not None:
+                        if len(self.current_object.fields) > 0:
+                            self.current_object.fields[-1].conv_vals()
                         self.objects.append(self.current_object)
                         self.current_object = None
 
@@ -143,6 +129,10 @@ class IDDParser():
 
         if self.current_object is not None:
             self.objects.append(self.current_object)
+
+        for obj in self.objects:
+            for field in obj.fields:
+                field.conv_vals()
         return self.objects
 #
 #         for o in self.objects:
