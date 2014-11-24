@@ -1,5 +1,5 @@
 """
-WARNING: This is an automatic generated file.
+WARNING: This is an automatically generated file.
 It is based on the EPW IDD specification given in the document
 Auxiliary EnergyPlus Programs - Extra programs for EnergyPlus, Date: November 22 2013
 

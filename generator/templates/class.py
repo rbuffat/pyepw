@@ -20,7 +20,7 @@ class {{ class_name }}(object):
         {%- if field.is_list %}
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = {{field.object_name}}()
             obj.read(vals[i:i + obj._field_count])
             self.add_{{field.field_name}}(obj)
@@ -29,7 +29,7 @@ class {{ class_name }}(object):
         if len(vals[i]) == 0:
             self.{{field.field_name}} = None
         else:
-            self.{{field.field_name}} = str(vals[i])
+            self.{{field.field_name}} = vals[i]
         i += 1
         {%- endif %}
         {%- endfor %}

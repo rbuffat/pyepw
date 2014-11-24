@@ -1,5 +1,5 @@
 """
-WARNING: This is an automatic generated file.
+WARNING: This is an automatically generated file.
 It is based on the EPW IDD specification given in the document
 Auxiliary EnergyPlus Programs - Extra programs for EnergyPlus, Date: November 22 2013
 
@@ -34,47 +34,47 @@ class Location(object):
         if len(vals[i]) == 0:
             self.city = None
         else:
-            self.city = str(vals[i])
+            self.city = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.state_province_region = None
         else:
-            self.state_province_region = str(vals[i])
+            self.state_province_region = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.country = None
         else:
-            self.country = str(vals[i])
+            self.country = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.source = None
         else:
-            self.source = str(vals[i])
+            self.source = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wmo = None
         else:
-            self.wmo = str(vals[i])
+            self.wmo = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.latitude = None
         else:
-            self.latitude = str(vals[i])
+            self.latitude = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.longitude = None
         else:
-            self.longitude = str(vals[i])
+            self.longitude = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.timezone = None
         else:
-            self.timezone = str(vals[i])
+            self.timezone = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.elevation = None
         else:
-            self.elevation = str(vals[i])
+            self.elevation = vals[i]
         i += 1
 
     @property
@@ -392,342 +392,342 @@ class DesignCondition(object):
         if len(vals[i]) == 0:
             self.title_of_design_condition = None
         else:
-            self.title_of_design_condition = str(vals[i])
+            self.title_of_design_condition = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.unkown_field = None
         else:
-            self.unkown_field = str(vals[i])
+            self.unkown_field = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.design_stat_heating = None
         else:
-            self.design_stat_heating = str(vals[i])
+            self.design_stat_heating = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.coldestmonth = None
         else:
-            self.coldestmonth = str(vals[i])
+            self.coldestmonth = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db996 = None
         else:
-            self.db996 = str(vals[i])
+            self.db996 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db990 = None
         else:
-            self.db990 = str(vals[i])
+            self.db990 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dp996 = None
         else:
-            self.dp996 = str(vals[i])
+            self.dp996 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.hr_dp996 = None
         else:
-            self.hr_dp996 = str(vals[i])
+            self.hr_dp996 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_dp996 = None
         else:
-            self.db_dp996 = str(vals[i])
+            self.db_dp996 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dp990 = None
         else:
-            self.dp990 = str(vals[i])
+            self.dp990 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.hr_dp990 = None
         else:
-            self.hr_dp990 = str(vals[i])
+            self.hr_dp990 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_dp990 = None
         else:
-            self.db_dp990 = str(vals[i])
+            self.db_dp990 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.ws004c = None
         else:
-            self.ws004c = str(vals[i])
+            self.ws004c = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_ws004c = None
         else:
-            self.db_ws004c = str(vals[i])
+            self.db_ws004c = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.ws010c = None
         else:
-            self.ws010c = str(vals[i])
+            self.ws010c = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_ws010c = None
         else:
-            self.db_ws010c = str(vals[i])
+            self.db_ws010c = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.ws_db996 = None
         else:
-            self.ws_db996 = str(vals[i])
+            self.ws_db996 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wd_db996 = None
         else:
-            self.wd_db996 = str(vals[i])
+            self.wd_db996 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.design_stat_cooling = None
         else:
-            self.design_stat_cooling = str(vals[i])
+            self.design_stat_cooling = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.hottestmonth = None
         else:
-            self.hottestmonth = str(vals[i])
+            self.hottestmonth = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbr = None
         else:
-            self.dbr = str(vals[i])
+            self.dbr = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db004 = None
         else:
-            self.db004 = str(vals[i])
+            self.db004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wb_db004 = None
         else:
-            self.wb_db004 = str(vals[i])
+            self.wb_db004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db010 = None
         else:
-            self.db010 = str(vals[i])
+            self.db010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wb_db010 = None
         else:
-            self.wb_db010 = str(vals[i])
+            self.wb_db010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db020 = None
         else:
-            self.db020 = str(vals[i])
+            self.db020 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wb_db020 = None
         else:
-            self.wb_db020 = str(vals[i])
+            self.wb_db020 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wb004 = None
         else:
-            self.wb004 = str(vals[i])
+            self.wb004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_wb004 = None
         else:
-            self.db_wb004 = str(vals[i])
+            self.db_wb004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wb010 = None
         else:
-            self.wb010 = str(vals[i])
+            self.wb010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_wb010 = None
         else:
-            self.db_wb010 = str(vals[i])
+            self.db_wb010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wb020 = None
         else:
-            self.wb020 = str(vals[i])
+            self.wb020 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_wb020 = None
         else:
-            self.db_wb020 = str(vals[i])
+            self.db_wb020 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.ws_db004 = None
         else:
-            self.ws_db004 = str(vals[i])
+            self.ws_db004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wd_db004 = None
         else:
-            self.wd_db004 = str(vals[i])
+            self.wd_db004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dp004 = None
         else:
-            self.dp004 = str(vals[i])
+            self.dp004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.hr_dp004 = None
         else:
-            self.hr_dp004 = str(vals[i])
+            self.hr_dp004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_dp004 = None
         else:
-            self.db_dp004 = str(vals[i])
+            self.db_dp004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dp010 = None
         else:
-            self.dp010 = str(vals[i])
+            self.dp010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.hr_dp010 = None
         else:
-            self.hr_dp010 = str(vals[i])
+            self.hr_dp010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_dp010 = None
         else:
-            self.db_dp010 = str(vals[i])
+            self.db_dp010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dp020 = None
         else:
-            self.dp020 = str(vals[i])
+            self.dp020 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.hr_dp020 = None
         else:
-            self.hr_dp020 = str(vals[i])
+            self.hr_dp020 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_dp020 = None
         else:
-            self.db_dp020 = str(vals[i])
+            self.db_dp020 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.en004 = None
         else:
-            self.en004 = str(vals[i])
+            self.en004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_en004 = None
         else:
-            self.db_en004 = str(vals[i])
+            self.db_en004 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.en010 = None
         else:
-            self.en010 = str(vals[i])
+            self.en010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_en010 = None
         else:
-            self.db_en010 = str(vals[i])
+            self.db_en010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.en020 = None
         else:
-            self.en020 = str(vals[i])
+            self.en020 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.db_en020 = None
         else:
-            self.db_en020 = str(vals[i])
+            self.db_en020 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.hrs_84_and_db12_8_or_20_6 = None
         else:
-            self.hrs_84_and_db12_8_or_20_6 = str(vals[i])
+            self.hrs_84_and_db12_8_or_20_6 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.design_stat_extremes = None
         else:
-            self.design_stat_extremes = str(vals[i])
+            self.design_stat_extremes = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.ws010 = None
         else:
-            self.ws010 = str(vals[i])
+            self.ws010 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.ws025 = None
         else:
-            self.ws025 = str(vals[i])
+            self.ws025 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.ws050 = None
         else:
-            self.ws050 = str(vals[i])
+            self.ws050 = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wbmax = None
         else:
-            self.wbmax = str(vals[i])
+            self.wbmax = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmin_mean = None
         else:
-            self.dbmin_mean = str(vals[i])
+            self.dbmin_mean = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmax_mean = None
         else:
-            self.dbmax_mean = str(vals[i])
+            self.dbmax_mean = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmin_stddev = None
         else:
-            self.dbmin_stddev = str(vals[i])
+            self.dbmin_stddev = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmax_stddev = None
         else:
-            self.dbmax_stddev = str(vals[i])
+            self.dbmax_stddev = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmin05years = None
         else:
-            self.dbmin05years = str(vals[i])
+            self.dbmin05years = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmax05years = None
         else:
-            self.dbmax05years = str(vals[i])
+            self.dbmax05years = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmin10years = None
         else:
-            self.dbmin10years = str(vals[i])
+            self.dbmin10years = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmax10years = None
         else:
-            self.dbmax10years = str(vals[i])
+            self.dbmax10years = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmin20years = None
         else:
-            self.dbmin20years = str(vals[i])
+            self.dbmin20years = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmax20years = None
         else:
-            self.dbmax20years = str(vals[i])
+            self.dbmax20years = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmin50years = None
         else:
-            self.dbmin50years = str(vals[i])
+            self.dbmin50years = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dbmax50years = None
         else:
-            self.dbmax50years = str(vals[i])
+            self.dbmax50years = vals[i]
         i += 1
 
     @property
@@ -2253,7 +2253,7 @@ class DesignConditions(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = DesignCondition()
             obj.read(vals[i:i + obj._field_count])
             self.add_design_condition(obj)
@@ -2304,22 +2304,22 @@ class TypicalOrExtremePeriod(object):
         if len(vals[i]) == 0:
             self.typical_or_extreme_period_name = None
         else:
-            self.typical_or_extreme_period_name = str(vals[i])
+            self.typical_or_extreme_period_name = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.typical_or_extreme_period_type = None
         else:
-            self.typical_or_extreme_period_type = str(vals[i])
+            self.typical_or_extreme_period_type = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.period_start_day = None
         else:
-            self.period_start_day = str(vals[i])
+            self.period_start_day = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.period_end_day = None
         else:
-            self.period_end_day = str(vals[i])
+            self.period_end_day = vals[i]
         i += 1
 
     @property
@@ -2423,7 +2423,7 @@ class TypicalOrExtremePeriods(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = TypicalOrExtremePeriod()
             obj.read(vals[i:i + obj._field_count])
             self.add_typical_or_extreme_period(obj)
@@ -2486,82 +2486,82 @@ class GroundTemperature(object):
         if len(vals[i]) == 0:
             self.ground_temperature_depth = None
         else:
-            self.ground_temperature_depth = str(vals[i])
+            self.ground_temperature_depth = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_soil_conductivity = None
         else:
-            self.depth_soil_conductivity = str(vals[i])
+            self.depth_soil_conductivity = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_soil_density = None
         else:
-            self.depth_soil_density = str(vals[i])
+            self.depth_soil_density = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_soil_specific_heat = None
         else:
-            self.depth_soil_specific_heat = str(vals[i])
+            self.depth_soil_specific_heat = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_january_average_ground_temperature = None
         else:
-            self.depth_january_average_ground_temperature = str(vals[i])
+            self.depth_january_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_february_average_ground_temperature = None
         else:
-            self.depth_february_average_ground_temperature = str(vals[i])
+            self.depth_february_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_march_average_ground_temperature = None
         else:
-            self.depth_march_average_ground_temperature = str(vals[i])
+            self.depth_march_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_april_average_ground_temperature = None
         else:
-            self.depth_april_average_ground_temperature = str(vals[i])
+            self.depth_april_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_may_average_ground_temperature = None
         else:
-            self.depth_may_average_ground_temperature = str(vals[i])
+            self.depth_may_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_june_average_ground_temperature = None
         else:
-            self.depth_june_average_ground_temperature = str(vals[i])
+            self.depth_june_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_july_average_ground_temperature = None
         else:
-            self.depth_july_average_ground_temperature = str(vals[i])
+            self.depth_july_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_august_average_ground_temperature = None
         else:
-            self.depth_august_average_ground_temperature = str(vals[i])
+            self.depth_august_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_september_average_ground_temperature = None
         else:
-            self.depth_september_average_ground_temperature = str(vals[i])
+            self.depth_september_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_october_average_ground_temperature = None
         else:
-            self.depth_october_average_ground_temperature = str(vals[i])
+            self.depth_october_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_november_average_ground_temperature = None
         else:
-            self.depth_november_average_ground_temperature = str(vals[i])
+            self.depth_november_average_ground_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.depth_december_average_ground_temperature = None
         else:
-            self.depth_december_average_ground_temperature = str(vals[i])
+            self.depth_december_average_ground_temperature = vals[i]
         i += 1
 
     @property
@@ -2921,7 +2921,7 @@ class GroundTemperatures(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = GroundTemperature()
             obj.read(vals[i:i + obj._field_count])
             self.add_ground_temperature(obj)
@@ -2970,12 +2970,12 @@ class Holiday(object):
         if len(vals[i]) == 0:
             self.holiday_name = None
         else:
-            self.holiday_name = str(vals[i])
+            self.holiday_name = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.holiday_day = None
         else:
-            self.holiday_day = str(vals[i])
+            self.holiday_day = vals[i]
         i += 1
 
     @property
@@ -3047,21 +3047,21 @@ class HolidaysOrDaylightSavings(object):
         if len(vals[i]) == 0:
             self.leapyear_observed = None
         else:
-            self.leapyear_observed = str(vals[i])
+            self.leapyear_observed = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.daylight_saving_start_day = None
         else:
-            self.daylight_saving_start_day = str(vals[i])
+            self.daylight_saving_start_day = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.daylight_saving_end_day = None
         else:
-            self.daylight_saving_end_day = str(vals[i])
+            self.daylight_saving_end_day = vals[i]
         i += 1
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = Holiday()
             obj.read(vals[i:i + obj._field_count])
             self.add_holiday(obj)
@@ -3177,7 +3177,7 @@ class Comments1(object):
         if len(vals[i]) == 0:
             self.comments_1 = None
         else:
-            self.comments_1 = str(vals[i])
+            self.comments_1 = vals[i]
         i += 1
 
     @property
@@ -3228,7 +3228,7 @@ class Comments2(object):
         if len(vals[i]) == 0:
             self.comments_2 = None
         else:
-            self.comments_2 = str(vals[i])
+            self.comments_2 = vals[i]
         i += 1
 
     @property
@@ -3283,27 +3283,27 @@ class DataPeriod(object):
         if len(vals[i]) == 0:
             self.number_of_records_per_hour = None
         else:
-            self.number_of_records_per_hour = str(vals[i])
+            self.number_of_records_per_hour = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.data_period_name_or_description = None
         else:
-            self.data_period_name_or_description = str(vals[i])
+            self.data_period_name_or_description = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.data_period_start_day_of_week = None
         else:
-            self.data_period_start_day_of_week = str(vals[i])
+            self.data_period_start_day_of_week = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.data_period_start_day = None
         else:
-            self.data_period_start_day = str(vals[i])
+            self.data_period_start_day = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.data_period_end_day = None
         else:
-            self.data_period_end_day = str(vals[i])
+            self.data_period_end_day = vals[i]
         i += 1
 
     @property
@@ -3316,10 +3316,10 @@ class DataPeriod(object):
         """Corresponds to IDD Field `number_of_records_per_hour`"""
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field number_of_records_per_hour'.format(value))
+                    'value {} need to be of type int for field number_of_records_per_hour'.format(value))
 
         self._number_of_records_per_hour = value
 
@@ -3447,7 +3447,7 @@ class DataPeriods(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in xrange(count):
+        for _ in range(count):
             obj = DataPeriod()
             obj.read(vals[i:i + obj._field_count])
             self.add_data_period(obj)
@@ -3511,7 +3511,7 @@ class WeatherData(object):
         self._wind_direction = None
         self._wind_speed = None
         self._total_sky_cover = None
-        self._opaque_sky_cover_used_if_horizontal_ir_intensity_missing = None
+        self._opaque_sky_cover = None
         self._visibility = None
         self._ceiling_height = None
         self._present_weather_observation = None
@@ -3529,178 +3529,177 @@ class WeatherData(object):
         if len(vals[i]) == 0:
             self.year = None
         else:
-            self.year = str(vals[i])
+            self.year = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.month = None
         else:
-            self.month = str(vals[i])
+            self.month = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.day = None
         else:
-            self.day = str(vals[i])
+            self.day = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.hour = None
         else:
-            self.hour = str(vals[i])
+            self.hour = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.minute = None
         else:
-            self.minute = str(vals[i])
+            self.minute = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.data_source_and_uncertainty_flags = None
         else:
-            self.data_source_and_uncertainty_flags = str(vals[i])
+            self.data_source_and_uncertainty_flags = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dry_bulb_temperature = None
         else:
-            self.dry_bulb_temperature = str(vals[i])
+            self.dry_bulb_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.dew_point_temperature = None
         else:
-            self.dew_point_temperature = str(vals[i])
+            self.dew_point_temperature = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.relative_humidity = None
         else:
-            self.relative_humidity = str(vals[i])
+            self.relative_humidity = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.atmospheric_station_pressure = None
         else:
-            self.atmospheric_station_pressure = str(vals[i])
+            self.atmospheric_station_pressure = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.extraterrestrial_horizontal_radiation = None
         else:
-            self.extraterrestrial_horizontal_radiation = str(vals[i])
+            self.extraterrestrial_horizontal_radiation = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.extraterrestrial_direct_normal_radiation = None
         else:
-            self.extraterrestrial_direct_normal_radiation = str(vals[i])
+            self.extraterrestrial_direct_normal_radiation = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.horizontal_infrared_radiation_intensity = None
         else:
-            self.horizontal_infrared_radiation_intensity = str(vals[i])
+            self.horizontal_infrared_radiation_intensity = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.global_horizontal_radiation = None
         else:
-            self.global_horizontal_radiation = str(vals[i])
+            self.global_horizontal_radiation = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.direct_normal_radiation = None
         else:
-            self.direct_normal_radiation = str(vals[i])
+            self.direct_normal_radiation = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.diffuse_horizontal_radiation = None
         else:
-            self.diffuse_horizontal_radiation = str(vals[i])
+            self.diffuse_horizontal_radiation = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.global_horizontal_illuminance = None
         else:
-            self.global_horizontal_illuminance = str(vals[i])
+            self.global_horizontal_illuminance = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.direct_normal_illuminance = None
         else:
-            self.direct_normal_illuminance = str(vals[i])
+            self.direct_normal_illuminance = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.diffuse_horizontal_illuminance = None
         else:
-            self.diffuse_horizontal_illuminance = str(vals[i])
+            self.diffuse_horizontal_illuminance = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.zenith_luminance = None
         else:
-            self.zenith_luminance = str(vals[i])
+            self.zenith_luminance = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wind_direction = None
         else:
-            self.wind_direction = str(vals[i])
+            self.wind_direction = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.wind_speed = None
         else:
-            self.wind_speed = str(vals[i])
+            self.wind_speed = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.total_sky_cover = None
         else:
-            self.total_sky_cover = str(vals[i])
+            self.total_sky_cover = vals[i]
         i += 1
         if len(vals[i]) == 0:
-            self.opaque_sky_cover_used_if_horizontal_ir_intensity_missing = None
+            self.opaque_sky_cover = None
         else:
-            self.opaque_sky_cover_used_if_horizontal_ir_intensity_missing = str(
-                vals[i])
+            self.opaque_sky_cover = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.visibility = None
         else:
-            self.visibility = str(vals[i])
+            self.visibility = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.ceiling_height = None
         else:
-            self.ceiling_height = str(vals[i])
+            self.ceiling_height = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.present_weather_observation = None
         else:
-            self.present_weather_observation = str(vals[i])
+            self.present_weather_observation = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.present_weather_codes = None
         else:
-            self.present_weather_codes = str(vals[i])
+            self.present_weather_codes = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.precipitable_water = None
         else:
-            self.precipitable_water = str(vals[i])
+            self.precipitable_water = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.aerosol_optical_depth = None
         else:
-            self.aerosol_optical_depth = str(vals[i])
+            self.aerosol_optical_depth = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.snow_depth = None
         else:
-            self.snow_depth = str(vals[i])
+            self.snow_depth = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.days_since_last_snowfall = None
         else:
-            self.days_since_last_snowfall = str(vals[i])
+            self.days_since_last_snowfall = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.albedo = None
         else:
-            self.albedo = str(vals[i])
+            self.albedo = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.liquid_precipitation_depth = None
         else:
-            self.liquid_precipitation_depth = str(vals[i])
+            self.liquid_precipitation_depth = vals[i]
         i += 1
         if len(vals[i]) == 0:
             self.liquid_precipitation_quantity = None
         else:
-            self.liquid_precipitation_quantity = str(vals[i])
+            self.liquid_precipitation_quantity = vals[i]
         i += 1
 
     @property
@@ -3713,10 +3712,10 @@ class WeatherData(object):
         """Corresponds to IDD Field `year`"""
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field year'.format(value))
+                    'value {} need to be of type int for field year'.format(value))
 
         self._year = value
 
@@ -3727,13 +3726,21 @@ class WeatherData(object):
 
     @month.setter
     def month(self, value=None):
-        """Corresponds to IDD Field `month`"""
+        """  Corresponds to IDD Field `month`
+        value >= 1
+        value <= 12
+        """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field month'.format(value))
+                    'value {} need to be of type int for field month'.format(value))
+            if value < 1:
+                raise ValueError(
+                    'value need to be greater or equal 1 for field month')
+            if value > 12:
+                raise ValueError('value need to be smaller 12 for field month')
 
         self._month = value
 
@@ -3744,13 +3751,21 @@ class WeatherData(object):
 
     @day.setter
     def day(self, value=None):
-        """Corresponds to IDD Field `day`"""
+        """  Corresponds to IDD Field `day`
+        value >= 1
+        value <= 31
+        """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field day'.format(value))
+                    'value {} need to be of type int for field day'.format(value))
+            if value < 1:
+                raise ValueError(
+                    'value need to be greater or equal 1 for field day')
+            if value > 31:
+                raise ValueError('value need to be smaller 31 for field day')
 
         self._day = value
 
@@ -3761,13 +3776,21 @@ class WeatherData(object):
 
     @hour.setter
     def hour(self, value=None):
-        """Corresponds to IDD Field `hour`"""
+        """  Corresponds to IDD Field `hour`
+        value >= 1
+        value <= 24
+        """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field hour'.format(value))
+                    'value {} need to be of type int for field hour'.format(value))
+            if value < 1:
+                raise ValueError(
+                    'value need to be greater or equal 1 for field hour')
+            if value > 24:
+                raise ValueError('value need to be smaller 24 for field hour')
 
         self._hour = value
 
@@ -3778,13 +3801,22 @@ class WeatherData(object):
 
     @minute.setter
     def minute(self, value=None):
-        """Corresponds to IDD Field `minute`"""
+        """  Corresponds to IDD Field `minute`
+        value >= 0
+        value <= 60
+        """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field minute'.format(value))
+                    'value {} need to be of type int for field minute'.format(value))
+            if value < 0:
+                raise ValueError(
+                    'value need to be greater or equal 0 for field minute')
+            if value > 60:
+                raise ValueError(
+                    'value need to be smaller 60 for field minute')
 
         self._minute = value
 
@@ -3874,24 +3906,24 @@ class WeatherData(object):
         return self._relative_humidity
 
     @relative_humidity.setter
-    def relative_humidity(self, value=999.0):
+    def relative_humidity(self, value=999):
         """  Corresponds to IDD Field `relative_humidity`
-        value >= 0.0
-        value <= 110.0
-        Missing value: 999.0
+        value >= 0
+        value <= 110
+        Missing value: 999
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field relative_humidity'.format(value))
-            if value < 0.0:
+                    'value {} need to be of type int for field relative_humidity'.format(value))
+            if value < 0:
                 raise ValueError(
-                    'value need to be greater or equal 0.0 for field relative_humidity')
-            if value > 110.0:
+                    'value need to be greater or equal 0 for field relative_humidity')
+            if value > 110:
                 raise ValueError(
-                    'value need to be smaller 110.0 for field relative_humidity')
+                    'value need to be smaller 110 for field relative_humidity')
 
         self._relative_humidity = value
 
@@ -3901,25 +3933,25 @@ class WeatherData(object):
         return self._atmospheric_station_pressure
 
     @atmospheric_station_pressure.setter
-    def atmospheric_station_pressure(self, value=999999.0):
+    def atmospheric_station_pressure(self, value=999999):
         """  Corresponds to IDD Field `atmospheric_station_pressure`
         Unit: Pa
-        value > 31000.0
-        value < 120000.0
-        Missing value: 999999.0
+        value > 31000
+        value < 120000
+        Missing value: 999999
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field atmospheric_station_pressure'.format(value))
-            if value <= 31000.0:
+                    'value {} need to be of type int for field atmospheric_station_pressure'.format(value))
+            if value <= 31000:
                 raise ValueError(
-                    'value need to be greater 31000.0 for field atmospheric_station_pressure')
-            if value >= 120000.0:
+                    'value need to be greater 31000 for field atmospheric_station_pressure')
+            if value >= 120000:
                 raise ValueError(
-                    'value need to be smaller 120000.0 for field atmospheric_station_pressure')
+                    'value need to be smaller 120000 for field atmospheric_station_pressure')
 
         self._atmospheric_station_pressure = value
 
@@ -4230,10 +4262,15 @@ class WeatherData(object):
 
     @total_sky_cover.setter
     def total_sky_cover(self, value=99.0):
-        """  Corresponds to IDD Field `total_sky_cover`
+        """Corresponds to IDD Field `total_sky_cover` This is the value for
+        total sky cover (tenths of coverage).
+
+        (i.e. 1 is 1/10 covered. 10 is total coverage).
+        (Amount of sky dome in tenths covered by clouds or obscuring phenomena at the  hour indicated at the time indicated.)
         value >= 0.0
         value <= 10.0
         Missing value: 99.0
+
         """
         if value is not None:
             try:
@@ -4251,33 +4288,37 @@ class WeatherData(object):
         self._total_sky_cover = value
 
     @property
-    def opaque_sky_cover_used_if_horizontal_ir_intensity_missing(self):
-        """Get opaque_sky_cover_used_if_horizontal_ir_intensity_missing."""
-        return self._opaque_sky_cover_used_if_horizontal_ir_intensity_missing
+    def opaque_sky_cover(self):
+        """Get opaque_sky_cover."""
+        return self._opaque_sky_cover
 
-    @opaque_sky_cover_used_if_horizontal_ir_intensity_missing.setter
-    def opaque_sky_cover_used_if_horizontal_ir_intensity_missing(
-            self,
-            value=99.0):
-        """  Corresponds to IDD Field `opaque_sky_cover_used_if_horizontal_ir_intensity_missing`
+    @opaque_sky_cover.setter
+    def opaque_sky_cover(self, value=99.0):
+        """Corresponds to IDD Field `opaque_sky_cover` This is the value for
+        opaque sky cover (tenths of coverage).
+
+        (i.e. 1 is 1/10 covered. 10 is total  coverage).
+        (Amount of sky dome in tenths covered by clouds or obscuring phenomena that  prevent observing the sky or higher cloud layers at the time indicated.)
+        This is not used unless the field for Horizontal Infrared Radiation Intensity is missing and then it is used to  calculate Horizontal Infrared Radiation Intensity
         value >= 0.0
         value <= 10.0
         Missing value: 99.0
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field opaque_sky_cover_used_if_horizontal_ir_intensity_missing'.format(value))
+                    'value {} need to be of type float for field opaque_sky_cover'.format(value))
             if value < 0.0:
                 raise ValueError(
-                    'value need to be greater or equal 0.0 for field opaque_sky_cover_used_if_horizontal_ir_intensity_missing')
+                    'value need to be greater or equal 0.0 for field opaque_sky_cover')
             if value > 10.0:
                 raise ValueError(
-                    'value need to be smaller 10.0 for field opaque_sky_cover_used_if_horizontal_ir_intensity_missing')
+                    'value need to be smaller 10.0 for field opaque_sky_cover')
 
-        self._opaque_sky_cover_used_if_horizontal_ir_intensity_missing = value
+        self._opaque_sky_cover = value
 
     @property
     def visibility(self):
@@ -4286,9 +4327,13 @@ class WeatherData(object):
 
     @visibility.setter
     def visibility(self, value=9999.0):
-        """  Corresponds to IDD Field `visibility`
+        """Corresponds to IDD Field `visibility` This is the value for
+        visibility in km.
+
+        (Horizontal visibility at the time indicated.)
         Unit: km
         Missing value: 9999.0
+
         """
         if value is not None:
             try:
@@ -4306,9 +4351,13 @@ class WeatherData(object):
 
     @ceiling_height.setter
     def ceiling_height(self, value=99999.0):
-        """  Corresponds to IDD Field `ceiling_height`
+        """Corresponds to IDD Field `ceiling_height` This is the value for
+        ceiling height in m.
+
+        (77777 is unlimited ceiling height. 88888 is cirroform ceiling.) It is not currently used in EnergyPlus calculations.
         Unit: m
         Missing value: 99999.0
+
         """
         if value is not None:
             try:
@@ -4326,13 +4375,23 @@ class WeatherData(object):
 
     @present_weather_observation.setter
     def present_weather_observation(self, value=None):
-        """Corresponds to IDD Field `present_weather_observation`"""
+        """Corresponds to IDD Field `present_weather_observation` If the value
+        of the field is 0, then the observed weather codes are taken from the
+        following field.
+
+        If the value of the field is 9, then "missing" weather is
+        assumed. Since the primary use of these fields (Present Weather
+        Observation and Present Weather Codes) is for rain/wet surfaces,
+        a missing observation field or a missing weather code implies
+        "no rain".
+
+        """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field present_weather_observation'.format(value))
+                    'value {} need to be of type int for field present_weather_observation'.format(value))
 
         self._present_weather_observation = value
 
@@ -4346,10 +4405,10 @@ class WeatherData(object):
         """Corresponds to IDD Field `present_weather_codes`"""
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field present_weather_codes'.format(value))
+                    'value {} need to be of type int for field present_weather_codes'.format(value))
 
         self._present_weather_codes = value
 
@@ -4419,16 +4478,16 @@ class WeatherData(object):
         return self._days_since_last_snowfall
 
     @days_since_last_snowfall.setter
-    def days_since_last_snowfall(self, value=99.0):
+    def days_since_last_snowfall(self, value=99):
         """  Corresponds to IDD Field `days_since_last_snowfall`
-        Missing value: 99.0
+        Missing value: 99
         """
         if value is not None:
             try:
-                value = float(value)
+                value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field days_since_last_snowfall'.format(value))
+                    'value {} need to be of type int for field days_since_last_snowfall'.format(value))
 
         self._days_since_last_snowfall = value
 
@@ -4524,9 +4583,7 @@ class WeatherData(object):
         out.append(self._to_str(self.wind_direction))
         out.append(self._to_str(self.wind_speed))
         out.append(self._to_str(self.total_sky_cover))
-        out.append(
-            self._to_str(
-                self.opaque_sky_cover_used_if_horizontal_ir_intensity_missing))
+        out.append(self._to_str(self.opaque_sky_cover))
         out.append(self._to_str(self.visibility))
         out.append(self._to_str(self.ceiling_height))
         out.append(self._to_str(self.present_weather_observation))

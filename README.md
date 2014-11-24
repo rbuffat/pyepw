@@ -24,7 +24,7 @@ Usage:
 
 Reading data from an EPW file:
 ```python
-	from pyepw.epw import EPW
+    from pyepw.epw import EPW
     epw = EPW()
     epw.read(r"USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw")
 ```

@@ -423,6 +423,7 @@ COMMENTS 2,
 
 DATA PERIOD,
 	N2, \field Number of Records per hour
+	\type integer
 	A1, \field Data Period Name/Description
 	A2, \field Data Period Start Day of Week
 	\type choice
@@ -441,10 +442,23 @@ DATA PERIODS,
 
 WEATHER DATA,
 	N1, \field Year
+	\type integer
 	N2, \field Month
+	\type integer
+	\minimum 1
+	\maximum 12
 	N3, \field Day
+	\type integer
+	\minimum 1
+	\maximum 31
 	N4, \field Hour
+	\type integer
+	\minimum 1
+	\maximum 24
 	N5, \field Minute
+	\type integer
+	\minimum 0
+	\maximum 60
 	A1, \field Data Source and Uncertainty Flags
 	\note Initial day of weather file is checked by EnergyPlus for validity (as shown below)
 	\note Each field is checked for "missing" as shown below. Reasonable values, calculated
@@ -453,21 +467,25 @@ WEATHER DATA,
 	\units C
 	\minimum> -70
 	\maximum< 70
+	\type real
 	\missing 99.9
 	N7, \field Dew Point Temperature
 	\units C
 	\minimum> -70
 	\maximum< 70
 	\missing 99.9
+	\type real
 	N8, \field Relative Humidity
-	\missing 999.
+	\missing 999
 	\minimum 0
 	\maximum 110
+	\type integer
 	N9, \field Atmospheric Station Pressure
 	\units Pa
-	\missing 999999.
+	\missing 999999
 	\minimum> 31000
 	\maximum< 120000
+	\type integer
 	N10, \field Extraterrestrial Horizontal Radiation
 	\units Wh/m2
 	\missing 9999.
@@ -523,21 +541,33 @@ WEATHER DATA,
 	\minimum 0
 	\maximum 40
 	N22, \field Total Sky Cover
+	\note This is the value for total sky cover (tenths of coverage). (i.e. 1 is 1/10 covered. 10 is total coverage).
+    \note (Amount of sky dome in tenths covered by clouds or obscuring phenomena at the  hour indicated at the time indicated.)
 	\missing 99
 	\minimum 0
 	\maximum 10
-	N23, \field Opaque Sky Cover (used if Horizontal IR Intensity missing)
+	N23, \field Opaque Sky Cover
+	\note This is the value for opaque sky cover (tenths of coverage). (i.e. 1 is 1/10 covered. 10 is total  coverage).
+    \note (Amount of sky dome in tenths covered by clouds or obscuring phenomena that  prevent observing the sky or higher cloud layers at the time indicated.)
+    \note This is not used unless the field for Horizontal Infrared Radiation Intensity is missing and then it is used to  calculate Horizontal Infrared Radiation Intensity
 	\missing 99
 	\minimum 0
 	\maximum 10
 	N24, \field Visibility
+	\note This is the value for visibility in km. (Horizontal visibility at the time indicated.) 
 	\units km
 	\missing 9999
 	N25, \field Ceiling Height
+	\note This is the value for ceiling height in m.
+	\note (77777 is unlimited ceiling height. 88888 is cirroform ceiling.) It is not currently used in EnergyPlus calculations.
 	\units m
 	\missing 99999
 	N26, \field Present Weather Observation
+	\note If the value of the field is 0, then the observed weather codes are taken from the following field.
+	\note If the value of the field is 9, then "missing" weather is assumed. Since the primary use of these fields (Present Weather Observation and Present Weather Codes) is for rain/wet surfaces, a missing observation field or a missing weather code implies "no rain".
+	\type integer
 	N27, \field Present Weather Codes
+	\type integer
 	N28, \field Precipitable Water
 	\units mm
 	\missing 999
@@ -549,6 +579,7 @@ WEATHER DATA,
 	\missing 999
 	N31, \field Days Since Last Snowfall
 	\missing 99
+	\type integer
 	N32, \field Albedo
 	\missing 999
 	N33, \field Liquid Precipitation Depth
