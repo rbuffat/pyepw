@@ -120,7 +120,7 @@ class {{ class_name }}(object):
             {%- endif %}
             {%- if field.attributes['maximum<'] %}
             if value >= {{ field.attributes['maximum<'] }}:
-                raise ValueError('value need to be smaller or equal {{ field.attributes["maximum<"] }} for field {{field.field_name}}')
+                raise ValueError('value need to be smaller {{ field.attributes["maximum<"] }} for field {{field.field_name}}')
             {%- endif %}
             {%- if field.attributes.type == "choice" %}
             vals = set()

@@ -282,7 +282,7 @@ class Location(object):
                     'value need to be greater or equal -1000.0 for field elevation')
             if value >= 9999.9:
                 raise ValueError(
-                    'value need to be smaller or equal 9999.9 for field elevation')
+                    'value need to be smaller 9999.9 for field elevation')
 
         self._elevation = value
 
@@ -3836,7 +3836,7 @@ class WeatherData(object):
                     'value need to be greater -70.0 for field dry_bulb_temperature')
             if value >= 70.0:
                 raise ValueError(
-                    'value need to be smaller or equal 70.0 for field dry_bulb_temperature')
+                    'value need to be smaller 70.0 for field dry_bulb_temperature')
 
         self._dry_bulb_temperature = value
 
@@ -3864,7 +3864,7 @@ class WeatherData(object):
                     'value need to be greater -70.0 for field dew_point_temperature')
             if value >= 70.0:
                 raise ValueError(
-                    'value need to be smaller or equal 70.0 for field dew_point_temperature')
+                    'value need to be smaller 70.0 for field dew_point_temperature')
 
         self._dew_point_temperature = value
 
@@ -3919,7 +3919,7 @@ class WeatherData(object):
                     'value need to be greater 31000.0 for field atmospheric_station_pressure')
             if value >= 120000.0:
                 raise ValueError(
-                    'value need to be smaller or equal 120000.0 for field atmospheric_station_pressure')
+                    'value need to be smaller 120000.0 for field atmospheric_station_pressure')
 
         self._atmospheric_station_pressure = value
 
