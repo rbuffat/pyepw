@@ -1,11 +1,11 @@
 """
-WARNING: This is an automatically generated file.
+WARNING: This is an automatic generated file.
 It is based on the EPW IDD specification given in the document
 Auxiliary EnergyPlus Programs - Extra programs for EnergyPlus, Date: November 22 2013
 
 Do not expect that it actually works!
 
-Generation date: 2014-11-23
+Generation date: 2014-11-24
 
 """
 from collections import OrderedDict
@@ -311,6 +311,1982 @@ class Location(object):
         return self.export(True)
 
 
+class DesignCondition(object):
+
+    """Corresponds to EPW IDD object `DESIGN CONDITION`"""
+    _internal_name = "DESIGN CONDITION"
+    _field_count = 68
+
+    def __init__(self):
+        self._title_of_design_condition = None
+        self._unkown_field = None
+        self._design_stat_heating = None
+        self._coldestmonth = None
+        self._db996 = None
+        self._db990 = None
+        self._dp996 = None
+        self._hr_dp996 = None
+        self._db_dp996 = None
+        self._dp990 = None
+        self._hr_dp990 = None
+        self._db_dp990 = None
+        self._ws004c = None
+        self._db_ws004c = None
+        self._ws010c = None
+        self._db_ws010c = None
+        self._ws_db996 = None
+        self._wd_db996 = None
+        self._design_stat_cooling = None
+        self._hottestmonth = None
+        self._dbr = None
+        self._db004 = None
+        self._wb_db004 = None
+        self._db010 = None
+        self._wb_db010 = None
+        self._db020 = None
+        self._wb_db020 = None
+        self._wb004 = None
+        self._db_wb004 = None
+        self._wb010 = None
+        self._db_wb010 = None
+        self._wb020 = None
+        self._db_wb020 = None
+        self._ws_db004 = None
+        self._wd_db004 = None
+        self._dp004 = None
+        self._hr_dp004 = None
+        self._db_dp004 = None
+        self._dp010 = None
+        self._hr_dp010 = None
+        self._db_dp010 = None
+        self._dp020 = None
+        self._hr_dp020 = None
+        self._db_dp020 = None
+        self._en004 = None
+        self._db_en004 = None
+        self._en010 = None
+        self._db_en010 = None
+        self._en020 = None
+        self._db_en020 = None
+        self._hrs_84_and_db12_8_or_20_6 = None
+        self._design_stat_extremes = None
+        self._ws010 = None
+        self._ws025 = None
+        self._ws050 = None
+        self._wbmax = None
+        self._dbmin_mean = None
+        self._dbmax_mean = None
+        self._dbmin_stddev = None
+        self._dbmax_stddev = None
+        self._dbmin05years = None
+        self._dbmax05years = None
+        self._dbmin10years = None
+        self._dbmax10years = None
+        self._dbmin20years = None
+        self._dbmax20years = None
+        self._dbmin50years = None
+        self._dbmax50years = None
+
+    def read(self, vals):
+        i = 0
+        if len(vals[i]) == 0:
+            self.title_of_design_condition = None
+        else:
+            self.title_of_design_condition = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.unkown_field = None
+        else:
+            self.unkown_field = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.design_stat_heating = None
+        else:
+            self.design_stat_heating = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.coldestmonth = None
+        else:
+            self.coldestmonth = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db996 = None
+        else:
+            self.db996 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db990 = None
+        else:
+            self.db990 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dp996 = None
+        else:
+            self.dp996 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.hr_dp996 = None
+        else:
+            self.hr_dp996 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_dp996 = None
+        else:
+            self.db_dp996 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dp990 = None
+        else:
+            self.dp990 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.hr_dp990 = None
+        else:
+            self.hr_dp990 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_dp990 = None
+        else:
+            self.db_dp990 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.ws004c = None
+        else:
+            self.ws004c = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_ws004c = None
+        else:
+            self.db_ws004c = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.ws010c = None
+        else:
+            self.ws010c = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_ws010c = None
+        else:
+            self.db_ws010c = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.ws_db996 = None
+        else:
+            self.ws_db996 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wd_db996 = None
+        else:
+            self.wd_db996 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.design_stat_cooling = None
+        else:
+            self.design_stat_cooling = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.hottestmonth = None
+        else:
+            self.hottestmonth = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbr = None
+        else:
+            self.dbr = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db004 = None
+        else:
+            self.db004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wb_db004 = None
+        else:
+            self.wb_db004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db010 = None
+        else:
+            self.db010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wb_db010 = None
+        else:
+            self.wb_db010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db020 = None
+        else:
+            self.db020 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wb_db020 = None
+        else:
+            self.wb_db020 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wb004 = None
+        else:
+            self.wb004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_wb004 = None
+        else:
+            self.db_wb004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wb010 = None
+        else:
+            self.wb010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_wb010 = None
+        else:
+            self.db_wb010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wb020 = None
+        else:
+            self.wb020 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_wb020 = None
+        else:
+            self.db_wb020 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.ws_db004 = None
+        else:
+            self.ws_db004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wd_db004 = None
+        else:
+            self.wd_db004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dp004 = None
+        else:
+            self.dp004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.hr_dp004 = None
+        else:
+            self.hr_dp004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_dp004 = None
+        else:
+            self.db_dp004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dp010 = None
+        else:
+            self.dp010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.hr_dp010 = None
+        else:
+            self.hr_dp010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_dp010 = None
+        else:
+            self.db_dp010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dp020 = None
+        else:
+            self.dp020 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.hr_dp020 = None
+        else:
+            self.hr_dp020 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_dp020 = None
+        else:
+            self.db_dp020 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.en004 = None
+        else:
+            self.en004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_en004 = None
+        else:
+            self.db_en004 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.en010 = None
+        else:
+            self.en010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_en010 = None
+        else:
+            self.db_en010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.en020 = None
+        else:
+            self.en020 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.db_en020 = None
+        else:
+            self.db_en020 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.hrs_84_and_db12_8_or_20_6 = None
+        else:
+            self.hrs_84_and_db12_8_or_20_6 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.design_stat_extremes = None
+        else:
+            self.design_stat_extremes = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.ws010 = None
+        else:
+            self.ws010 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.ws025 = None
+        else:
+            self.ws025 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.ws050 = None
+        else:
+            self.ws050 = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.wbmax = None
+        else:
+            self.wbmax = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmin_mean = None
+        else:
+            self.dbmin_mean = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmax_mean = None
+        else:
+            self.dbmax_mean = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmin_stddev = None
+        else:
+            self.dbmin_stddev = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmax_stddev = None
+        else:
+            self.dbmax_stddev = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmin05years = None
+        else:
+            self.dbmin05years = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmax05years = None
+        else:
+            self.dbmax05years = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmin10years = None
+        else:
+            self.dbmin10years = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmax10years = None
+        else:
+            self.dbmax10years = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmin20years = None
+        else:
+            self.dbmin20years = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmax20years = None
+        else:
+            self.dbmax20years = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmin50years = None
+        else:
+            self.dbmin50years = str(vals[i])
+        i += 1
+        if len(vals[i]) == 0:
+            self.dbmax50years = None
+        else:
+            self.dbmax50years = str(vals[i])
+        i += 1
+
+    @property
+    def title_of_design_condition(self):
+        """Get title_of_design_condition."""
+        return self._title_of_design_condition
+
+    @title_of_design_condition.setter
+    def title_of_design_condition(self, value=None):
+        """Corresponds to IDD Field `title_of_design_condition`"""
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type string for field title_of_design_condition'.format(value))
+
+        self._title_of_design_condition = value
+
+    @property
+    def unkown_field(self):
+        """Get unkown_field."""
+        return self._unkown_field
+
+    @unkown_field.setter
+    def unkown_field(self, value=None):
+        """Corresponds to IDD Field `unkown_field` Empty field in data."""
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type string for field unkown_field'.format(value))
+
+        self._unkown_field = value
+
+    @property
+    def design_stat_heating(self):
+        """Get design_stat_heating."""
+        return self._design_stat_heating
+
+    @design_stat_heating.setter
+    def design_stat_heating(self, value="Heating"):
+        """Corresponds to IDD Field `design_stat_heating`
+
+        Accepted values:
+          - Heating
+        Default value: Heating
+
+        """
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type string for field design_stat_heating'.format(value))
+            vals = set()
+            vals.add("Heating")
+            if value not in vals:
+                raise ValueError(
+                    'value {} is not an accepted value for field design_stat_heating'.format(value))
+
+        self._design_stat_heating = value
+
+    @property
+    def coldestmonth(self):
+        """Get coldestmonth."""
+        return self._coldestmonth
+
+    @coldestmonth.setter
+    def coldestmonth(self, value=None):
+        """  Corresponds to IDD Field `coldestmonth`
+        value >= 1
+        value <= 12
+        """
+        if value is not None:
+            try:
+                value = int(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type int for field coldestmonth'.format(value))
+            if value < 1:
+                raise ValueError(
+                    'value need to be greater or equal 1 for field coldestmonth')
+            if value > 12:
+                raise ValueError(
+                    'value need to be smaller 12 for field coldestmonth')
+
+        self._coldestmonth = value
+
+    @property
+    def db996(self):
+        """Get db996."""
+        return self._db996
+
+    @db996.setter
+    def db996(self, value=None):
+        """  Corresponds to IDD Field `db996`
+        Dry-bulb temperature corresponding to 99.6% annual cumulative
+        frequency of occurrence (cold conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db996'.format(value))
+
+        self._db996 = value
+
+    @property
+    def db990(self):
+        """Get db990."""
+        return self._db990
+
+    @db990.setter
+    def db990(self, value=None):
+        """  Corresponds to IDD Field `db990`
+        Dry-bulb temperature corresponding to 90.0% annual cumulative
+        frequency of occurrence (cold conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db990'.format(value))
+
+        self._db990 = value
+
+    @property
+    def dp996(self):
+        """Get dp996."""
+        return self._dp996
+
+    @dp996.setter
+    def dp996(self, value=None):
+        """  Corresponds to IDD Field `dp996`
+        Dew-point temperature corresponding to 99.6% annual cumulative
+        frequency of occurrence (cold conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dp996'.format(value))
+
+        self._dp996 = value
+
+    @property
+    def hr_dp996(self):
+        """Get hr_dp996."""
+        return self._hr_dp996
+
+    @hr_dp996.setter
+    def hr_dp996(self, value=None):
+        """  Corresponds to IDD Field `hr_dp996`
+        humidity ratio, calculated at standard atmospheric pressure
+        at elevation of station, corresponding to
+        Dew-point temperature corresponding to 99.6% annual cumulative
+        frequency of occurrence (cold conditions)
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field hr_dp996'.format(value))
+
+        self._hr_dp996 = value
+
+    @property
+    def db_dp996(self):
+        """Get db_dp996."""
+        return self._db_dp996
+
+    @db_dp996.setter
+    def db_dp996(self, value=None):
+        """  Corresponds to IDD Field `db_dp996`
+        mean coincident drybulb temperature corresponding to
+        Dew-point temperature corresponding to 99.6% annual cumulative
+        frequency of occurrence (cold conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_dp996'.format(value))
+
+        self._db_dp996 = value
+
+    @property
+    def dp990(self):
+        """Get dp990."""
+        return self._dp990
+
+    @dp990.setter
+    def dp990(self, value=None):
+        """  Corresponds to IDD Field `dp990`
+        Dew-point temperature corresponding to 90.0% annual cumulative
+        frequency of occurrence (cold conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dp990'.format(value))
+
+        self._dp990 = value
+
+    @property
+    def hr_dp990(self):
+        """Get hr_dp990."""
+        return self._hr_dp990
+
+    @hr_dp990.setter
+    def hr_dp990(self, value=None):
+        """  Corresponds to IDD Field `hr_dp990`
+        humidity ratio, calculated at standard atmospheric pressure
+        at elevation of station, corresponding to
+        Dew-point temperature corresponding to 90.0% annual cumulative
+        frequency of occurrence (cold conditions)
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field hr_dp990'.format(value))
+
+        self._hr_dp990 = value
+
+    @property
+    def db_dp990(self):
+        """Get db_dp990."""
+        return self._db_dp990
+
+    @db_dp990.setter
+    def db_dp990(self, value=None):
+        """  Corresponds to IDD Field `db_dp990`
+        mean coincident drybulb temperature corresponding to
+        Dew-point temperature corresponding to 90.0% annual cumulative
+        frequency of occurrence (cold conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_dp990'.format(value))
+
+        self._db_dp990 = value
+
+    @property
+    def ws004c(self):
+        """Get ws004c."""
+        return self._ws004c
+
+    @ws004c.setter
+    def ws004c(self, value=None):
+        """  Corresponds to IDD Field `ws004c`
+        Unit: m/s
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field ws004c'.format(value))
+
+        self._ws004c = value
+
+    @property
+    def db_ws004c(self):
+        """Get db_ws004c."""
+        return self._db_ws004c
+
+    @db_ws004c.setter
+    def db_ws004c(self, value=None):
+        """  Corresponds to IDD Field `db_ws004c`
+        Mean coincident dry-bulb temperature to wind speed corresponding to 0.40% cumulative frequency for coldest month
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_ws004c'.format(value))
+
+        self._db_ws004c = value
+
+    @property
+    def ws010c(self):
+        """Get ws010c."""
+        return self._ws010c
+
+    @ws010c.setter
+    def ws010c(self, value=None):
+        """  Corresponds to IDD Field `ws010c`
+        Wind speed corresponding to 1.0% cumulative frequency
+        of occurrence for coldest month;
+        Unit: m/s
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field ws010c'.format(value))
+
+        self._ws010c = value
+
+    @property
+    def db_ws010c(self):
+        """Get db_ws010c."""
+        return self._db_ws010c
+
+    @db_ws010c.setter
+    def db_ws010c(self, value=None):
+        """  Corresponds to IDD Field `db_ws010c`
+        Mean coincident dry-bulb temperature to wind speed corresponding to 1.0% cumulative frequency for coldest month
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_ws010c'.format(value))
+
+        self._db_ws010c = value
+
+    @property
+    def ws_db996(self):
+        """Get ws_db996."""
+        return self._ws_db996
+
+    @ws_db996.setter
+    def ws_db996(self, value=None):
+        """  Corresponds to IDD Field `ws_db996`
+        Mean wind speed coincident with 99.6% dry-bulb temperature
+        Unit: m/s
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field ws_db996'.format(value))
+
+        self._ws_db996 = value
+
+    @property
+    def wd_db996(self):
+        """Get wd_db996."""
+        return self._wd_db996
+
+    @wd_db996.setter
+    def wd_db996(self, value=None):
+        """  Corresponds to IDD Field `wd_db996`
+        most frequent wind direction corresponding to mean wind speed coincident with 99.6% dry-bulb temperature
+        degrees from north (east = 90 deg)
+        Unit: deg
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field wd_db996'.format(value))
+
+        self._wd_db996 = value
+
+    @property
+    def design_stat_cooling(self):
+        """Get design_stat_cooling."""
+        return self._design_stat_cooling
+
+    @design_stat_cooling.setter
+    def design_stat_cooling(self, value="Cooling"):
+        """Corresponds to IDD Field `design_stat_cooling`
+
+        Accepted values:
+          - Cooling
+        Default value: Cooling
+
+        """
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type string for field design_stat_cooling'.format(value))
+            vals = set()
+            vals.add("Cooling")
+            if value not in vals:
+                raise ValueError(
+                    'value {} is not an accepted value for field design_stat_cooling'.format(value))
+
+        self._design_stat_cooling = value
+
+    @property
+    def hottestmonth(self):
+        """Get hottestmonth."""
+        return self._hottestmonth
+
+    @hottestmonth.setter
+    def hottestmonth(self, value=None):
+        """  Corresponds to IDD Field `hottestmonth`
+        value >= 1
+        value <= 12
+        """
+        if value is not None:
+            try:
+                value = int(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type int for field hottestmonth'.format(value))
+            if value < 1:
+                raise ValueError(
+                    'value need to be greater or equal 1 for field hottestmonth')
+            if value > 12:
+                raise ValueError(
+                    'value need to be smaller 12 for field hottestmonth')
+
+        self._hottestmonth = value
+
+    @property
+    def dbr(self):
+        """Get dbr."""
+        return self._dbr
+
+    @dbr.setter
+    def dbr(self, value=None):
+        """Corresponds to IDD Field `dbr` Daily temperature range for hottest
+        month.
+
+        [defined as mean of the difference between daily maximum
+        and daily minimum dry-bulb temperatures for hottest month]
+        Unit: C
+
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbr'.format(value))
+
+        self._dbr = value
+
+    @property
+    def db004(self):
+        """Get db004."""
+        return self._db004
+
+    @db004.setter
+    def db004(self, value=None):
+        """  Corresponds to IDD Field `db004`
+        Dry-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence (warm conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db004'.format(value))
+
+        self._db004 = value
+
+    @property
+    def wb_db004(self):
+        """Get wb_db004."""
+        return self._wb_db004
+
+    @wb_db004.setter
+    def wb_db004(self, value=None):
+        """  Corresponds to IDD Field `wb_db004`
+        mean coincident wet-bulb temperature to
+        Dry-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence (warm conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field wb_db004'.format(value))
+
+        self._wb_db004 = value
+
+    @property
+    def db010(self):
+        """Get db010."""
+        return self._db010
+
+    @db010.setter
+    def db010(self, value=None):
+        """  Corresponds to IDD Field `db010`
+        Dry-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence (warm conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db010'.format(value))
+
+        self._db010 = value
+
+    @property
+    def wb_db010(self):
+        """Get wb_db010."""
+        return self._wb_db010
+
+    @wb_db010.setter
+    def wb_db010(self, value=None):
+        """  Corresponds to IDD Field `wb_db010`
+        mean coincident wet-bulb temperature to
+        Dry-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence (warm conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field wb_db010'.format(value))
+
+        self._wb_db010 = value
+
+    @property
+    def db020(self):
+        """Get db020."""
+        return self._db020
+
+    @db020.setter
+    def db020(self, value=None):
+        """  Corresponds to IDD Field `db020`
+        mean coincident wet-bulb temperature to
+        Dry-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence (warm conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db020'.format(value))
+
+        self._db020 = value
+
+    @property
+    def wb_db020(self):
+        """Get wb_db020."""
+        return self._wb_db020
+
+    @wb_db020.setter
+    def wb_db020(self, value=None):
+        """  Corresponds to IDD Field `wb_db020`
+        mean coincident wet-bulb temperature to
+        Dry-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence (warm conditions)
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field wb_db020'.format(value))
+
+        self._wb_db020 = value
+
+    @property
+    def wb004(self):
+        """Get wb004."""
+        return self._wb004
+
+    @wb004.setter
+    def wb004(self, value=None):
+        """  Corresponds to IDD Field `wb004`
+        Wet-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field wb004'.format(value))
+
+        self._wb004 = value
+
+    @property
+    def db_wb004(self):
+        """Get db_wb004."""
+        return self._db_wb004
+
+    @db_wb004.setter
+    def db_wb004(self, value=None):
+        """  Corresponds to IDD Field `db_wb004`
+        mean coincident dry-bulb temperature to
+        Wet-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_wb004'.format(value))
+
+        self._db_wb004 = value
+
+    @property
+    def wb010(self):
+        """Get wb010."""
+        return self._wb010
+
+    @wb010.setter
+    def wb010(self, value=None):
+        """  Corresponds to IDD Field `wb010`
+        Wet-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field wb010'.format(value))
+
+        self._wb010 = value
+
+    @property
+    def db_wb010(self):
+        """Get db_wb010."""
+        return self._db_wb010
+
+    @db_wb010.setter
+    def db_wb010(self, value=None):
+        """  Corresponds to IDD Field `db_wb010`
+        mean coincident dry-bulb temperature to
+        Wet-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_wb010'.format(value))
+
+        self._db_wb010 = value
+
+    @property
+    def wb020(self):
+        """Get wb020."""
+        return self._wb020
+
+    @wb020.setter
+    def wb020(self, value=None):
+        """  Corresponds to IDD Field `wb020`
+        Wet-bulb temperature corresponding to 02.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field wb020'.format(value))
+
+        self._wb020 = value
+
+    @property
+    def db_wb020(self):
+        """Get db_wb020."""
+        return self._db_wb020
+
+    @db_wb020.setter
+    def db_wb020(self, value=None):
+        """  Corresponds to IDD Field `db_wb020`
+        mean coincident dry-bulb temperature to
+        Wet-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_wb020'.format(value))
+
+        self._db_wb020 = value
+
+    @property
+    def ws_db004(self):
+        """Get ws_db004."""
+        return self._ws_db004
+
+    @ws_db004.setter
+    def ws_db004(self, value=None):
+        """  Corresponds to IDD Field `ws_db004`
+        Mean wind speed coincident with 0.4% dry-bulb temperature
+        Unit: m/s
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field ws_db004'.format(value))
+
+        self._ws_db004 = value
+
+    @property
+    def wd_db004(self):
+        """Get wd_db004."""
+        return self._wd_db004
+
+    @wd_db004.setter
+    def wd_db004(self, value=None):
+        """  Corresponds to IDD Field `wd_db004`
+        corresponding most frequent wind direction
+        Mean wind speed coincident with 0.4% dry-bulb temperature
+        degrees true from north (east = 90 deg)
+        Unit: deg
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field wd_db004'.format(value))
+
+        self._wd_db004 = value
+
+    @property
+    def dp004(self):
+        """Get dp004."""
+        return self._dp004
+
+    @dp004.setter
+    def dp004(self, value=None):
+        """  Corresponds to IDD Field `dp004`
+        Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dp004'.format(value))
+
+        self._dp004 = value
+
+    @property
+    def hr_dp004(self):
+        """Get hr_dp004."""
+        return self._hr_dp004
+
+    @hr_dp004.setter
+    def hr_dp004(self, value=None):
+        """  Corresponds to IDD Field `hr_dp004`
+        humidity ratio corresponding to
+        Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field hr_dp004'.format(value))
+
+        self._hr_dp004 = value
+
+    @property
+    def db_dp004(self):
+        """Get db_dp004."""
+        return self._db_dp004
+
+    @db_dp004.setter
+    def db_dp004(self, value=None):
+        """  Corresponds to IDD Field `db_dp004`
+        mean coincident dry-bulb temperature to
+        Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_dp004'.format(value))
+
+        self._db_dp004 = value
+
+    @property
+    def dp010(self):
+        """Get dp010."""
+        return self._dp010
+
+    @dp010.setter
+    def dp010(self, value=None):
+        """  Corresponds to IDD Field `dp010`
+        Dew-point temperature corresponding to 1.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dp010'.format(value))
+
+        self._dp010 = value
+
+    @property
+    def hr_dp010(self):
+        """Get hr_dp010."""
+        return self._hr_dp010
+
+    @hr_dp010.setter
+    def hr_dp010(self, value=None):
+        """  Corresponds to IDD Field `hr_dp010`
+        humidity ratio corresponding to
+        Dew-point temperature corresponding to 1.0,% annual cumulative frequency of occurrence
+        calculated at the standard atmospheric pressure at elevation of station
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field hr_dp010'.format(value))
+
+        self._hr_dp010 = value
+
+    @property
+    def db_dp010(self):
+        """Get db_dp010."""
+        return self._db_dp010
+
+    @db_dp010.setter
+    def db_dp010(self, value=None):
+        """  Corresponds to IDD Field `db_dp010`
+        mean coincident dry-bulb temperature to
+        Dew-point temperature corresponding to 1.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_dp010'.format(value))
+
+        self._db_dp010 = value
+
+    @property
+    def dp020(self):
+        """Get dp020."""
+        return self._dp020
+
+    @dp020.setter
+    def dp020(self, value=None):
+        """  Corresponds to IDD Field `dp020`
+        Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dp020'.format(value))
+
+        self._dp020 = value
+
+    @property
+    def hr_dp020(self):
+        """Get hr_dp020."""
+        return self._hr_dp020
+
+    @hr_dp020.setter
+    def hr_dp020(self, value=None):
+        """  Corresponds to IDD Field `hr_dp020`
+        humidity ratio corresponding to
+        Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
+        calculated at the standard atmospheric pressure at elevation of station
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field hr_dp020'.format(value))
+
+        self._hr_dp020 = value
+
+    @property
+    def db_dp020(self):
+        """Get db_dp020."""
+        return self._db_dp020
+
+    @db_dp020.setter
+    def db_dp020(self, value=None):
+        """  Corresponds to IDD Field `db_dp020`
+        mean coincident dry-bulb temperature to
+        Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_dp020'.format(value))
+
+        self._db_dp020 = value
+
+    @property
+    def en004(self):
+        """Get en004."""
+        return self._en004
+
+    @en004.setter
+    def en004(self, value=None):
+        """  Corresponds to IDD Field `en004`
+        mean coincident dry-bulb temperature to
+        Enthalpy corresponding to 0.4% annual cumulative frequency of occurrence
+        Unit: kJ/kg
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field en004'.format(value))
+
+        self._en004 = value
+
+    @property
+    def db_en004(self):
+        """Get db_en004."""
+        return self._db_en004
+
+    @db_en004.setter
+    def db_en004(self, value=None):
+        """  Corresponds to IDD Field `db_en004`
+        mean coincident dry-bulb temperature to
+        Enthalpy corresponding to 0.4% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_en004'.format(value))
+
+        self._db_en004 = value
+
+    @property
+    def en010(self):
+        """Get en010."""
+        return self._en010
+
+    @en010.setter
+    def en010(self, value=None):
+        """  Corresponds to IDD Field `en010`
+        mean coincident dry-bulb temperature to
+        Enthalpy corresponding to 1.0% annual cumulative frequency of occurrence
+        Unit: kJ/kg
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field en010'.format(value))
+
+        self._en010 = value
+
+    @property
+    def db_en010(self):
+        """Get db_en010."""
+        return self._db_en010
+
+    @db_en010.setter
+    def db_en010(self, value=None):
+        """  Corresponds to IDD Field `db_en010`
+        mean coincident dry-bulb temperature to
+        Enthalpy corresponding to 1.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_en010'.format(value))
+
+        self._db_en010 = value
+
+    @property
+    def en020(self):
+        """Get en020."""
+        return self._en020
+
+    @en020.setter
+    def en020(self, value=None):
+        """  Corresponds to IDD Field `en020`
+        mean coincident dry-bulb temperature to
+        Enthalpy corresponding to 2.0% annual cumulative frequency of occurrence
+        Unit: kJ/kg
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field en020'.format(value))
+
+        self._en020 = value
+
+    @property
+    def db_en020(self):
+        """Get db_en020."""
+        return self._db_en020
+
+    @db_en020.setter
+    def db_en020(self, value=None):
+        """  Corresponds to IDD Field `db_en020`
+        mean coincident dry-bulb temperature to
+        Enthalpy corresponding to 2.0% annual cumulative frequency of occurrence
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field db_en020'.format(value))
+
+        self._db_en020 = value
+
+    @property
+    def hrs_84_and_db12_8_or_20_6(self):
+        """Get hrs_84_and_db12_8_or_20_6."""
+        return self._hrs_84_and_db12_8_or_20_6
+
+    @hrs_84_and_db12_8_or_20_6.setter
+    def hrs_84_and_db12_8_or_20_6(self, value=None):
+        """  Corresponds to IDD Field `hrs_84_and_db12_8_or_20_6`
+        Number of hours between 8 AM and 4 PM (inclusive) with dry-bulb temperature between 12.8 and 20.6 C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field hrs_84_and_db12_8_or_20_6'.format(value))
+
+        self._hrs_84_and_db12_8_or_20_6 = value
+
+    @property
+    def design_stat_extremes(self):
+        """Get design_stat_extremes."""
+        return self._design_stat_extremes
+
+    @design_stat_extremes.setter
+    def design_stat_extremes(self, value="Extremes"):
+        """Corresponds to IDD Field `design_stat_extremes`
+
+        Accepted values:
+          - Extremes
+        Default value: Extremes
+
+        """
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type string for field design_stat_extremes'.format(value))
+            vals = set()
+            vals.add("Extremes")
+            if value not in vals:
+                raise ValueError(
+                    'value {} is not an accepted value for field design_stat_extremes'.format(value))
+
+        self._design_stat_extremes = value
+
+    @property
+    def ws010(self):
+        """Get ws010."""
+        return self._ws010
+
+    @ws010.setter
+    def ws010(self, value=None):
+        """  Corresponds to IDD Field `ws010`
+        Wind speed corresponding to 1.0% annual cumulative frequency of occurrence
+        Unit: m/s
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field ws010'.format(value))
+
+        self._ws010 = value
+
+    @property
+    def ws025(self):
+        """Get ws025."""
+        return self._ws025
+
+    @ws025.setter
+    def ws025(self, value=None):
+        """  Corresponds to IDD Field `ws025`
+        Wind speed corresponding to 2.5% annual cumulative frequency of occurrence
+        Unit: m/s
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field ws025'.format(value))
+
+        self._ws025 = value
+
+    @property
+    def ws050(self):
+        """Get ws050."""
+        return self._ws050
+
+    @ws050.setter
+    def ws050(self, value=None):
+        """  Corresponds to IDD Field `ws050`
+        Wind speed corresponding 5.0% annual cumulative frequency of occurrence
+        Unit: m/s
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field ws050'.format(value))
+
+        self._ws050 = value
+
+    @property
+    def wbmax(self):
+        """Get wbmax."""
+        return self._wbmax
+
+    @wbmax.setter
+    def wbmax(self, value=None):
+        """  Corresponds to IDD Field `wbmax`
+        Extreme maximum wet-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field wbmax'.format(value))
+
+        self._wbmax = value
+
+    @property
+    def dbmin_mean(self):
+        """Get dbmin_mean."""
+        return self._dbmin_mean
+
+    @dbmin_mean.setter
+    def dbmin_mean(self, value=None):
+        """  Corresponds to IDD Field `dbmin_mean`
+        Mean of extreme annual minimum dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmin_mean'.format(value))
+
+        self._dbmin_mean = value
+
+    @property
+    def dbmax_mean(self):
+        """Get dbmax_mean."""
+        return self._dbmax_mean
+
+    @dbmax_mean.setter
+    def dbmax_mean(self, value=None):
+        """  Corresponds to IDD Field `dbmax_mean`
+        Mean of extreme annual maximum dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmax_mean'.format(value))
+
+        self._dbmax_mean = value
+
+    @property
+    def dbmin_stddev(self):
+        """Get dbmin_stddev."""
+        return self._dbmin_stddev
+
+    @dbmin_stddev.setter
+    def dbmin_stddev(self, value=None):
+        """  Corresponds to IDD Field `dbmin_stddev`
+        Standard deviation of extreme annual minimum dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmin_stddev'.format(value))
+
+        self._dbmin_stddev = value
+
+    @property
+    def dbmax_stddev(self):
+        """Get dbmax_stddev."""
+        return self._dbmax_stddev
+
+    @dbmax_stddev.setter
+    def dbmax_stddev(self, value=None):
+        """  Corresponds to IDD Field `dbmax_stddev`
+        Standard deviation of extreme annual maximum dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmax_stddev'.format(value))
+
+        self._dbmax_stddev = value
+
+    @property
+    def dbmin05years(self):
+        """Get dbmin05years."""
+        return self._dbmin05years
+
+    @dbmin05years.setter
+    def dbmin05years(self, value=None):
+        """  Corresponds to IDD Field `dbmin05years`
+        5-year return period values for minimum extreme dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmin05years'.format(value))
+
+        self._dbmin05years = value
+
+    @property
+    def dbmax05years(self):
+        """Get dbmax05years."""
+        return self._dbmax05years
+
+    @dbmax05years.setter
+    def dbmax05years(self, value=None):
+        """  Corresponds to IDD Field `dbmax05years`
+        5-year return period values for maximum extreme dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmax05years'.format(value))
+
+        self._dbmax05years = value
+
+    @property
+    def dbmin10years(self):
+        """Get dbmin10years."""
+        return self._dbmin10years
+
+    @dbmin10years.setter
+    def dbmin10years(self, value=None):
+        """  Corresponds to IDD Field `dbmin10years`
+        10-year return period values for minimum extreme dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmin10years'.format(value))
+
+        self._dbmin10years = value
+
+    @property
+    def dbmax10years(self):
+        """Get dbmax10years."""
+        return self._dbmax10years
+
+    @dbmax10years.setter
+    def dbmax10years(self, value=None):
+        """  Corresponds to IDD Field `dbmax10years`
+        10-year return period values for maximum extreme dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmax10years'.format(value))
+
+        self._dbmax10years = value
+
+    @property
+    def dbmin20years(self):
+        """Get dbmin20years."""
+        return self._dbmin20years
+
+    @dbmin20years.setter
+    def dbmin20years(self, value=None):
+        """  Corresponds to IDD Field `dbmin20years`
+        20-year return period values for minimum extreme dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmin20years'.format(value))
+
+        self._dbmin20years = value
+
+    @property
+    def dbmax20years(self):
+        """Get dbmax20years."""
+        return self._dbmax20years
+
+    @dbmax20years.setter
+    def dbmax20years(self, value=None):
+        """  Corresponds to IDD Field `dbmax20years`
+        20-year return period values for maximum extreme dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmax20years'.format(value))
+
+        self._dbmax20years = value
+
+    @property
+    def dbmin50years(self):
+        """Get dbmin50years."""
+        return self._dbmin50years
+
+    @dbmin50years.setter
+    def dbmin50years(self, value=None):
+        """  Corresponds to IDD Field `dbmin50years`
+        50-year return period values for minimum extreme dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmin50years'.format(value))
+
+        self._dbmin50years = value
+
+    @property
+    def dbmax50years(self):
+        """Get dbmax50years."""
+        return self._dbmax50years
+
+    @dbmax50years.setter
+    def dbmax50years(self, value=None):
+        """  Corresponds to IDD Field `dbmax50years`
+        50-year return period values for maximum extreme dry-bulb temperature
+        Unit: C
+        """
+        if value is not None:
+            try:
+                value = float(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type float for field dbmax50years'.format(value))
+
+        self._dbmax50years = value
+
+    def _to_str(self, value):
+        if value is None:
+            return ''
+        else:
+            return str(value)
+
+    def export(self, top=True):
+        out = []
+        if top:
+            out.append(self._internal_name)
+        out.append(self._to_str(self.title_of_design_condition))
+        out.append(self._to_str(self.unkown_field))
+        out.append(self._to_str(self.design_stat_heating))
+        out.append(self._to_str(self.coldestmonth))
+        out.append(self._to_str(self.db996))
+        out.append(self._to_str(self.db990))
+        out.append(self._to_str(self.dp996))
+        out.append(self._to_str(self.hr_dp996))
+        out.append(self._to_str(self.db_dp996))
+        out.append(self._to_str(self.dp990))
+        out.append(self._to_str(self.hr_dp990))
+        out.append(self._to_str(self.db_dp990))
+        out.append(self._to_str(self.ws004c))
+        out.append(self._to_str(self.db_ws004c))
+        out.append(self._to_str(self.ws010c))
+        out.append(self._to_str(self.db_ws010c))
+        out.append(self._to_str(self.ws_db996))
+        out.append(self._to_str(self.wd_db996))
+        out.append(self._to_str(self.design_stat_cooling))
+        out.append(self._to_str(self.hottestmonth))
+        out.append(self._to_str(self.dbr))
+        out.append(self._to_str(self.db004))
+        out.append(self._to_str(self.wb_db004))
+        out.append(self._to_str(self.db010))
+        out.append(self._to_str(self.wb_db010))
+        out.append(self._to_str(self.db020))
+        out.append(self._to_str(self.wb_db020))
+        out.append(self._to_str(self.wb004))
+        out.append(self._to_str(self.db_wb004))
+        out.append(self._to_str(self.wb010))
+        out.append(self._to_str(self.db_wb010))
+        out.append(self._to_str(self.wb020))
+        out.append(self._to_str(self.db_wb020))
+        out.append(self._to_str(self.ws_db004))
+        out.append(self._to_str(self.wd_db004))
+        out.append(self._to_str(self.dp004))
+        out.append(self._to_str(self.hr_dp004))
+        out.append(self._to_str(self.db_dp004))
+        out.append(self._to_str(self.dp010))
+        out.append(self._to_str(self.hr_dp010))
+        out.append(self._to_str(self.db_dp010))
+        out.append(self._to_str(self.dp020))
+        out.append(self._to_str(self.hr_dp020))
+        out.append(self._to_str(self.db_dp020))
+        out.append(self._to_str(self.en004))
+        out.append(self._to_str(self.db_en004))
+        out.append(self._to_str(self.en010))
+        out.append(self._to_str(self.db_en010))
+        out.append(self._to_str(self.en020))
+        out.append(self._to_str(self.db_en020))
+        out.append(self._to_str(self.hrs_84_and_db12_8_or_20_6))
+        out.append(self._to_str(self.design_stat_extremes))
+        out.append(self._to_str(self.ws010))
+        out.append(self._to_str(self.ws025))
+        out.append(self._to_str(self.ws050))
+        out.append(self._to_str(self.wbmax))
+        out.append(self._to_str(self.dbmin_mean))
+        out.append(self._to_str(self.dbmax_mean))
+        out.append(self._to_str(self.dbmin_stddev))
+        out.append(self._to_str(self.dbmax_stddev))
+        out.append(self._to_str(self.dbmin05years))
+        out.append(self._to_str(self.dbmax05years))
+        out.append(self._to_str(self.dbmin10years))
+        out.append(self._to_str(self.dbmax10years))
+        out.append(self._to_str(self.dbmin20years))
+        out.append(self._to_str(self.dbmax20years))
+        out.append(self._to_str(self.dbmin50years))
+        out.append(self._to_str(self.dbmax50years))
+        return ",".join(out)
+
+    def __str__(self):
+        return self.export(True)
+
+
+class DesignConditions(object):
+
+    """Corresponds to EPW IDD object `DESIGN CONDITIONS`"""
+    _internal_name = "DESIGN CONDITIONS"
+    _field_count = 1
+
+    def __init__(self):
+        self._design_conditions = []
+
+    def read(self, vals):
+        i = 0
+        count = int(vals[i])
+        i += 1
+        for _ in xrange(count):
+            obj = DesignCondition()
+            obj.read(vals[i:i + obj._field_count])
+            self.add_design_condition(obj)
+            i += obj._field_count
+
+    @property
+    def design_conditions(self):
+        """Get design_conditions."""
+        return self._design_conditions
+
+    def add_design_condition(self, value):
+        """Add TypicalOrExtremePeriod."""
+        self._design_conditions.append(value)
+
+    def _to_str(self, value):
+        if value is None:
+            return ''
+        else:
+            return str(value)
+
+    def export(self, top=True):
+        out = []
+        if top:
+            out.append(self._internal_name)
+        out.append(str(len(self.design_conditions)))
+        for obj in self.design_conditions:
+            out.append(obj.export(top=False))
+        return ",".join(out)
+
+    def __str__(self):
+        return self.export(True)
+
+
 class TypicalOrExtremePeriod(object):
 
     """Corresponds to EPW IDD object `TYPICAL/EXTREME PERIOD`"""
@@ -319,9 +2295,9 @@ class TypicalOrExtremePeriod(object):
 
     def __init__(self):
         self._typical_or_extreme_period_name = None
-        self._typical_or_extreme_period__type = None
+        self._typical_or_extreme_period_type = None
         self._period_start_day = None
-        self._period__end_day = None
+        self._period_end_day = None
 
     def read(self, vals):
         i = 0
@@ -331,9 +2307,9 @@ class TypicalOrExtremePeriod(object):
             self.typical_or_extreme_period_name = str(vals[i])
         i += 1
         if len(vals[i]) == 0:
-            self.typical_or_extreme_period__type = None
+            self.typical_or_extreme_period_type = None
         else:
-            self.typical_or_extreme_period__type = str(vals[i])
+            self.typical_or_extreme_period_type = str(vals[i])
         i += 1
         if len(vals[i]) == 0:
             self.period_start_day = None
@@ -341,9 +2317,9 @@ class TypicalOrExtremePeriod(object):
             self.period_start_day = str(vals[i])
         i += 1
         if len(vals[i]) == 0:
-            self.period__end_day = None
+            self.period_end_day = None
         else:
-            self.period__end_day = str(vals[i])
+            self.period_end_day = str(vals[i])
         i += 1
 
     @property
@@ -364,21 +2340,21 @@ class TypicalOrExtremePeriod(object):
         self._typical_or_extreme_period_name = value
 
     @property
-    def typical_or_extreme_period__type(self):
-        """Get typical_or_extreme_period__type."""
-        return self._typical_or_extreme_period__type
+    def typical_or_extreme_period_type(self):
+        """Get typical_or_extreme_period_type."""
+        return self._typical_or_extreme_period_type
 
-    @typical_or_extreme_period__type.setter
-    def typical_or_extreme_period__type(self, value=None):
-        """Corresponds to IDD Field `typical_or_extreme_period__type`"""
+    @typical_or_extreme_period_type.setter
+    def typical_or_extreme_period_type(self, value=None):
+        """Corresponds to IDD Field `typical_or_extreme_period_type`"""
         if value is not None:
             try:
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field typical_or_extreme_period__type'.format(value))
+                    'value {} need to be of type string for field typical_or_extreme_period_type'.format(value))
 
-        self._typical_or_extreme_period__type = value
+        self._typical_or_extreme_period_type = value
 
     @property
     def period_start_day(self):
@@ -398,21 +2374,21 @@ class TypicalOrExtremePeriod(object):
         self._period_start_day = value
 
     @property
-    def period__end_day(self):
-        """Get period__end_day."""
-        return self._period__end_day
+    def period_end_day(self):
+        """Get period_end_day."""
+        return self._period_end_day
 
-    @period__end_day.setter
-    def period__end_day(self, value=None):
-        """Corresponds to IDD Field `period__end_day`"""
+    @period_end_day.setter
+    def period_end_day(self, value=None):
+        """Corresponds to IDD Field `period_end_day`"""
         if value is not None:
             try:
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field period__end_day'.format(value))
+                    'value {} need to be of type string for field period_end_day'.format(value))
 
-        self._period__end_day = value
+        self._period_end_day = value
 
     def _to_str(self, value):
         if value is None:
@@ -425,9 +2401,9 @@ class TypicalOrExtremePeriod(object):
         if top:
             out.append(self._internal_name)
         out.append(self._to_str(self.typical_or_extreme_period_name))
-        out.append(self._to_str(self.typical_or_extreme_period__type))
+        out.append(self._to_str(self.typical_or_extreme_period_type))
         out.append(self._to_str(self.period_start_day))
-        out.append(self._to_str(self.period__end_day))
+        out.append(self._to_str(self.period_end_day))
         return ",".join(out)
 
     def __str__(self):
@@ -447,7 +2423,7 @@ class TypicalOrExtremePeriods(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in range(count):
+        for _ in xrange(count):
             obj = TypicalOrExtremePeriod()
             obj.read(vals[i:i + obj._field_count])
             self.add_typical_or_extreme_period(obj)
@@ -945,7 +2921,7 @@ class GroundTemperatures(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in range(count):
+        for _ in xrange(count):
             obj = GroundTemperature()
             obj.read(vals[i:i + obj._field_count])
             self.add_ground_temperature(obj)
@@ -1085,7 +3061,7 @@ class HolidaysOrDaylightSavings(object):
         i += 1
         count = int(vals[i])
         i += 1
-        for _ in range(count):
+        for _ in xrange(count):
             obj = Holiday()
             obj.read(vals[i:i + obj._field_count])
             self.add_holiday(obj)
@@ -1471,7 +3447,7 @@ class DataPeriods(object):
         i = 0
         count = int(vals[i])
         i += 1
-        for _ in range(count):
+        for _ in xrange(count):
             obj = DataPeriod()
             obj.read(vals[i:i + obj._field_count])
             self.add_data_period(obj)
@@ -2573,6 +4549,7 @@ class EPW(object):
     def __init__(
             self,
             location=None,
+            design_conditions=None,
             typical_or_extreme_periods=None,
             ground_temperatures=None,
             holidays_or_daylight_savings=None,
@@ -2582,6 +4559,7 @@ class EPW(object):
             weatherdata=[]):
         self._data = OrderedDict()
         self._data["LOCATION"] = location
+        self._data["DESIGN CONDITIONS"] = design_conditions
         self._data["TYPICAL/EXTREME PERIODS"] = typical_or_extreme_periods
         self._data["GROUND TEMPERATURES"] = ground_temperatures
         self._data["HOLIDAYS/DAYLIGHT SAVINGS"] = holidays_or_daylight_savings
@@ -2599,6 +4577,16 @@ class EPW(object):
     def location(self, data_dictionary):
         """Set location data dictionary object."""
         self._data["LOCATION"] = data_dictionary
+
+    @property
+    def design_conditions(self):
+        """Get design_conditions data dictionary object."""
+        return self._data["DESIGN CONDITIONS"]
+
+    @design_conditions.setter
+    def design_conditions(self, data_dictionary):
+        """Set design_conditions data dictionary object."""
+        self._data["DESIGN CONDITIONS"] = data_dictionary
 
     @property
     def typical_or_extreme_periods(self):
@@ -2680,6 +4668,7 @@ class EPW(object):
         """Save WeatherData in EPW format to path."""
         with open(path, 'w') as f:
             f.write(self._data["LOCATION"].export() + "\n")
+            f.write(self._data["DESIGN CONDITIONS"].export() + "\n")
             f.write(self._data["TYPICAL/EXTREME PERIODS"].export() + "\n")
             f.write(self._data["GROUND TEMPERATURES"].export() + "\n")
             f.write(self._data["HOLIDAYS/DAYLIGHT SAVINGS"].export() + "\n")
@@ -2692,6 +4681,8 @@ class EPW(object):
     def _create_datadict(self, internal_name):
         if internal_name == "LOCATION":
             return Location()
+        if internal_name == "DESIGN CONDITIONS":
+            return DesignConditions()
         if internal_name == "TYPICAL/EXTREME PERIODS":
             return TypicalOrExtremePeriods()
         if internal_name == "GROUND TEMPERATURES":

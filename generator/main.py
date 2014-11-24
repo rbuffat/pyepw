@@ -18,6 +18,7 @@ if __name__ == '__main__':
     source_file = autopep8.fix_code(
         source_file, options=autopep8.parse_args(['--aggressive',
                                                   '--aggressive',
+                                                  '--aggressive',
                                                   '']))
     source_file = format_code(source_file)
 

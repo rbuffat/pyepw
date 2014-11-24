@@ -4,13 +4,18 @@ Created on Oct 30, 2014
 @author: rene
 '''
 import string
+import re
 
 
 def normalize_field_name(internal_name):
-    name = internal_name.strip().replace('/', ' or ').lower()
+
+    name = internal_name.strip()
+    name = name.replace('/', ' or ').replace('&', ' and ')
+    name = name.replace('.', ' ').replace(',', ' ')
+    name = name.lower()
     name = name.replace(' ', '_')
-    name = name.replace('(', '')
-    name = name.replace(')', '')
+    name = re.sub(r'[^a-zA-Z0-9_]', '', name)
+    name = re.sub(r'_+', '_', name)
     return name
 
 

@@ -53,7 +53,7 @@ class {{ class_name }}(object):
         return self._{{field.field_name}}
 
     @{{field.field_name}}.setter
-    def {{field.field_name}}(self, value={%if field.attributes.default %}{{field.attributes.default}}{%elif not field.attributes.default and field.attributes.missing  %}{{field.attributes.missing}}{% else %}None{% endif %}):
+    def {{field.field_name}}(self, value={%if field.attributes.default and not (field.attributes.type=="alpha" or field.attributes.type=="choice") %}{{field.attributes.default}} {% elif field.attributes.default and (field.attributes.type=="alpha" or field.attributes.type=="choice") %}"{{field.attributes.default}}"{%elif not field.attributes.default and field.attributes.missing  %}{{field.attributes.missing}}{% else %}None{% endif %}):
         """  Corresponds to IDD Field `{{field.field_name}}`
         {%- for comment in field.attributes.note %}
         {{comment}}

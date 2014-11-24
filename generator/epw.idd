@@ -40,6 +40,319 @@ LOCATION,
 	\maximum< +9999.9
 	\default 0.0
 	\type real
+	
+DESIGN CONDITION,
+A1, \field Title of Design Condition
+	\type alpha
+A2, \field Unkown field
+	\type alpha
+	\note Empty field in data
+A3, \field Design Stat Heating
+	\type choice
+	\key Heating
+	\default Heating
+N1, \field ColdestMonth
+	\type integer
+	\minimum 1
+	\maximum 12
+N2, \field DB996
+	\note Dry-bulb temperature corresponding to 99.6% annual cumulative 
+	\note frequency of occurrence (cold conditions)
+	\units C
+	\type real
+N3, \field DB990
+	\note Dry-bulb temperature corresponding to 90.0% annual cumulative
+	\note frequency of occurrence (cold conditions)
+	\units C
+	\type real
+N4, \field DP996
+	\note Dew-point temperature corresponding to 99.6% annual cumulative
+	\note frequency of occurrence (cold conditions)
+	\units C
+	\type real
+N5, \field HR_DP996
+	\note humidity ratio, calculated at standard atmospheric pressure 
+	\note at elevation of station, corresponding to
+	\note Dew-point temperature corresponding to 99.6% annual cumulative
+	\note frequency of occurrence (cold conditions)
+	\type real
+N6, \field DB_DP996
+	\note mean coincident drybulb temperature corresponding to
+	\note Dew-point temperature corresponding to 99.6% annual cumulative
+	\note frequency of occurrence (cold conditions)
+	\units C
+	\type real
+N7, \field DP990
+	\note Dew-point temperature corresponding to 90.0% annual cumulative
+	\note frequency of occurrence (cold conditions)
+	\units C
+	\type real
+N8, \field HR_DP990
+	\note humidity ratio, calculated at standard atmospheric pressure 
+	\note at elevation of station, corresponding to
+	\note Dew-point temperature corresponding to 90.0% annual cumulative
+	\note frequency of occurrence (cold conditions)
+	\type real
+N9, \field DB_DP990
+	\note mean coincident drybulb temperature corresponding to
+	\note Dew-point temperature corresponding to 90.0% annual cumulative
+	\note frequency of occurrence (cold conditions)
+	\units C
+	\type real
+N10, \field WS004c
+	\units m/s
+	\type real
+N11, \field DB_WS004c
+	\note Mean coincident dry-bulb temperature to wind speed corresponding to 0.40% cumulative frequency for coldest month
+	\units C
+	\type real
+N12, \field WS010c
+	\note Wind speed corresponding to 1.0% cumulative frequency
+	\note of occurrence for coldest month; 
+	\units m/s
+	\type real
+N13, \field DB_WS010c
+	\note Mean coincident dry-bulb temperature to wind speed corresponding to 1.0% cumulative frequency for coldest month
+	\units C
+	\type real
+N14, \field WS_DB996
+	\note Mean wind speed coincident with 99.6% dry-bulb temperature
+	\units m/s
+	\type real
+N15, \field WD_DB996
+	\note most frequent wind direction corresponding to mean wind speed coincident with 99.6% dry-bulb temperature
+	\note degrees from north (east = 90 deg)
+	\units deg
+	\type real
+A4, \field Design Stat Cooling
+	\type choice
+	\key Cooling
+	\default Cooling
+N16, \field HottestMonth
+	\type integer
+	\minimum 1
+	\maximum 12
+N17, \field DBR
+	\note Daily temperature range for hottest month
+	\note [defined as mean of the difference between daily maximum
+	\note and daily minimum dry-bulb temperatures for hottest month]
+	\units C
+	\type real
+N18, \field DB004
+	\note Dry-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence (warm conditions)
+	\units C
+	\type real
+N19, \field WB_DB004
+	\note mean coincident wet-bulb temperature to 
+	\note Dry-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence (warm conditions)
+	\units C
+	\type real
+N20, \field DB010
+	\note Dry-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence (warm conditions)
+	\units C
+	\type real
+N21, \field WB_DB010
+	\note mean coincident wet-bulb temperature to 
+	\note Dry-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence (warm conditions)
+	\units C
+	\type real
+N22, \field DB020
+	\note mean coincident wet-bulb temperature to 
+	\note Dry-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence (warm conditions)
+	\units C
+	\type real
+N23, \field WB_DB020
+	\note mean coincident wet-bulb temperature to 
+	\note Dry-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence (warm conditions)
+	\units C
+	\type real
+N24, \field WB004
+	\note Wet-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N25, \field DB_WB004
+	\note mean coincident dry-bulb temperature to
+	\note Wet-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N26, \field WB010
+	\note Wet-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N27, \field DB_WB010
+	\note mean coincident dry-bulb temperature to
+	\note Wet-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N28, \field WB020
+	\note Wet-bulb temperature corresponding to 02.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N29, \field DB_WB020
+	\note mean coincident dry-bulb temperature to
+	\note Wet-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N30, \field WS_DB004
+	\note Mean wind speed coincident with 0.4% dry-bulb temperature
+	\units m/s
+	\type real
+N31, \field WD_DB004
+	\note corresponding most frequent wind direction
+	\note Mean wind speed coincident with 0.4% dry-bulb temperature
+	\note degrees true from north (east = 90 deg)
+	\units deg
+	\type real
+N32, \field DP004
+	\note Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N33, \field HR_DP004
+	\note humidity ratio corresponding to
+	\note Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
+	\units 
+	\type real
+N34, \field DB_DP004
+	\note mean coincident dry-bulb temperature to
+	\note Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N35, \field DP010
+	\note Dew-point temperature corresponding to 1.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N36, \field HR_DP010
+	\note humidity ratio corresponding to
+	\note Dew-point temperature corresponding to 1.0,% annual cumulative frequency of occurrence
+	\note calculated at the standard atmospheric pressure at elevation of station
+	\units 
+	\type real
+N37, \field DB_DP010
+	\note mean coincident dry-bulb temperature to
+	\note Dew-point temperature corresponding to 1.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N38, \field DP020
+	\note Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N39, \field HR_DP020
+	\note humidity ratio corresponding to
+	\note Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
+	\note calculated at the standard atmospheric pressure at elevation of station
+	\units 
+	\type real
+N40, \field DB_DP020
+	\note mean coincident dry-bulb temperature to
+	\note Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N41, \field EN004
+	\note mean coincident dry-bulb temperature to
+	\note Enthalpy corresponding to 0.4% annual cumulative frequency of occurrence
+	\units kJ/kg
+	\type real
+N42, \field DB_EN004
+	\note mean coincident dry-bulb temperature to
+	\note Enthalpy corresponding to 0.4% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N43, \field EN010
+	\note mean coincident dry-bulb temperature to
+	\note Enthalpy corresponding to 1.0% annual cumulative frequency of occurrence
+	\units kJ/kg
+	\type real
+N44, \field DB_EN010
+	\note mean coincident dry-bulb temperature to
+	\note Enthalpy corresponding to 1.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N45, \field EN020
+	\note mean coincident dry-bulb temperature to
+	\note Enthalpy corresponding to 2.0% annual cumulative frequency of occurrence
+	\units kJ/kg
+	\type real
+N46, \field DB_EN020
+	\note mean coincident dry-bulb temperature to
+	\note Enthalpy corresponding to 2.0% annual cumulative frequency of occurrence
+	\units C
+	\type real
+N47, \field Hrs_8-4_&_DB-12.8/20.6
+	\note Number of hours between 8 AM and 4 PM (inclusive) with dry-bulb temperature between 12.8 and 20.6 C
+	\type real
+A5, \field Design Stat Extremes
+	\type choice
+	\key Extremes
+	\default Extremes
+N48, \field WS010
+	\note Wind speed corresponding to 1.0% annual cumulative frequency of occurrence
+	\units m/s
+	\type real
+N49, \field WS025
+	\note Wind speed corresponding to 2.5% annual cumulative frequency of occurrence
+	\units m/s
+	\type real
+N50, \field WS050
+	\note Wind speed corresponding 5.0% annual cumulative frequency of occurrence
+	\units m/s
+	\type real
+N51, \field WBmax
+	\note Extreme maximum wet-bulb temperature
+	\units C
+	\type real
+N52, \field DBmin_mean
+	\note Mean of extreme annual minimum dry-bulb temperature
+	\units C
+	\type real
+N53, \field DBmax_mean
+	\note Mean of extreme annual maximum dry-bulb temperature
+	\units C
+	\type real
+N54, \field DBmin_stddev
+	\note Standard deviation of extreme annual minimum dry-bulb temperature
+	\units C
+	\type real
+N55, \field DBmax_stddev
+	\note Standard deviation of extreme annual maximum dry-bulb temperature
+	\units C
+	\type real
+N56, \field DBmin05years
+	\note 5-year return period values for minimum extreme dry-bulb temperature
+	\units C
+	\type real
+N57, \field DBmax05years
+	\note 5-year return period values for maximum extreme dry-bulb temperature
+	\units C
+	\type real
+N58, \field DBmin10years
+	\note 10-year return period values for minimum extreme dry-bulb temperature
+	\units C
+	\type real
+N59, \field DBmax10years
+	\note 10-year return period values for maximum extreme dry-bulb temperature
+	\units C
+	\type real
+N60, \field DBmin20years
+	\note 20-year return period values for minimum extreme dry-bulb temperature
+	\units C
+	\type real
+N61, \field DBmax20years
+	\note 20-year return period values for maximum extreme dry-bulb temperature
+	\units C
+	\type real
+N62, \field DBmin50years
+	\note 50-year return period values for minimum extreme dry-bulb temperature
+	\units C
+	\type real
+N63, \field DBmax50years
+	\note 50-year return period values for maximum extreme dry-bulb temperature
+	\units C
+	\type real
+
+
+DESIGN CONDITIONS,
+	L1; \list  DESIGN CONDITION
+
 
 TYPICAL/EXTREME PERIOD,
 	A1, \field Typical/Extreme Period Name
