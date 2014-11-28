@@ -10,7 +10,7 @@ LOCATION,
 	\type alpha
 	A4, \field Source
 	\type alpha
-	N1, \field WMO
+	A5, \field WMO
 	\note usually a 6 digit field. Used as alpha in EnergyPlus
 	\type alpha
 	N2 , \field Latitude

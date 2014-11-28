@@ -49,12 +49,17 @@ class {{ class_name }}(object):
 
     @property
     def {{field.field_name}}(self):
-        """Get {{field.field_name}}"""
+        """Get {{field.field_name}}
+
+        Returns:
+            The value of {{field.field_name}}
+        """
         return self._{{field.field_name}}
 
     @{{field.field_name}}.setter
     def {{field.field_name}}(self, value={%if field.attributes.default and not (field.attributes.type=="alpha" or field.attributes.type=="choice") %}{{field.attributes.default}} {% elif field.attributes.default and (field.attributes.type=="alpha" or field.attributes.type=="choice") %}"{{field.attributes.default}}"{%elif not field.attributes.default and field.attributes.missing  %}{{field.attributes.missing}}{% else %}None{% endif %}):
         """  Corresponds to IDD Field `{{field.field_name}}`
+
         {%- for comment in field.attributes.note %}
         {{comment}}
         {%- endfor %}
@@ -90,22 +95,10 @@ class {{ class_name }}(object):
         {%- if field.attributes|length > 0  %}
         if value is not None:
         {%- endif %}
-            {%- if field.attributes.type == "alpha" or field.attributes.type == "choice"  %}
             try:
-                value = str(value)
+                value = {{ field.attributes.pytype }}(value)
             except:
-                raise ValueError('value {} need to be of type string for field {{field.field_name}}'.format(value))
-            {%- elif field.attributes.type == "integer" %}
-            try:
-                value = int(value)
-            except:
-                raise ValueError('value {} need to be of type int for field {{field.field_name}}'.format(value))
-            {%- elif field.attributes.type == "real" %}
-            try:
-                value = float(value)
-            except:
-                raise ValueError('value {} need to be of type float for field {{field.field_name}}'.format(value))
-            {%- endif %}
+                raise ValueError('value {} need to be of type {{ field.attributes.pytype }} for field {{field.field_name}}'.format(value))
             {%- if field.attributes.minimum %}
             if value < {{ field.attributes.minimum }}:
                 raise ValueError('value need to be greater or equal {{ field.attributes.minimum }} for field {{field.field_name}}')

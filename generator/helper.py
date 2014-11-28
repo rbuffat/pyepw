@@ -33,17 +33,6 @@ def normalize_object_var_name(internal_name):
     name = name.replace(')', '')
     return name
 
-# 
-# def value2pyconv(self, vtype):
-# 
-#     if vtype == 'alpha':
-#         return "str"
-#     if vtype == 'integer':
-#         return "int"
-#     if vtype == 'real':
-#         return "float"
-#     return "str"
-
 
 class DataObject:
 
@@ -73,6 +62,15 @@ class DataField(object):
             return str(float(value))
         return value
 
+    def pytype(self, ftype):
+        if ftype == 'alpha' or ftype == 'choice':
+            return "str"
+        if ftype == 'integer':
+            return "int"
+        if ftype == 'real':
+            return "float"
+        return "str"
+
     def add_attribute(self, attribute_name, value):
         self.attributes[attribute_name] = value
 
@@ -85,7 +83,7 @@ class DataField(object):
                 self.attributes["type"] = "real"
 
         # Convert some values to python representation
-        for attribute_name in self.attributes:
+        for attribute_name in list(self.attributes):
             if attribute_name in ["default",
                              "minimum",
                              "minimum>",
@@ -95,6 +93,7 @@ class DataField(object):
                 value = self.attributes[attribute_name]
                 self.attributes[attribute_name] = self.value2py(value,
                                                                 self.attributes["type"])
+            self.attributes["pytype"] = self.pytype(self.attributes["type"])
 
 
 class ListField(DataField):

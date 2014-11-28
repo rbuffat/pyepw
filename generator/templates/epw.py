@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """
 WARNING: This is an automatically generated file.
 It is based on the EPW IDD specification given in the document

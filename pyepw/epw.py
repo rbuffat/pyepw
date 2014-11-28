@@ -1,11 +1,13 @@
+#!/usr/bin/python
 """
 WARNING: This is an automatically generated file.
 It is based on the EPW IDD specification given in the document
-Auxiliary EnergyPlus Programs - Extra programs for EnergyPlus, Date: November 22 2013
+Auxiliary EnergyPlus Programs - Extra programs for EnergyPlus,
+Date: November 22 2013
 
 Do not expect that it actually works!
 
-Generation date: 2014-11-24
+Generation date: 2014-11-28
 
 """
 from collections import OrderedDict
@@ -79,82 +81,55 @@ class Location(object):
 
     @property
     def city(self):
-        """Get city."""
+        """Get city.
+
+        Returns:
+            str: The value of `city` or None if not set
+
+        """
         return self._city
 
     @city.setter
     def city(self, value=None):
-        """Corresponds to IDD Field `city`"""
+        """Corresponds to IDD Field `city`
+
+        Args:
+            value (str): value for IDD Field `city`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type string for field city'.format(value))
+                raise ValueError('value {} need to be of type str '
+                                 'for field `city`'.format(value))
 
         self._city = value
 
     @property
     def state_province_region(self):
-        """Get state_province_region."""
+        """Get state_province_region.
+
+        Returns:
+            str: The value of `state_province_region` or None if not set
+
+        """
         return self._state_province_region
 
     @state_province_region.setter
     def state_province_region(self, value=None):
-        """Corresponds to IDD Field `state_province_region`"""
-        if value is not None:
-            try:
-                value = str(value)
-            except:
-                raise ValueError(
-                    'value {} need to be of type string for field state_province_region'.format(value))
+        """Corresponds to IDD Field `state_province_region`
 
-        self._state_province_region = value
+        Args:
+            value (str): value for IDD Field `state_province_region`
+                 a `value` of None will not be checked against the specification
 
-    @property
-    def country(self):
-        """Get country."""
-        return self._country
-
-    @country.setter
-    def country(self, value=None):
-        """Corresponds to IDD Field `country`"""
-        if value is not None:
-            try:
-                value = str(value)
-            except:
-                raise ValueError(
-                    'value {} need to be of type string for field country'.format(value))
-
-        self._country = value
-
-    @property
-    def source(self):
-        """Get source."""
-        return self._source
-
-    @source.setter
-    def source(self, value=None):
-        """Corresponds to IDD Field `source`"""
-        if value is not None:
-            try:
-                value = str(value)
-            except:
-                raise ValueError(
-                    'value {} need to be of type string for field source'.format(value))
-
-        self._source = value
-
-    @property
-    def wmo(self):
-        """Get wmo."""
-        return self._wmo
-
-    @wmo.setter
-    def wmo(self, value=None):
-        """Corresponds to IDD Field `wmo` usually a 6 digit field.
-
-        Used as alpha in EnergyPlus
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
@@ -162,13 +137,113 @@ class Location(object):
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field wmo'.format(value))
+                    'value {} need to be of type str '
+                    'for field `state_province_region`'.format(value))
+
+        self._state_province_region = value
+
+    @property
+    def country(self):
+        """Get country.
+
+        Returns:
+            str: The value of `country` or None if not set
+
+        """
+        return self._country
+
+    @country.setter
+    def country(self, value=None):
+        """Corresponds to IDD Field `country`
+
+        Args:
+            value (str): value for IDD Field `country`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError('value {} need to be of type str '
+                                 'for field `country`'.format(value))
+
+        self._country = value
+
+    @property
+    def source(self):
+        """Get source.
+
+        Returns:
+            str: The value of `source` or None if not set
+
+        """
+        return self._source
+
+    @source.setter
+    def source(self, value=None):
+        """Corresponds to IDD Field `source`
+
+        Args:
+            value (str): value for IDD Field `source`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError('value {} need to be of type str '
+                                 'for field `source`'.format(value))
+
+        self._source = value
+
+    @property
+    def wmo(self):
+        """Get wmo.
+
+        Returns:
+            str: The value of `wmo` or None if not set
+
+        """
+        return self._wmo
+
+    @wmo.setter
+    def wmo(self, value=None):
+        """Corresponds to IDD Field `wmo` usually a 6 digit field. Used as
+        alpha in EnergyPlus.
+
+        Args:
+            value (str): value for IDD Field `wmo`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError('value {} need to be of type str '
+                                 'for field `wmo`'.format(value))
 
         self._wmo = value
 
     @property
     def latitude(self):
-        """Get latitude."""
+        """Get latitude.
+
+        Returns:
+            float: The value of `latitude` or None if not set
+
+        """
         return self._latitude
 
     @latitude.setter
@@ -176,30 +251,42 @@ class Location(object):
         """Corresponds to IDD Field `latitude`
 
         + is North, - is South, degree minutes represented in decimal (i.e. 30 minutes is .5)
-        Unit: deg
-        Default value: 0.0
-        value >= -90.0
-        value <= 90.0
+
+        Args:
+            value (float): value for IDD Field `latitude`
+                Unit: deg
+                Default value: 0.0
+                value >= -90.0
+                value <= 90.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field latitude'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `latitude`'.format(value))
             if value < -90.0:
-                raise ValueError(
-                    'value need to be greater or equal -90.0 for field latitude')
+                raise ValueError('value need to be greater or equal -90.0 '
+                                 'for field `latitude`')
             if value > 90.0:
-                raise ValueError(
-                    'value need to be smaller 90.0 for field latitude')
+                raise ValueError('value need to be smaller 90.0 '
+                                 'for field `latitude`')
 
         self._latitude = value
 
     @property
     def longitude(self):
-        """Get longitude."""
+        """Get longitude.
+
+        Returns:
+            float: The value of `longitude` or None if not set
+
+        """
         return self._longitude
 
     @longitude.setter
@@ -207,82 +294,113 @@ class Location(object):
         """Corresponds to IDD Field `longitude`
 
         - is West, + is East, degree minutes represented in decimal (i.e. 30 minutes is .5)
-        Unit: deg
-        Default value: 0.0
-        value >= -180.0
-        value <= 180.0
+
+        Args:
+            value (float): value for IDD Field `longitude`
+                Unit: deg
+                Default value: 0.0
+                value >= -180.0
+                value <= 180.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field longitude'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `longitude`'.format(value))
             if value < -180.0:
-                raise ValueError(
-                    'value need to be greater or equal -180.0 for field longitude')
+                raise ValueError('value need to be greater or equal -180.0 '
+                                 'for field `longitude`')
             if value > 180.0:
-                raise ValueError(
-                    'value need to be smaller 180.0 for field longitude')
+                raise ValueError('value need to be smaller 180.0 '
+                                 'for field `longitude`')
 
         self._longitude = value
 
     @property
     def timezone(self):
-        """Get timezone."""
+        """Get timezone.
+
+        Returns:
+            float: The value of `timezone` or None if not set
+
+        """
         return self._timezone
 
     @timezone.setter
     def timezone(self, value=0.0):
         """Corresponds to IDD Field `timezone` Time relative to GMT.
 
-        Unit: hr - not on standard units list???
-        Default value: 0.0
-        value >= -12.0
-        value <= 12.0
+        Args:
+            value (float): value for IDD Field `timezone`
+                Unit: hr - not on standard units list???
+                Default value: 0.0
+                value >= -12.0
+                value <= 12.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field timezone'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `timezone`'.format(value))
             if value < -12.0:
-                raise ValueError(
-                    'value need to be greater or equal -12.0 for field timezone')
+                raise ValueError('value need to be greater or equal -12.0 '
+                                 'for field `timezone`')
             if value > 12.0:
-                raise ValueError(
-                    'value need to be smaller 12.0 for field timezone')
+                raise ValueError('value need to be smaller 12.0 '
+                                 'for field `timezone`')
 
         self._timezone = value
 
     @property
     def elevation(self):
-        """Get elevation."""
+        """Get elevation.
+
+        Returns:
+            float: The value of `elevation` or None if not set
+
+        """
         return self._elevation
 
     @elevation.setter
     def elevation(self, value=0.0):
-        """  Corresponds to IDD Field `elevation`
-        Unit: m
-        Default value: 0.0
-        value >= -1000.0
-        value < 9999.9
+        """Corresponds to IDD Field `elevation`
+
+        Args:
+            value (float): value for IDD Field `elevation`
+                Unit: m
+                Default value: 0.0
+                value >= -1000.0
+                value < 9999.9
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field elevation'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `elevation`'.format(value))
             if value < -1000.0:
-                raise ValueError(
-                    'value need to be greater or equal -1000.0 for field elevation')
+                raise ValueError('value need to be greater or equal -1000.0 '
+                                 'for field `elevation`')
             if value >= 9999.9:
-                raise ValueError(
-                    'value need to be smaller 9999.9 for field elevation')
+                raise ValueError('value need to be smaller 9999.9 '
+                                 'for field `elevation`')
 
         self._elevation = value
 
@@ -732,50 +850,90 @@ class DesignCondition(object):
 
     @property
     def title_of_design_condition(self):
-        """Get title_of_design_condition."""
+        """Get title_of_design_condition.
+
+        Returns:
+            str: The value of `title_of_design_condition` or None if not set
+
+        """
         return self._title_of_design_condition
 
     @title_of_design_condition.setter
     def title_of_design_condition(self, value=None):
-        """Corresponds to IDD Field `title_of_design_condition`"""
+        """Corresponds to IDD Field `title_of_design_condition`
+
+        Args:
+            value (str): value for IDD Field `title_of_design_condition`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field title_of_design_condition'.format(value))
+                    'value {} need to be of type str '
+                    'for field `title_of_design_condition`'.format(value))
 
         self._title_of_design_condition = value
 
     @property
     def unkown_field(self):
-        """Get unkown_field."""
+        """Get unkown_field.
+
+        Returns:
+            str: The value of `unkown_field` or None if not set
+
+        """
         return self._unkown_field
 
     @unkown_field.setter
     def unkown_field(self, value=None):
-        """Corresponds to IDD Field `unkown_field` Empty field in data."""
+        """Corresponds to IDD Field `unkown_field` Empty field in data.
+
+        Args:
+            value (str): value for IDD Field `unkown_field`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type string for field unkown_field'.format(value))
+                raise ValueError('value {} need to be of type str '
+                                 'for field `unkown_field`'.format(value))
 
         self._unkown_field = value
 
     @property
     def design_stat_heating(self):
-        """Get design_stat_heating."""
+        """Get design_stat_heating.
+
+        Returns:
+            str: The value of `design_stat_heating` or None if not set
+
+        """
         return self._design_stat_heating
 
     @design_stat_heating.setter
     def design_stat_heating(self, value="Heating"):
         """Corresponds to IDD Field `design_stat_heating`
 
-        Accepted values:
-          - Heating
-        Default value: Heating
+        Args:
+            value (str): value for IDD Field `design_stat_heating`
+                Accepted values are:
+                      - Heating
+                Default value: Heating
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
@@ -783,44 +941,63 @@ class DesignCondition(object):
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field design_stat_heating'.format(value))
+                    'value {} need to be of type str '
+                    'for field `design_stat_heating`'.format(value))
             vals = set()
             vals.add("Heating")
             if value not in vals:
-                raise ValueError(
-                    'value {} is not an accepted value for field design_stat_heating'.format(value))
+                raise ValueError('value {} is not an accepted value for '
+                                 'field `design_stat_heating`'.format(value))
 
         self._design_stat_heating = value
 
     @property
     def coldestmonth(self):
-        """Get coldestmonth."""
+        """Get coldestmonth.
+
+        Returns:
+            int: The value of `coldestmonth` or None if not set
+
+        """
         return self._coldestmonth
 
     @coldestmonth.setter
     def coldestmonth(self, value=None):
-        """  Corresponds to IDD Field `coldestmonth`
-        value >= 1
-        value <= 12
+        """Corresponds to IDD Field `coldestmonth`
+
+        Args:
+            value (int): value for IDD Field `coldestmonth`
+                value >= 1
+                value <= 12
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = int(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type int for field coldestmonth'.format(value))
+                raise ValueError('value {} need to be of type int '
+                                 'for field `coldestmonth`'.format(value))
             if value < 1:
-                raise ValueError(
-                    'value need to be greater or equal 1 for field coldestmonth')
+                raise ValueError('value need to be greater or equal 1 '
+                                 'for field `coldestmonth`')
             if value > 12:
-                raise ValueError(
-                    'value need to be smaller 12 for field coldestmonth')
+                raise ValueError('value need to be smaller 12 '
+                                 'for field `coldestmonth`')
 
         self._coldestmonth = value
 
     @property
     def db996(self):
-        """Get db996."""
+        """Get db996.
+
+        Returns:
+            float: The value of `db996` or None if not set
+
+        """
         return self._db996
 
     @db996.setter
@@ -828,20 +1005,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db996`
         Dry-bulb temperature corresponding to 99.6% annual cumulative
         frequency of occurrence (cold conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db996`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db996'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db996`'.format(value))
 
         self._db996 = value
 
     @property
     def db990(self):
-        """Get db990."""
+        """Get db990.
+
+        Returns:
+            float: The value of `db990` or None if not set
+
+        """
         return self._db990
 
     @db990.setter
@@ -849,20 +1038,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db990`
         Dry-bulb temperature corresponding to 90.0% annual cumulative
         frequency of occurrence (cold conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db990`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db990'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db990`'.format(value))
 
         self._db990 = value
 
     @property
     def dp996(self):
-        """Get dp996."""
+        """Get dp996.
+
+        Returns:
+            float: The value of `dp996` or None if not set
+
+        """
         return self._dp996
 
     @dp996.setter
@@ -870,20 +1071,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `dp996`
         Dew-point temperature corresponding to 99.6% annual cumulative
         frequency of occurrence (cold conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dp996`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dp996'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dp996`'.format(value))
 
         self._dp996 = value
 
     @property
     def hr_dp996(self):
-        """Get hr_dp996."""
+        """Get hr_dp996.
+
+        Returns:
+            float: The value of `hr_dp996` or None if not set
+
+        """
         return self._hr_dp996
 
     @hr_dp996.setter
@@ -893,19 +1106,31 @@ class DesignCondition(object):
         at elevation of station, corresponding to
         Dew-point temperature corresponding to 99.6% annual cumulative
         frequency of occurrence (cold conditions)
+
+        Args:
+            value (float): value for IDD Field `hr_dp996`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field hr_dp996'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `hr_dp996`'.format(value))
 
         self._hr_dp996 = value
 
     @property
     def db_dp996(self):
-        """Get db_dp996."""
+        """Get db_dp996.
+
+        Returns:
+            float: The value of `db_dp996` or None if not set
+
+        """
         return self._db_dp996
 
     @db_dp996.setter
@@ -914,20 +1139,32 @@ class DesignCondition(object):
         mean coincident drybulb temperature corresponding to
         Dew-point temperature corresponding to 99.6% annual cumulative
         frequency of occurrence (cold conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_dp996`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_dp996'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_dp996`'.format(value))
 
         self._db_dp996 = value
 
     @property
     def dp990(self):
-        """Get dp990."""
+        """Get dp990.
+
+        Returns:
+            float: The value of `dp990` or None if not set
+
+        """
         return self._dp990
 
     @dp990.setter
@@ -935,20 +1172,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `dp990`
         Dew-point temperature corresponding to 90.0% annual cumulative
         frequency of occurrence (cold conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dp990`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dp990'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dp990`'.format(value))
 
         self._dp990 = value
 
     @property
     def hr_dp990(self):
-        """Get hr_dp990."""
+        """Get hr_dp990.
+
+        Returns:
+            float: The value of `hr_dp990` or None if not set
+
+        """
         return self._hr_dp990
 
     @hr_dp990.setter
@@ -958,19 +1207,31 @@ class DesignCondition(object):
         at elevation of station, corresponding to
         Dew-point temperature corresponding to 90.0% annual cumulative
         frequency of occurrence (cold conditions)
+
+        Args:
+            value (float): value for IDD Field `hr_dp990`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field hr_dp990'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `hr_dp990`'.format(value))
 
         self._hr_dp990 = value
 
     @property
     def db_dp990(self):
-        """Get db_dp990."""
+        """Get db_dp990.
+
+        Returns:
+            float: The value of `db_dp990` or None if not set
+
+        """
         return self._db_dp990
 
     @db_dp990.setter
@@ -979,59 +1240,96 @@ class DesignCondition(object):
         mean coincident drybulb temperature corresponding to
         Dew-point temperature corresponding to 90.0% annual cumulative
         frequency of occurrence (cold conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_dp990`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_dp990'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_dp990`'.format(value))
 
         self._db_dp990 = value
 
     @property
     def ws004c(self):
-        """Get ws004c."""
+        """Get ws004c.
+
+        Returns:
+            float: The value of `ws004c` or None if not set
+
+        """
         return self._ws004c
 
     @ws004c.setter
     def ws004c(self, value=None):
-        """  Corresponds to IDD Field `ws004c`
-        Unit: m/s
+        """Corresponds to IDD Field `ws004c`
+
+        Args:
+            value (float): value for IDD Field `ws004c`
+                Unit: m/s
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field ws004c'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `ws004c`'.format(value))
 
         self._ws004c = value
 
     @property
     def db_ws004c(self):
-        """Get db_ws004c."""
+        """Get db_ws004c.
+
+        Returns:
+            float: The value of `db_ws004c` or None if not set
+
+        """
         return self._db_ws004c
 
     @db_ws004c.setter
     def db_ws004c(self, value=None):
         """  Corresponds to IDD Field `db_ws004c`
         Mean coincident dry-bulb temperature to wind speed corresponding to 0.40% cumulative frequency for coldest month
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_ws004c`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_ws004c'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_ws004c`'.format(value))
 
         self._db_ws004c = value
 
     @property
     def ws010c(self):
-        """Get ws010c."""
+        """Get ws010c.
+
+        Returns:
+            float: The value of `ws010c` or None if not set
+
+        """
         return self._ws010c
 
     @ws010c.setter
@@ -1039,60 +1337,96 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `ws010c`
         Wind speed corresponding to 1.0% cumulative frequency
         of occurrence for coldest month;
-        Unit: m/s
+
+        Args:
+            value (float): value for IDD Field `ws010c`
+                Unit: m/s
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field ws010c'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `ws010c`'.format(value))
 
         self._ws010c = value
 
     @property
     def db_ws010c(self):
-        """Get db_ws010c."""
+        """Get db_ws010c.
+
+        Returns:
+            float: The value of `db_ws010c` or None if not set
+
+        """
         return self._db_ws010c
 
     @db_ws010c.setter
     def db_ws010c(self, value=None):
         """  Corresponds to IDD Field `db_ws010c`
         Mean coincident dry-bulb temperature to wind speed corresponding to 1.0% cumulative frequency for coldest month
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_ws010c`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_ws010c'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_ws010c`'.format(value))
 
         self._db_ws010c = value
 
     @property
     def ws_db996(self):
-        """Get ws_db996."""
+        """Get ws_db996.
+
+        Returns:
+            float: The value of `ws_db996` or None if not set
+
+        """
         return self._ws_db996
 
     @ws_db996.setter
     def ws_db996(self, value=None):
         """  Corresponds to IDD Field `ws_db996`
         Mean wind speed coincident with 99.6% dry-bulb temperature
-        Unit: m/s
+
+        Args:
+            value (float): value for IDD Field `ws_db996`
+                Unit: m/s
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field ws_db996'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `ws_db996`'.format(value))
 
         self._ws_db996 = value
 
     @property
     def wd_db996(self):
-        """Get wd_db996."""
+        """Get wd_db996.
+
+        Returns:
+            float: The value of `wd_db996` or None if not set
+
+        """
         return self._wd_db996
 
     @wd_db996.setter
@@ -1100,29 +1434,47 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `wd_db996`
         most frequent wind direction corresponding to mean wind speed coincident with 99.6% dry-bulb temperature
         degrees from north (east = 90 deg)
-        Unit: deg
+
+        Args:
+            value (float): value for IDD Field `wd_db996`
+                Unit: deg
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wd_db996'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wd_db996`'.format(value))
 
         self._wd_db996 = value
 
     @property
     def design_stat_cooling(self):
-        """Get design_stat_cooling."""
+        """Get design_stat_cooling.
+
+        Returns:
+            str: The value of `design_stat_cooling` or None if not set
+
+        """
         return self._design_stat_cooling
 
     @design_stat_cooling.setter
     def design_stat_cooling(self, value="Cooling"):
         """Corresponds to IDD Field `design_stat_cooling`
 
-        Accepted values:
-          - Cooling
-        Default value: Cooling
+        Args:
+            value (str): value for IDD Field `design_stat_cooling`
+                Accepted values are:
+                      - Cooling
+                Default value: Cooling
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
@@ -1130,44 +1482,63 @@ class DesignCondition(object):
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field design_stat_cooling'.format(value))
+                    'value {} need to be of type str '
+                    'for field `design_stat_cooling`'.format(value))
             vals = set()
             vals.add("Cooling")
             if value not in vals:
-                raise ValueError(
-                    'value {} is not an accepted value for field design_stat_cooling'.format(value))
+                raise ValueError('value {} is not an accepted value for '
+                                 'field `design_stat_cooling`'.format(value))
 
         self._design_stat_cooling = value
 
     @property
     def hottestmonth(self):
-        """Get hottestmonth."""
+        """Get hottestmonth.
+
+        Returns:
+            int: The value of `hottestmonth` or None if not set
+
+        """
         return self._hottestmonth
 
     @hottestmonth.setter
     def hottestmonth(self, value=None):
-        """  Corresponds to IDD Field `hottestmonth`
-        value >= 1
-        value <= 12
+        """Corresponds to IDD Field `hottestmonth`
+
+        Args:
+            value (int): value for IDD Field `hottestmonth`
+                value >= 1
+                value <= 12
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = int(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type int for field hottestmonth'.format(value))
+                raise ValueError('value {} need to be of type int '
+                                 'for field `hottestmonth`'.format(value))
             if value < 1:
-                raise ValueError(
-                    'value need to be greater or equal 1 for field hottestmonth')
+                raise ValueError('value need to be greater or equal 1 '
+                                 'for field `hottestmonth`')
             if value > 12:
-                raise ValueError(
-                    'value need to be smaller 12 for field hottestmonth')
+                raise ValueError('value need to be smaller 12 '
+                                 'for field `hottestmonth`')
 
         self._hottestmonth = value
 
     @property
     def dbr(self):
-        """Get dbr."""
+        """Get dbr.
+
+        Returns:
+            float: The value of `dbr` or None if not set
+
+        """
         return self._dbr
 
     @dbr.setter
@@ -1177,41 +1548,65 @@ class DesignCondition(object):
 
         [defined as mean of the difference between daily maximum
         and daily minimum dry-bulb temperatures for hottest month]
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbr`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbr'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbr`'.format(value))
 
         self._dbr = value
 
     @property
     def db004(self):
-        """Get db004."""
+        """Get db004.
+
+        Returns:
+            float: The value of `db004` or None if not set
+
+        """
         return self._db004
 
     @db004.setter
     def db004(self, value=None):
         """  Corresponds to IDD Field `db004`
         Dry-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence (warm conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db004`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db004`'.format(value))
 
         self._db004 = value
 
     @property
     def wb_db004(self):
-        """Get wb_db004."""
+        """Get wb_db004.
+
+        Returns:
+            float: The value of `wb_db004` or None if not set
+
+        """
         return self._wb_db004
 
     @wb_db004.setter
@@ -1219,40 +1614,64 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `wb_db004`
         mean coincident wet-bulb temperature to
         Dry-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence (warm conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `wb_db004`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wb_db004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wb_db004`'.format(value))
 
         self._wb_db004 = value
 
     @property
     def db010(self):
-        """Get db010."""
+        """Get db010.
+
+        Returns:
+            float: The value of `db010` or None if not set
+
+        """
         return self._db010
 
     @db010.setter
     def db010(self, value=None):
         """  Corresponds to IDD Field `db010`
         Dry-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence (warm conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db010`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db010`'.format(value))
 
         self._db010 = value
 
     @property
     def wb_db010(self):
-        """Get wb_db010."""
+        """Get wb_db010.
+
+        Returns:
+            float: The value of `wb_db010` or None if not set
+
+        """
         return self._wb_db010
 
     @wb_db010.setter
@@ -1260,20 +1679,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `wb_db010`
         mean coincident wet-bulb temperature to
         Dry-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence (warm conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `wb_db010`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wb_db010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wb_db010`'.format(value))
 
         self._wb_db010 = value
 
     @property
     def db020(self):
-        """Get db020."""
+        """Get db020.
+
+        Returns:
+            float: The value of `db020` or None if not set
+
+        """
         return self._db020
 
     @db020.setter
@@ -1281,20 +1712,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db020`
         mean coincident wet-bulb temperature to
         Dry-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence (warm conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db020`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db020'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db020`'.format(value))
 
         self._db020 = value
 
     @property
     def wb_db020(self):
-        """Get wb_db020."""
+        """Get wb_db020.
+
+        Returns:
+            float: The value of `wb_db020` or None if not set
+
+        """
         return self._wb_db020
 
     @wb_db020.setter
@@ -1302,40 +1745,64 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `wb_db020`
         mean coincident wet-bulb temperature to
         Dry-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence (warm conditions)
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `wb_db020`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wb_db020'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wb_db020`'.format(value))
 
         self._wb_db020 = value
 
     @property
     def wb004(self):
-        """Get wb004."""
+        """Get wb004.
+
+        Returns:
+            float: The value of `wb004` or None if not set
+
+        """
         return self._wb004
 
     @wb004.setter
     def wb004(self, value=None):
         """  Corresponds to IDD Field `wb004`
         Wet-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `wb004`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wb004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wb004`'.format(value))
 
         self._wb004 = value
 
     @property
     def db_wb004(self):
-        """Get db_wb004."""
+        """Get db_wb004.
+
+        Returns:
+            float: The value of `db_wb004` or None if not set
+
+        """
         return self._db_wb004
 
     @db_wb004.setter
@@ -1343,40 +1810,64 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db_wb004`
         mean coincident dry-bulb temperature to
         Wet-bulb temperature corresponding to 0.4% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_wb004`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_wb004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_wb004`'.format(value))
 
         self._db_wb004 = value
 
     @property
     def wb010(self):
-        """Get wb010."""
+        """Get wb010.
+
+        Returns:
+            float: The value of `wb010` or None if not set
+
+        """
         return self._wb010
 
     @wb010.setter
     def wb010(self, value=None):
         """  Corresponds to IDD Field `wb010`
         Wet-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `wb010`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wb010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wb010`'.format(value))
 
         self._wb010 = value
 
     @property
     def db_wb010(self):
-        """Get db_wb010."""
+        """Get db_wb010.
+
+        Returns:
+            float: The value of `db_wb010` or None if not set
+
+        """
         return self._db_wb010
 
     @db_wb010.setter
@@ -1384,40 +1875,64 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db_wb010`
         mean coincident dry-bulb temperature to
         Wet-bulb temperature corresponding to 1.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_wb010`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_wb010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_wb010`'.format(value))
 
         self._db_wb010 = value
 
     @property
     def wb020(self):
-        """Get wb020."""
+        """Get wb020.
+
+        Returns:
+            float: The value of `wb020` or None if not set
+
+        """
         return self._wb020
 
     @wb020.setter
     def wb020(self, value=None):
         """  Corresponds to IDD Field `wb020`
         Wet-bulb temperature corresponding to 02.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `wb020`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wb020'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wb020`'.format(value))
 
         self._wb020 = value
 
     @property
     def db_wb020(self):
-        """Get db_wb020."""
+        """Get db_wb020.
+
+        Returns:
+            float: The value of `db_wb020` or None if not set
+
+        """
         return self._db_wb020
 
     @db_wb020.setter
@@ -1425,40 +1940,64 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db_wb020`
         mean coincident dry-bulb temperature to
         Wet-bulb temperature corresponding to 2.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_wb020`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_wb020'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_wb020`'.format(value))
 
         self._db_wb020 = value
 
     @property
     def ws_db004(self):
-        """Get ws_db004."""
+        """Get ws_db004.
+
+        Returns:
+            float: The value of `ws_db004` or None if not set
+
+        """
         return self._ws_db004
 
     @ws_db004.setter
     def ws_db004(self, value=None):
         """  Corresponds to IDD Field `ws_db004`
         Mean wind speed coincident with 0.4% dry-bulb temperature
-        Unit: m/s
+
+        Args:
+            value (float): value for IDD Field `ws_db004`
+                Unit: m/s
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field ws_db004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `ws_db004`'.format(value))
 
         self._ws_db004 = value
 
     @property
     def wd_db004(self):
-        """Get wd_db004."""
+        """Get wd_db004.
+
+        Returns:
+            float: The value of `wd_db004` or None if not set
+
+        """
         return self._wd_db004
 
     @wd_db004.setter
@@ -1467,40 +2006,64 @@ class DesignCondition(object):
         corresponding most frequent wind direction
         Mean wind speed coincident with 0.4% dry-bulb temperature
         degrees true from north (east = 90 deg)
-        Unit: deg
+
+        Args:
+            value (float): value for IDD Field `wd_db004`
+                Unit: deg
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wd_db004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wd_db004`'.format(value))
 
         self._wd_db004 = value
 
     @property
     def dp004(self):
-        """Get dp004."""
+        """Get dp004.
+
+        Returns:
+            float: The value of `dp004` or None if not set
+
+        """
         return self._dp004
 
     @dp004.setter
     def dp004(self, value=None):
         """  Corresponds to IDD Field `dp004`
         Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dp004`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dp004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dp004`'.format(value))
 
         self._dp004 = value
 
     @property
     def hr_dp004(self):
-        """Get hr_dp004."""
+        """Get hr_dp004.
+
+        Returns:
+            float: The value of `hr_dp004` or None if not set
+
+        """
         return self._hr_dp004
 
     @hr_dp004.setter
@@ -1508,19 +2071,31 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `hr_dp004`
         humidity ratio corresponding to
         Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
+
+        Args:
+            value (float): value for IDD Field `hr_dp004`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field hr_dp004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `hr_dp004`'.format(value))
 
         self._hr_dp004 = value
 
     @property
     def db_dp004(self):
-        """Get db_dp004."""
+        """Get db_dp004.
+
+        Returns:
+            float: The value of `db_dp004` or None if not set
+
+        """
         return self._db_dp004
 
     @db_dp004.setter
@@ -1528,40 +2103,64 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db_dp004`
         mean coincident dry-bulb temperature to
         Dew-point temperature corresponding to 0.4% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_dp004`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_dp004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_dp004`'.format(value))
 
         self._db_dp004 = value
 
     @property
     def dp010(self):
-        """Get dp010."""
+        """Get dp010.
+
+        Returns:
+            float: The value of `dp010` or None if not set
+
+        """
         return self._dp010
 
     @dp010.setter
     def dp010(self, value=None):
         """  Corresponds to IDD Field `dp010`
         Dew-point temperature corresponding to 1.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dp010`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dp010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dp010`'.format(value))
 
         self._dp010 = value
 
     @property
     def hr_dp010(self):
-        """Get hr_dp010."""
+        """Get hr_dp010.
+
+        Returns:
+            float: The value of `hr_dp010` or None if not set
+
+        """
         return self._hr_dp010
 
     @hr_dp010.setter
@@ -1570,19 +2169,31 @@ class DesignCondition(object):
         humidity ratio corresponding to
         Dew-point temperature corresponding to 1.0,% annual cumulative frequency of occurrence
         calculated at the standard atmospheric pressure at elevation of station
+
+        Args:
+            value (float): value for IDD Field `hr_dp010`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field hr_dp010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `hr_dp010`'.format(value))
 
         self._hr_dp010 = value
 
     @property
     def db_dp010(self):
-        """Get db_dp010."""
+        """Get db_dp010.
+
+        Returns:
+            float: The value of `db_dp010` or None if not set
+
+        """
         return self._db_dp010
 
     @db_dp010.setter
@@ -1590,40 +2201,64 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db_dp010`
         mean coincident dry-bulb temperature to
         Dew-point temperature corresponding to 1.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_dp010`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_dp010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_dp010`'.format(value))
 
         self._db_dp010 = value
 
     @property
     def dp020(self):
-        """Get dp020."""
+        """Get dp020.
+
+        Returns:
+            float: The value of `dp020` or None if not set
+
+        """
         return self._dp020
 
     @dp020.setter
     def dp020(self, value=None):
         """  Corresponds to IDD Field `dp020`
         Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dp020`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dp020'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dp020`'.format(value))
 
         self._dp020 = value
 
     @property
     def hr_dp020(self):
-        """Get hr_dp020."""
+        """Get hr_dp020.
+
+        Returns:
+            float: The value of `hr_dp020` or None if not set
+
+        """
         return self._hr_dp020
 
     @hr_dp020.setter
@@ -1632,19 +2267,31 @@ class DesignCondition(object):
         humidity ratio corresponding to
         Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
         calculated at the standard atmospheric pressure at elevation of station
+
+        Args:
+            value (float): value for IDD Field `hr_dp020`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field hr_dp020'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `hr_dp020`'.format(value))
 
         self._hr_dp020 = value
 
     @property
     def db_dp020(self):
-        """Get db_dp020."""
+        """Get db_dp020.
+
+        Returns:
+            float: The value of `db_dp020` or None if not set
+
+        """
         return self._db_dp020
 
     @db_dp020.setter
@@ -1652,20 +2299,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db_dp020`
         mean coincident dry-bulb temperature to
         Dew-point temperature corresponding to 2.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_dp020`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_dp020'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_dp020`'.format(value))
 
         self._db_dp020 = value
 
     @property
     def en004(self):
-        """Get en004."""
+        """Get en004.
+
+        Returns:
+            float: The value of `en004` or None if not set
+
+        """
         return self._en004
 
     @en004.setter
@@ -1673,20 +2332,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `en004`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 0.4% annual cumulative frequency of occurrence
-        Unit: kJ/kg
+
+        Args:
+            value (float): value for IDD Field `en004`
+                Unit: kJ/kg
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field en004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `en004`'.format(value))
 
         self._en004 = value
 
     @property
     def db_en004(self):
-        """Get db_en004."""
+        """Get db_en004.
+
+        Returns:
+            float: The value of `db_en004` or None if not set
+
+        """
         return self._db_en004
 
     @db_en004.setter
@@ -1694,20 +2365,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db_en004`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 0.4% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_en004`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_en004'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_en004`'.format(value))
 
         self._db_en004 = value
 
     @property
     def en010(self):
-        """Get en010."""
+        """Get en010.
+
+        Returns:
+            float: The value of `en010` or None if not set
+
+        """
         return self._en010
 
     @en010.setter
@@ -1715,20 +2398,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `en010`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 1.0% annual cumulative frequency of occurrence
-        Unit: kJ/kg
+
+        Args:
+            value (float): value for IDD Field `en010`
+                Unit: kJ/kg
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field en010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `en010`'.format(value))
 
         self._en010 = value
 
     @property
     def db_en010(self):
-        """Get db_en010."""
+        """Get db_en010.
+
+        Returns:
+            float: The value of `db_en010` or None if not set
+
+        """
         return self._db_en010
 
     @db_en010.setter
@@ -1736,20 +2431,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db_en010`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 1.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_en010`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_en010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_en010`'.format(value))
 
         self._db_en010 = value
 
     @property
     def en020(self):
-        """Get en020."""
+        """Get en020.
+
+        Returns:
+            float: The value of `en020` or None if not set
+
+        """
         return self._en020
 
     @en020.setter
@@ -1757,20 +2464,32 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `en020`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 2.0% annual cumulative frequency of occurrence
-        Unit: kJ/kg
+
+        Args:
+            value (float): value for IDD Field `en020`
+                Unit: kJ/kg
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field en020'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `en020`'.format(value))
 
         self._en020 = value
 
     @property
     def db_en020(self):
-        """Get db_en020."""
+        """Get db_en020.
+
+        Returns:
+            float: The value of `db_en020` or None if not set
+
+        """
         return self._db_en020
 
     @db_en020.setter
@@ -1778,48 +2497,79 @@ class DesignCondition(object):
         """  Corresponds to IDD Field `db_en020`
         mean coincident dry-bulb temperature to
         Enthalpy corresponding to 2.0% annual cumulative frequency of occurrence
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `db_en020`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field db_en020'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `db_en020`'.format(value))
 
         self._db_en020 = value
 
     @property
     def hrs_84_and_db12_8_or_20_6(self):
-        """Get hrs_84_and_db12_8_or_20_6."""
+        """Get hrs_84_and_db12_8_or_20_6.
+
+        Returns:
+            float: The value of `hrs_84_and_db12_8_or_20_6` or None if not set
+
+        """
         return self._hrs_84_and_db12_8_or_20_6
 
     @hrs_84_and_db12_8_or_20_6.setter
     def hrs_84_and_db12_8_or_20_6(self, value=None):
         """  Corresponds to IDD Field `hrs_84_and_db12_8_or_20_6`
         Number of hours between 8 AM and 4 PM (inclusive) with dry-bulb temperature between 12.8 and 20.6 C
+
+        Args:
+            value (float): value for IDD Field `hrs_84_and_db12_8_or_20_6`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field hrs_84_and_db12_8_or_20_6'.format(value))
+                    'value {} need to be of type float '
+                    'for field `hrs_84_and_db12_8_or_20_6`'.format(value))
 
         self._hrs_84_and_db12_8_or_20_6 = value
 
     @property
     def design_stat_extremes(self):
-        """Get design_stat_extremes."""
+        """Get design_stat_extremes.
+
+        Returns:
+            str: The value of `design_stat_extremes` or None if not set
+
+        """
         return self._design_stat_extremes
 
     @design_stat_extremes.setter
     def design_stat_extremes(self, value="Extremes"):
         """Corresponds to IDD Field `design_stat_extremes`
 
-        Accepted values:
-          - Extremes
-        Default value: Extremes
+        Args:
+            value (str): value for IDD Field `design_stat_extremes`
+                Accepted values are:
+                      - Extremes
+                Default value: Extremes
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
@@ -1827,332 +2577,525 @@ class DesignCondition(object):
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field design_stat_extremes'.format(value))
+                    'value {} need to be of type str '
+                    'for field `design_stat_extremes`'.format(value))
             vals = set()
             vals.add("Extremes")
             if value not in vals:
-                raise ValueError(
-                    'value {} is not an accepted value for field design_stat_extremes'.format(value))
+                raise ValueError('value {} is not an accepted value for '
+                                 'field `design_stat_extremes`'.format(value))
 
         self._design_stat_extremes = value
 
     @property
     def ws010(self):
-        """Get ws010."""
+        """Get ws010.
+
+        Returns:
+            float: The value of `ws010` or None if not set
+
+        """
         return self._ws010
 
     @ws010.setter
     def ws010(self, value=None):
         """  Corresponds to IDD Field `ws010`
         Wind speed corresponding to 1.0% annual cumulative frequency of occurrence
-        Unit: m/s
+
+        Args:
+            value (float): value for IDD Field `ws010`
+                Unit: m/s
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field ws010'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `ws010`'.format(value))
 
         self._ws010 = value
 
     @property
     def ws025(self):
-        """Get ws025."""
+        """Get ws025.
+
+        Returns:
+            float: The value of `ws025` or None if not set
+
+        """
         return self._ws025
 
     @ws025.setter
     def ws025(self, value=None):
         """  Corresponds to IDD Field `ws025`
         Wind speed corresponding to 2.5% annual cumulative frequency of occurrence
-        Unit: m/s
+
+        Args:
+            value (float): value for IDD Field `ws025`
+                Unit: m/s
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field ws025'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `ws025`'.format(value))
 
         self._ws025 = value
 
     @property
     def ws050(self):
-        """Get ws050."""
+        """Get ws050.
+
+        Returns:
+            float: The value of `ws050` or None if not set
+
+        """
         return self._ws050
 
     @ws050.setter
     def ws050(self, value=None):
         """  Corresponds to IDD Field `ws050`
         Wind speed corresponding 5.0% annual cumulative frequency of occurrence
-        Unit: m/s
+
+        Args:
+            value (float): value for IDD Field `ws050`
+                Unit: m/s
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field ws050'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `ws050`'.format(value))
 
         self._ws050 = value
 
     @property
     def wbmax(self):
-        """Get wbmax."""
+        """Get wbmax.
+
+        Returns:
+            float: The value of `wbmax` or None if not set
+
+        """
         return self._wbmax
 
     @wbmax.setter
     def wbmax(self, value=None):
         """  Corresponds to IDD Field `wbmax`
         Extreme maximum wet-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `wbmax`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wbmax'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wbmax`'.format(value))
 
         self._wbmax = value
 
     @property
     def dbmin_mean(self):
-        """Get dbmin_mean."""
+        """Get dbmin_mean.
+
+        Returns:
+            float: The value of `dbmin_mean` or None if not set
+
+        """
         return self._dbmin_mean
 
     @dbmin_mean.setter
     def dbmin_mean(self, value=None):
         """  Corresponds to IDD Field `dbmin_mean`
         Mean of extreme annual minimum dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmin_mean`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmin_mean'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmin_mean`'.format(value))
 
         self._dbmin_mean = value
 
     @property
     def dbmax_mean(self):
-        """Get dbmax_mean."""
+        """Get dbmax_mean.
+
+        Returns:
+            float: The value of `dbmax_mean` or None if not set
+
+        """
         return self._dbmax_mean
 
     @dbmax_mean.setter
     def dbmax_mean(self, value=None):
         """  Corresponds to IDD Field `dbmax_mean`
         Mean of extreme annual maximum dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmax_mean`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmax_mean'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmax_mean`'.format(value))
 
         self._dbmax_mean = value
 
     @property
     def dbmin_stddev(self):
-        """Get dbmin_stddev."""
+        """Get dbmin_stddev.
+
+        Returns:
+            float: The value of `dbmin_stddev` or None if not set
+
+        """
         return self._dbmin_stddev
 
     @dbmin_stddev.setter
     def dbmin_stddev(self, value=None):
         """  Corresponds to IDD Field `dbmin_stddev`
         Standard deviation of extreme annual minimum dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmin_stddev`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmin_stddev'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmin_stddev`'.format(value))
 
         self._dbmin_stddev = value
 
     @property
     def dbmax_stddev(self):
-        """Get dbmax_stddev."""
+        """Get dbmax_stddev.
+
+        Returns:
+            float: The value of `dbmax_stddev` or None if not set
+
+        """
         return self._dbmax_stddev
 
     @dbmax_stddev.setter
     def dbmax_stddev(self, value=None):
         """  Corresponds to IDD Field `dbmax_stddev`
         Standard deviation of extreme annual maximum dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmax_stddev`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmax_stddev'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmax_stddev`'.format(value))
 
         self._dbmax_stddev = value
 
     @property
     def dbmin05years(self):
-        """Get dbmin05years."""
+        """Get dbmin05years.
+
+        Returns:
+            float: The value of `dbmin05years` or None if not set
+
+        """
         return self._dbmin05years
 
     @dbmin05years.setter
     def dbmin05years(self, value=None):
         """  Corresponds to IDD Field `dbmin05years`
         5-year return period values for minimum extreme dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmin05years`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmin05years'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmin05years`'.format(value))
 
         self._dbmin05years = value
 
     @property
     def dbmax05years(self):
-        """Get dbmax05years."""
+        """Get dbmax05years.
+
+        Returns:
+            float: The value of `dbmax05years` or None if not set
+
+        """
         return self._dbmax05years
 
     @dbmax05years.setter
     def dbmax05years(self, value=None):
         """  Corresponds to IDD Field `dbmax05years`
         5-year return period values for maximum extreme dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmax05years`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmax05years'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmax05years`'.format(value))
 
         self._dbmax05years = value
 
     @property
     def dbmin10years(self):
-        """Get dbmin10years."""
+        """Get dbmin10years.
+
+        Returns:
+            float: The value of `dbmin10years` or None if not set
+
+        """
         return self._dbmin10years
 
     @dbmin10years.setter
     def dbmin10years(self, value=None):
         """  Corresponds to IDD Field `dbmin10years`
         10-year return period values for minimum extreme dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmin10years`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmin10years'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmin10years`'.format(value))
 
         self._dbmin10years = value
 
     @property
     def dbmax10years(self):
-        """Get dbmax10years."""
+        """Get dbmax10years.
+
+        Returns:
+            float: The value of `dbmax10years` or None if not set
+
+        """
         return self._dbmax10years
 
     @dbmax10years.setter
     def dbmax10years(self, value=None):
         """  Corresponds to IDD Field `dbmax10years`
         10-year return period values for maximum extreme dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmax10years`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmax10years'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmax10years`'.format(value))
 
         self._dbmax10years = value
 
     @property
     def dbmin20years(self):
-        """Get dbmin20years."""
+        """Get dbmin20years.
+
+        Returns:
+            float: The value of `dbmin20years` or None if not set
+
+        """
         return self._dbmin20years
 
     @dbmin20years.setter
     def dbmin20years(self, value=None):
         """  Corresponds to IDD Field `dbmin20years`
         20-year return period values for minimum extreme dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmin20years`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmin20years'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmin20years`'.format(value))
 
         self._dbmin20years = value
 
     @property
     def dbmax20years(self):
-        """Get dbmax20years."""
+        """Get dbmax20years.
+
+        Returns:
+            float: The value of `dbmax20years` or None if not set
+
+        """
         return self._dbmax20years
 
     @dbmax20years.setter
     def dbmax20years(self, value=None):
         """  Corresponds to IDD Field `dbmax20years`
         20-year return period values for maximum extreme dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmax20years`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmax20years'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmax20years`'.format(value))
 
         self._dbmax20years = value
 
     @property
     def dbmin50years(self):
-        """Get dbmin50years."""
+        """Get dbmin50years.
+
+        Returns:
+            float: The value of `dbmin50years` or None if not set
+
+        """
         return self._dbmin50years
 
     @dbmin50years.setter
     def dbmin50years(self, value=None):
         """  Corresponds to IDD Field `dbmin50years`
         50-year return period values for minimum extreme dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmin50years`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmin50years'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmin50years`'.format(value))
 
         self._dbmin50years = value
 
     @property
     def dbmax50years(self):
-        """Get dbmax50years."""
+        """Get dbmax50years.
+
+        Returns:
+            float: The value of `dbmax50years` or None if not set
+
+        """
         return self._dbmax50years
 
     @dbmax50years.setter
     def dbmax50years(self, value=None):
         """  Corresponds to IDD Field `dbmax50years`
         50-year return period values for maximum extreme dry-bulb temperature
-        Unit: C
+
+        Args:
+            value (float): value for IDD Field `dbmax50years`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field dbmax50years'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `dbmax50years`'.format(value))
 
         self._dbmax50years = value
 
@@ -2261,11 +3204,21 @@ class DesignConditions(object):
 
     @property
     def design_conditions(self):
-        """Get design_conditions."""
+        """Get design_conditions.
+
+        Returns:
+            A list of DesignCondition objects
+
+        """
         return self._design_conditions
 
     def add_design_condition(self, value):
-        """Add TypicalOrExtremePeriod."""
+        """Add design_condition.
+
+        Args:
+            DesignCondition: New value to add to `design_conditions`
+
+        """
         self._design_conditions.append(value)
 
     def _to_str(self, value):
@@ -2324,69 +3277,127 @@ class TypicalOrExtremePeriod(object):
 
     @property
     def typical_or_extreme_period_name(self):
-        """Get typical_or_extreme_period_name."""
+        """Get typical_or_extreme_period_name.
+
+        Returns:
+            str: The value of `typical_or_extreme_period_name` or None if not set
+
+        """
         return self._typical_or_extreme_period_name
 
     @typical_or_extreme_period_name.setter
     def typical_or_extreme_period_name(self, value=None):
-        """Corresponds to IDD Field `typical_or_extreme_period_name`"""
+        """Corresponds to IDD Field `typical_or_extreme_period_name`
+
+        Args:
+            value (str): value for IDD Field `typical_or_extreme_period_name`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field typical_or_extreme_period_name'.format(value))
+                    'value {} need to be of type str '
+                    'for field `typical_or_extreme_period_name`'.format(value))
 
         self._typical_or_extreme_period_name = value
 
     @property
     def typical_or_extreme_period_type(self):
-        """Get typical_or_extreme_period_type."""
+        """Get typical_or_extreme_period_type.
+
+        Returns:
+            str: The value of `typical_or_extreme_period_type` or None if not set
+
+        """
         return self._typical_or_extreme_period_type
 
     @typical_or_extreme_period_type.setter
     def typical_or_extreme_period_type(self, value=None):
-        """Corresponds to IDD Field `typical_or_extreme_period_type`"""
+        """Corresponds to IDD Field `typical_or_extreme_period_type`
+
+        Args:
+            value (str): value for IDD Field `typical_or_extreme_period_type`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field typical_or_extreme_period_type'.format(value))
+                    'value {} need to be of type str '
+                    'for field `typical_or_extreme_period_type`'.format(value))
 
         self._typical_or_extreme_period_type = value
 
     @property
     def period_start_day(self):
-        """Get period_start_day."""
+        """Get period_start_day.
+
+        Returns:
+            str: The value of `period_start_day` or None if not set
+
+        """
         return self._period_start_day
 
     @period_start_day.setter
     def period_start_day(self, value=None):
-        """Corresponds to IDD Field `period_start_day`"""
+        """Corresponds to IDD Field `period_start_day`
+
+        Args:
+            value (str): value for IDD Field `period_start_day`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type string for field period_start_day'.format(value))
+                raise ValueError('value {} need to be of type str '
+                                 'for field `period_start_day`'.format(value))
 
         self._period_start_day = value
 
     @property
     def period_end_day(self):
-        """Get period_end_day."""
+        """Get period_end_day.
+
+        Returns:
+            str: The value of `period_end_day` or None if not set
+
+        """
         return self._period_end_day
 
     @period_end_day.setter
     def period_end_day(self, value=None):
-        """Corresponds to IDD Field `period_end_day`"""
+        """Corresponds to IDD Field `period_end_day`
+
+        Args:
+            value (str): value for IDD Field `period_end_day`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type string for field period_end_day'.format(value))
+                raise ValueError('value {} need to be of type str '
+                                 'for field `period_end_day`'.format(value))
 
         self._period_end_day = value
 
@@ -2431,11 +3442,21 @@ class TypicalOrExtremePeriods(object):
 
     @property
     def typical_or_extreme_periods(self):
-        """Get typical_or_extreme_periods."""
+        """Get typical_or_extreme_periods.
+
+        Returns:
+            A list of TypicalOrExtremePeriod objects
+
+        """
         return self._typical_or_extreme_periods
 
     def add_typical_or_extreme_period(self, value):
-        """Add TypicalOrExtremePeriod."""
+        """Add typical_or_extreme_period.
+
+        Args:
+            TypicalOrExtremePeriod: New value to add to `typical_or_extreme_periods`
+
+        """
         self._typical_or_extreme_periods.append(value)
 
     def _to_str(self, value):
@@ -2566,305 +3587,530 @@ class GroundTemperature(object):
 
     @property
     def ground_temperature_depth(self):
-        """Get ground_temperature_depth."""
+        """Get ground_temperature_depth.
+
+        Returns:
+            float: The value of `ground_temperature_depth` or None if not set
+
+        """
         return self._ground_temperature_depth
 
     @ground_temperature_depth.setter
     def ground_temperature_depth(self, value=None):
-        """  Corresponds to IDD Field `ground_temperature_depth`
-        Unit: m
+        """Corresponds to IDD Field `ground_temperature_depth`
+
+        Args:
+            value (float): value for IDD Field `ground_temperature_depth`
+                Unit: m
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field ground_temperature_depth'.format(value))
+                    'value {} need to be of type float '
+                    'for field `ground_temperature_depth`'.format(value))
 
         self._ground_temperature_depth = value
 
     @property
     def depth_soil_conductivity(self):
-        """Get depth_soil_conductivity."""
+        """Get depth_soil_conductivity.
+
+        Returns:
+            float: The value of `depth_soil_conductivity` or None if not set
+
+        """
         return self._depth_soil_conductivity
 
     @depth_soil_conductivity.setter
     def depth_soil_conductivity(self, value=None):
-        """  Corresponds to IDD Field `depth_soil_conductivity`
-        Unit: W/m-K,
+        """Corresponds to IDD Field `depth_soil_conductivity`
+
+        Args:
+            value (float): value for IDD Field `depth_soil_conductivity`
+                Unit: W/m-K,
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_soil_conductivity'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_soil_conductivity`'.format(value))
 
         self._depth_soil_conductivity = value
 
     @property
     def depth_soil_density(self):
-        """Get depth_soil_density."""
+        """Get depth_soil_density.
+
+        Returns:
+            float: The value of `depth_soil_density` or None if not set
+
+        """
         return self._depth_soil_density
 
     @depth_soil_density.setter
     def depth_soil_density(self, value=None):
-        """  Corresponds to IDD Field `depth_soil_density`
-        Unit: kg/m3
+        """Corresponds to IDD Field `depth_soil_density`
+
+        Args:
+            value (float): value for IDD Field `depth_soil_density`
+                Unit: kg/m3
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_soil_density'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_soil_density`'.format(value))
 
         self._depth_soil_density = value
 
     @property
     def depth_soil_specific_heat(self):
-        """Get depth_soil_specific_heat."""
+        """Get depth_soil_specific_heat.
+
+        Returns:
+            float: The value of `depth_soil_specific_heat` or None if not set
+
+        """
         return self._depth_soil_specific_heat
 
     @depth_soil_specific_heat.setter
     def depth_soil_specific_heat(self, value=None):
-        """  Corresponds to IDD Field `depth_soil_specific_heat`
-        Unit: J/kg-K,
+        """Corresponds to IDD Field `depth_soil_specific_heat`
+
+        Args:
+            value (float): value for IDD Field `depth_soil_specific_heat`
+                Unit: J/kg-K,
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_soil_specific_heat'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_soil_specific_heat`'.format(value))
 
         self._depth_soil_specific_heat = value
 
     @property
     def depth_january_average_ground_temperature(self):
-        """Get depth_january_average_ground_temperature."""
+        """Get depth_january_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_january_average_ground_temperature` or None if not set
+
+        """
         return self._depth_january_average_ground_temperature
 
     @depth_january_average_ground_temperature.setter
     def depth_january_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_january_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_january_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_january_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_january_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_january_average_ground_temperature`'.format(value))
 
         self._depth_january_average_ground_temperature = value
 
     @property
     def depth_february_average_ground_temperature(self):
-        """Get depth_february_average_ground_temperature."""
+        """Get depth_february_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_february_average_ground_temperature` or None if not set
+
+        """
         return self._depth_february_average_ground_temperature
 
     @depth_february_average_ground_temperature.setter
     def depth_february_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_february_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_february_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_february_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_february_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_february_average_ground_temperature`'.format(value))
 
         self._depth_february_average_ground_temperature = value
 
     @property
     def depth_march_average_ground_temperature(self):
-        """Get depth_march_average_ground_temperature."""
+        """Get depth_march_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_march_average_ground_temperature` or None if not set
+
+        """
         return self._depth_march_average_ground_temperature
 
     @depth_march_average_ground_temperature.setter
     def depth_march_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_march_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_march_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_march_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_march_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_march_average_ground_temperature`'.format(value))
 
         self._depth_march_average_ground_temperature = value
 
     @property
     def depth_april_average_ground_temperature(self):
-        """Get depth_april_average_ground_temperature."""
+        """Get depth_april_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_april_average_ground_temperature` or None if not set
+
+        """
         return self._depth_april_average_ground_temperature
 
     @depth_april_average_ground_temperature.setter
     def depth_april_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_april_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_april_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_april_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_april_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_april_average_ground_temperature`'.format(value))
 
         self._depth_april_average_ground_temperature = value
 
     @property
     def depth_may_average_ground_temperature(self):
-        """Get depth_may_average_ground_temperature."""
+        """Get depth_may_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_may_average_ground_temperature` or None if not set
+
+        """
         return self._depth_may_average_ground_temperature
 
     @depth_may_average_ground_temperature.setter
     def depth_may_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_may_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_may_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_may_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_may_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_may_average_ground_temperature`'.format(value))
 
         self._depth_may_average_ground_temperature = value
 
     @property
     def depth_june_average_ground_temperature(self):
-        """Get depth_june_average_ground_temperature."""
+        """Get depth_june_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_june_average_ground_temperature` or None if not set
+
+        """
         return self._depth_june_average_ground_temperature
 
     @depth_june_average_ground_temperature.setter
     def depth_june_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_june_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_june_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_june_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_june_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_june_average_ground_temperature`'.format(value))
 
         self._depth_june_average_ground_temperature = value
 
     @property
     def depth_july_average_ground_temperature(self):
-        """Get depth_july_average_ground_temperature."""
+        """Get depth_july_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_july_average_ground_temperature` or None if not set
+
+        """
         return self._depth_july_average_ground_temperature
 
     @depth_july_average_ground_temperature.setter
     def depth_july_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_july_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_july_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_july_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_july_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_july_average_ground_temperature`'.format(value))
 
         self._depth_july_average_ground_temperature = value
 
     @property
     def depth_august_average_ground_temperature(self):
-        """Get depth_august_average_ground_temperature."""
+        """Get depth_august_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_august_average_ground_temperature` or None if not set
+
+        """
         return self._depth_august_average_ground_temperature
 
     @depth_august_average_ground_temperature.setter
     def depth_august_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_august_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_august_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_august_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_august_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_august_average_ground_temperature`'.format(value))
 
         self._depth_august_average_ground_temperature = value
 
     @property
     def depth_september_average_ground_temperature(self):
-        """Get depth_september_average_ground_temperature."""
+        """Get depth_september_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_september_average_ground_temperature` or None if not set
+
+        """
         return self._depth_september_average_ground_temperature
 
     @depth_september_average_ground_temperature.setter
     def depth_september_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_september_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field
+        `depth_september_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_september_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_september_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_september_average_ground_temperature`'.format(value))
 
         self._depth_september_average_ground_temperature = value
 
     @property
     def depth_october_average_ground_temperature(self):
-        """Get depth_october_average_ground_temperature."""
+        """Get depth_october_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_october_average_ground_temperature` or None if not set
+
+        """
         return self._depth_october_average_ground_temperature
 
     @depth_october_average_ground_temperature.setter
     def depth_october_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_october_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_october_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_october_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_october_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_october_average_ground_temperature`'.format(value))
 
         self._depth_october_average_ground_temperature = value
 
     @property
     def depth_november_average_ground_temperature(self):
-        """Get depth_november_average_ground_temperature."""
+        """Get depth_november_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_november_average_ground_temperature` or None if not set
+
+        """
         return self._depth_november_average_ground_temperature
 
     @depth_november_average_ground_temperature.setter
     def depth_november_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_november_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_november_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_november_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_november_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_november_average_ground_temperature`'.format(value))
 
         self._depth_november_average_ground_temperature = value
 
     @property
     def depth_december_average_ground_temperature(self):
-        """Get depth_december_average_ground_temperature."""
+        """Get depth_december_average_ground_temperature.
+
+        Returns:
+            float: The value of `depth_december_average_ground_temperature` or None if not set
+
+        """
         return self._depth_december_average_ground_temperature
 
     @depth_december_average_ground_temperature.setter
     def depth_december_average_ground_temperature(self, value=None):
-        """  Corresponds to IDD Field `depth_december_average_ground_temperature`
-        Unit: C
+        """Corresponds to IDD Field `depth_december_average_ground_temperature`
+
+        Args:
+            value (float): value for IDD Field `depth_december_average_ground_temperature`
+                Unit: C
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field depth_december_average_ground_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `depth_december_average_ground_temperature`'.format(value))
 
         self._depth_december_average_ground_temperature = value
 
@@ -2929,11 +4175,21 @@ class GroundTemperatures(object):
 
     @property
     def ground_temperatures(self):
-        """Get ground_temperatures."""
+        """Get ground_temperatures.
+
+        Returns:
+            A list of GroundTemperature objects
+
+        """
         return self._ground_temperatures
 
     def add_ground_temperature(self, value):
-        """Add TypicalOrExtremePeriod."""
+        """Add ground_temperature.
+
+        Args:
+            GroundTemperature: New value to add to `ground_temperatures`
+
+        """
         self._ground_temperatures.append(value)
 
     def _to_str(self, value):
@@ -2980,35 +4236,63 @@ class Holiday(object):
 
     @property
     def holiday_name(self):
-        """Get holiday_name."""
+        """Get holiday_name.
+
+        Returns:
+            str: The value of `holiday_name` or None if not set
+
+        """
         return self._holiday_name
 
     @holiday_name.setter
     def holiday_name(self, value=None):
-        """Corresponds to IDD Field `holiday_name`"""
+        """Corresponds to IDD Field `holiday_name`
+
+        Args:
+            value (str): value for IDD Field `holiday_name`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type string for field holiday_name'.format(value))
+                raise ValueError('value {} need to be of type str '
+                                 'for field `holiday_name`'.format(value))
 
         self._holiday_name = value
 
     @property
     def holiday_day(self):
-        """Get holiday_day."""
+        """Get holiday_day.
+
+        Returns:
+            str: The value of `holiday_day` or None if not set
+
+        """
         return self._holiday_day
 
     @holiday_day.setter
     def holiday_day(self, value=None):
-        """Corresponds to IDD Field `holiday_day`"""
+        """Corresponds to IDD Field `holiday_day`
+
+        Args:
+            value (str): value for IDD Field `holiday_day`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type string for field holiday_day'.format(value))
+                raise ValueError('value {} need to be of type str '
+                                 'for field `holiday_day`'.format(value))
 
         self._holiday_day = value
 
@@ -3069,7 +4353,12 @@ class HolidaysOrDaylightSavings(object):
 
     @property
     def leapyear_observed(self):
-        """Get leapyear_observed."""
+        """Get leapyear_observed.
+
+        Returns:
+            str: The value of `leapyear_observed` or None if not set
+
+        """
         return self._leapyear_observed
 
     @leapyear_observed.setter
@@ -3078,9 +4367,52 @@ class HolidaysOrDaylightSavings(object):
         be observed for this file No if Leap Year days (29 Feb) should be
         ignored in this file.
 
-        Accepted values:
-          - Yes
-          - No
+        Args:
+            value (str): value for IDD Field `leapyear_observed`
+                Accepted values are:
+                      - Yes
+                      - No
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError('value {} need to be of type str '
+                                 'for field `leapyear_observed`'.format(value))
+            vals = set()
+            vals.add("Yes")
+            vals.add("No")
+            if value not in vals:
+                raise ValueError('value {} is not an accepted value for '
+                                 'field `leapyear_observed`'.format(value))
+
+        self._leapyear_observed = value
+
+    @property
+    def daylight_saving_start_day(self):
+        """Get daylight_saving_start_day.
+
+        Returns:
+            str: The value of `daylight_saving_start_day` or None if not set
+
+        """
+        return self._daylight_saving_start_day
+
+    @daylight_saving_start_day.setter
+    def daylight_saving_start_day(self, value=None):
+        """Corresponds to IDD Field `daylight_saving_start_day`
+
+        Args:
+            value (str): value for IDD Field `daylight_saving_start_day`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
@@ -3088,57 +4420,60 @@ class HolidaysOrDaylightSavings(object):
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field leapyear_observed'.format(value))
-            vals = set()
-            vals.add("Yes")
-            vals.add("No")
-            if value not in vals:
-                raise ValueError(
-                    'value {} is not an accepted value for field leapyear_observed'.format(value))
-
-        self._leapyear_observed = value
-
-    @property
-    def daylight_saving_start_day(self):
-        """Get daylight_saving_start_day."""
-        return self._daylight_saving_start_day
-
-    @daylight_saving_start_day.setter
-    def daylight_saving_start_day(self, value=None):
-        """Corresponds to IDD Field `daylight_saving_start_day`"""
-        if value is not None:
-            try:
-                value = str(value)
-            except:
-                raise ValueError(
-                    'value {} need to be of type string for field daylight_saving_start_day'.format(value))
+                    'value {} need to be of type str '
+                    'for field `daylight_saving_start_day`'.format(value))
 
         self._daylight_saving_start_day = value
 
     @property
     def daylight_saving_end_day(self):
-        """Get daylight_saving_end_day."""
+        """Get daylight_saving_end_day.
+
+        Returns:
+            str: The value of `daylight_saving_end_day` or None if not set
+
+        """
         return self._daylight_saving_end_day
 
     @daylight_saving_end_day.setter
     def daylight_saving_end_day(self, value=None):
-        """Corresponds to IDD Field `daylight_saving_end_day`"""
+        """Corresponds to IDD Field `daylight_saving_end_day`
+
+        Args:
+            value (str): value for IDD Field `daylight_saving_end_day`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field daylight_saving_end_day'.format(value))
+                    'value {} need to be of type str '
+                    'for field `daylight_saving_end_day`'.format(value))
 
         self._daylight_saving_end_day = value
 
     @property
     def holidays(self):
-        """Get holidays."""
+        """Get holidays.
+
+        Returns:
+            A list of Holiday objects
+
+        """
         return self._holidays
 
     def add_holiday(self, value):
-        """Add TypicalOrExtremePeriod."""
+        """Add holiday.
+
+        Args:
+            Holiday: New value to add to `holidays`
+
+        """
         self._holidays.append(value)
 
     def _to_str(self, value):
@@ -3182,18 +4517,32 @@ class Comments1(object):
 
     @property
     def comments_1(self):
-        """Get comments_1."""
+        """Get comments_1.
+
+        Returns:
+            str: The value of `comments_1` or None if not set
+
+        """
         return self._comments_1
 
     @comments_1.setter
     def comments_1(self, value=None):
-        """Corresponds to IDD Field `comments_1`"""
+        """Corresponds to IDD Field `comments_1`
+
+        Args:
+            value (str): value for IDD Field `comments_1`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type string for field comments_1'.format(value))
+                raise ValueError('value {} need to be of type str '
+                                 'for field `comments_1`'.format(value))
 
         self._comments_1 = value
 
@@ -3233,18 +4582,32 @@ class Comments2(object):
 
     @property
     def comments_2(self):
-        """Get comments_2."""
+        """Get comments_2.
+
+        Returns:
+            str: The value of `comments_2` or None if not set
+
+        """
         return self._comments_2
 
     @comments_2.setter
     def comments_2(self, value=None):
-        """Corresponds to IDD Field `comments_2`"""
+        """Corresponds to IDD Field `comments_2`
+
+        Args:
+            value (str): value for IDD Field `comments_2`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type string for field comments_2'.format(value))
+                raise ValueError('value {} need to be of type str '
+                                 'for field `comments_2`'.format(value))
 
         self._comments_2 = value
 
@@ -3308,55 +4671,56 @@ class DataPeriod(object):
 
     @property
     def number_of_records_per_hour(self):
-        """Get number_of_records_per_hour."""
+        """Get number_of_records_per_hour.
+
+        Returns:
+            int: The value of `number_of_records_per_hour` or None if not set
+
+        """
         return self._number_of_records_per_hour
 
     @number_of_records_per_hour.setter
     def number_of_records_per_hour(self, value=None):
-        """Corresponds to IDD Field `number_of_records_per_hour`"""
+        """Corresponds to IDD Field `number_of_records_per_hour`
+
+        Args:
+            value (int): value for IDD Field `number_of_records_per_hour`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type int for field number_of_records_per_hour'.format(value))
+                    'value {} need to be of type int '
+                    'for field `number_of_records_per_hour`'.format(value))
 
         self._number_of_records_per_hour = value
 
     @property
     def data_period_name_or_description(self):
-        """Get data_period_name_or_description."""
+        """Get data_period_name_or_description.
+
+        Returns:
+            str: The value of `data_period_name_or_description` or None if not set
+
+        """
         return self._data_period_name_or_description
 
     @data_period_name_or_description.setter
     def data_period_name_or_description(self, value=None):
-        """Corresponds to IDD Field `data_period_name_or_description`"""
-        if value is not None:
-            try:
-                value = str(value)
-            except:
-                raise ValueError(
-                    'value {} need to be of type string for field data_period_name_or_description'.format(value))
+        """Corresponds to IDD Field `data_period_name_or_description`
 
-        self._data_period_name_or_description = value
+        Args:
+            value (str): value for IDD Field `data_period_name_or_description`
+                 a `value` of None will not be checked against the specification
 
-    @property
-    def data_period_start_day_of_week(self):
-        """Get data_period_start_day_of_week."""
-        return self._data_period_start_day_of_week
-
-    @data_period_start_day_of_week.setter
-    def data_period_start_day_of_week(self, value=None):
-        """Corresponds to IDD Field `data_period_start_day_of_week`
-
-        Accepted values:
-          - Sunday
-          - Monday
-          - Tuesday
-          - Wednesday
-          - Thursday
-          - Friday
-          - Saturday
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
@@ -3364,7 +4728,48 @@ class DataPeriod(object):
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field data_period_start_day_of_week'.format(value))
+                    'value {} need to be of type str '
+                    'for field `data_period_name_or_description`'.format(value))
+
+        self._data_period_name_or_description = value
+
+    @property
+    def data_period_start_day_of_week(self):
+        """Get data_period_start_day_of_week.
+
+        Returns:
+            str: The value of `data_period_start_day_of_week` or None if not set
+
+        """
+        return self._data_period_start_day_of_week
+
+    @data_period_start_day_of_week.setter
+    def data_period_start_day_of_week(self, value=None):
+        """Corresponds to IDD Field `data_period_start_day_of_week`
+
+        Args:
+            value (str): value for IDD Field `data_period_start_day_of_week`
+                Accepted values are:
+                      - Sunday
+                      - Monday
+                      - Tuesday
+                      - Wednesday
+                      - Thursday
+                      - Friday
+                      - Saturday
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
+        if value is not None:
+            try:
+                value = str(value)
+            except:
+                raise ValueError(
+                    'value {} need to be of type str '
+                    'for field `data_period_start_day_of_week`'.format(value))
             vals = set()
             vals.add("Sunday")
             vals.add("Monday")
@@ -3375,41 +4780,72 @@ class DataPeriod(object):
             vals.add("Saturday")
             if value not in vals:
                 raise ValueError(
-                    'value {} is not an accepted value for field data_period_start_day_of_week'.format(value))
+                    'value {} is not an accepted value for '
+                    'field `data_period_start_day_of_week`'.format(value))
 
         self._data_period_start_day_of_week = value
 
     @property
     def data_period_start_day(self):
-        """Get data_period_start_day."""
+        """Get data_period_start_day.
+
+        Returns:
+            str: The value of `data_period_start_day` or None if not set
+
+        """
         return self._data_period_start_day
 
     @data_period_start_day.setter
     def data_period_start_day(self, value=None):
-        """Corresponds to IDD Field `data_period_start_day`"""
+        """Corresponds to IDD Field `data_period_start_day`
+
+        Args:
+            value (str): value for IDD Field `data_period_start_day`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field data_period_start_day'.format(value))
+                    'value {} need to be of type str '
+                    'for field `data_period_start_day`'.format(value))
 
         self._data_period_start_day = value
 
     @property
     def data_period_end_day(self):
-        """Get data_period_end_day."""
+        """Get data_period_end_day.
+
+        Returns:
+            str: The value of `data_period_end_day` or None if not set
+
+        """
         return self._data_period_end_day
 
     @data_period_end_day.setter
     def data_period_end_day(self, value=None):
-        """Corresponds to IDD Field `data_period_end_day`"""
+        """Corresponds to IDD Field `data_period_end_day`
+
+        Args:
+            value (str): value for IDD Field `data_period_end_day`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field data_period_end_day'.format(value))
+                    'value {} need to be of type str '
+                    'for field `data_period_end_day`'.format(value))
 
         self._data_period_end_day = value
 
@@ -3455,11 +4891,21 @@ class DataPeriods(object):
 
     @property
     def data_periods(self):
-        """Get data_periods."""
+        """Get data_periods.
+
+        Returns:
+            A list of DataPeriod objects
+
+        """
         return self._data_periods
 
     def add_data_period(self, value):
-        """Add TypicalOrExtremePeriod."""
+        """Add data_period.
+
+        Args:
+            DataPeriod: New value to add to `data_periods`
+
+        """
         self._data_periods.append(value)
 
     def _to_str(self, value):
@@ -3704,135 +5150,214 @@ class WeatherData(object):
 
     @property
     def year(self):
-        """Get year."""
+        """Get year.
+
+        Returns:
+            int: The value of `year` or None if not set
+
+        """
         return self._year
 
     @year.setter
     def year(self, value=None):
-        """Corresponds to IDD Field `year`"""
+        """Corresponds to IDD Field `year`
+
+        Args:
+            value (int): value for IDD Field `year`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = int(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type int for field year'.format(value))
+                raise ValueError('value {} need to be of type int '
+                                 'for field `year`'.format(value))
 
         self._year = value
 
     @property
     def month(self):
-        """Get month."""
+        """Get month.
+
+        Returns:
+            int: The value of `month` or None if not set
+
+        """
         return self._month
 
     @month.setter
     def month(self, value=None):
-        """  Corresponds to IDD Field `month`
-        value >= 1
-        value <= 12
+        """Corresponds to IDD Field `month`
+
+        Args:
+            value (int): value for IDD Field `month`
+                value >= 1
+                value <= 12
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = int(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type int for field month'.format(value))
+                raise ValueError('value {} need to be of type int '
+                                 'for field `month`'.format(value))
             if value < 1:
-                raise ValueError(
-                    'value need to be greater or equal 1 for field month')
+                raise ValueError('value need to be greater or equal 1 '
+                                 'for field `month`')
             if value > 12:
-                raise ValueError('value need to be smaller 12 for field month')
+                raise ValueError('value need to be smaller 12 '
+                                 'for field `month`')
 
         self._month = value
 
     @property
     def day(self):
-        """Get day."""
+        """Get day.
+
+        Returns:
+            int: The value of `day` or None if not set
+
+        """
         return self._day
 
     @day.setter
     def day(self, value=None):
-        """  Corresponds to IDD Field `day`
-        value >= 1
-        value <= 31
+        """Corresponds to IDD Field `day`
+
+        Args:
+            value (int): value for IDD Field `day`
+                value >= 1
+                value <= 31
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = int(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type int for field day'.format(value))
+                raise ValueError('value {} need to be of type int '
+                                 'for field `day`'.format(value))
             if value < 1:
-                raise ValueError(
-                    'value need to be greater or equal 1 for field day')
+                raise ValueError('value need to be greater or equal 1 '
+                                 'for field `day`')
             if value > 31:
-                raise ValueError('value need to be smaller 31 for field day')
+                raise ValueError('value need to be smaller 31 '
+                                 'for field `day`')
 
         self._day = value
 
     @property
     def hour(self):
-        """Get hour."""
+        """Get hour.
+
+        Returns:
+            int: The value of `hour` or None if not set
+
+        """
         return self._hour
 
     @hour.setter
     def hour(self, value=None):
-        """  Corresponds to IDD Field `hour`
-        value >= 1
-        value <= 24
+        """Corresponds to IDD Field `hour`
+
+        Args:
+            value (int): value for IDD Field `hour`
+                value >= 1
+                value <= 24
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = int(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type int for field hour'.format(value))
+                raise ValueError('value {} need to be of type int '
+                                 'for field `hour`'.format(value))
             if value < 1:
-                raise ValueError(
-                    'value need to be greater or equal 1 for field hour')
+                raise ValueError('value need to be greater or equal 1 '
+                                 'for field `hour`')
             if value > 24:
-                raise ValueError('value need to be smaller 24 for field hour')
+                raise ValueError('value need to be smaller 24 '
+                                 'for field `hour`')
 
         self._hour = value
 
     @property
     def minute(self):
-        """Get minute."""
+        """Get minute.
+
+        Returns:
+            int: The value of `minute` or None if not set
+
+        """
         return self._minute
 
     @minute.setter
     def minute(self, value=None):
-        """  Corresponds to IDD Field `minute`
-        value >= 0
-        value <= 60
+        """Corresponds to IDD Field `minute`
+
+        Args:
+            value (int): value for IDD Field `minute`
+                value >= 0
+                value <= 60
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = int(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type int for field minute'.format(value))
+                raise ValueError('value {} need to be of type int '
+                                 'for field `minute`'.format(value))
             if value < 0:
-                raise ValueError(
-                    'value need to be greater or equal 0 for field minute')
+                raise ValueError('value need to be greater or equal 0 '
+                                 'for field `minute`')
             if value > 60:
-                raise ValueError(
-                    'value need to be smaller 60 for field minute')
+                raise ValueError('value need to be smaller 60 '
+                                 'for field `minute`')
 
         self._minute = value
 
     @property
     def data_source_and_uncertainty_flags(self):
-        """Get data_source_and_uncertainty_flags."""
+        """Get data_source_and_uncertainty_flags.
+
+        Returns:
+            str: The value of `data_source_and_uncertainty_flags` or None if not set
+
+        """
         return self._data_source_and_uncertainty_flags
 
     @data_source_and_uncertainty_flags.setter
     def data_source_and_uncertainty_flags(self, value=None):
         """Corresponds to IDD Field `data_source_and_uncertainty_flags` Initial
         day of weather file is checked by EnergyPlus for validity (as shown
-        below) Each field is checked for "missing" as shown below.
+        below) Each field is checked for "missing" as shown below. Reasonable
+        values, calculated values or the last "good" value is substituted.
 
-        Reasonable values, calculated values or the last "good" value is
-        substituted.
+        Args:
+            value (str): value for IDD Field `data_source_and_uncertainty_flags`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
@@ -3840,550 +5365,825 @@ class WeatherData(object):
                 value = str(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type string for field data_source_and_uncertainty_flags'.format(value))
+                    'value {} need to be of type str '
+                    'for field `data_source_and_uncertainty_flags`'.format(value))
 
         self._data_source_and_uncertainty_flags = value
 
     @property
     def dry_bulb_temperature(self):
-        """Get dry_bulb_temperature."""
+        """Get dry_bulb_temperature.
+
+        Returns:
+            float: The value of `dry_bulb_temperature` or None if not set
+
+        """
         return self._dry_bulb_temperature
 
     @dry_bulb_temperature.setter
     def dry_bulb_temperature(self, value=99.9):
-        """  Corresponds to IDD Field `dry_bulb_temperature`
-        Unit: C
-        value > -70.0
-        value < 70.0
-        Missing value: 99.9
+        """Corresponds to IDD Field `dry_bulb_temperature`
+
+        Args:
+            value (float): value for IDD Field `dry_bulb_temperature`
+                Unit: C
+                value > -70.0
+                value < 70.0
+                Missing value: 99.9
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field dry_bulb_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `dry_bulb_temperature`'.format(value))
             if value <= -70.0:
-                raise ValueError(
-                    'value need to be greater -70.0 for field dry_bulb_temperature')
+                raise ValueError('value need to be greater -70.0 '
+                                 'for field `dry_bulb_temperature`')
             if value >= 70.0:
-                raise ValueError(
-                    'value need to be smaller 70.0 for field dry_bulb_temperature')
+                raise ValueError('value need to be smaller 70.0 '
+                                 'for field `dry_bulb_temperature`')
 
         self._dry_bulb_temperature = value
 
     @property
     def dew_point_temperature(self):
-        """Get dew_point_temperature."""
+        """Get dew_point_temperature.
+
+        Returns:
+            float: The value of `dew_point_temperature` or None if not set
+
+        """
         return self._dew_point_temperature
 
     @dew_point_temperature.setter
     def dew_point_temperature(self, value=99.9):
-        """  Corresponds to IDD Field `dew_point_temperature`
-        Unit: C
-        value > -70.0
-        value < 70.0
-        Missing value: 99.9
+        """Corresponds to IDD Field `dew_point_temperature`
+
+        Args:
+            value (float): value for IDD Field `dew_point_temperature`
+                Unit: C
+                value > -70.0
+                value < 70.0
+                Missing value: 99.9
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field dew_point_temperature'.format(value))
+                    'value {} need to be of type float '
+                    'for field `dew_point_temperature`'.format(value))
             if value <= -70.0:
-                raise ValueError(
-                    'value need to be greater -70.0 for field dew_point_temperature')
+                raise ValueError('value need to be greater -70.0 '
+                                 'for field `dew_point_temperature`')
             if value >= 70.0:
-                raise ValueError(
-                    'value need to be smaller 70.0 for field dew_point_temperature')
+                raise ValueError('value need to be smaller 70.0 '
+                                 'for field `dew_point_temperature`')
 
         self._dew_point_temperature = value
 
     @property
     def relative_humidity(self):
-        """Get relative_humidity."""
+        """Get relative_humidity.
+
+        Returns:
+            int: The value of `relative_humidity` or None if not set
+
+        """
         return self._relative_humidity
 
     @relative_humidity.setter
     def relative_humidity(self, value=999):
-        """  Corresponds to IDD Field `relative_humidity`
-        value >= 0
-        value <= 110
-        Missing value: 999
+        """Corresponds to IDD Field `relative_humidity`
+
+        Args:
+            value (int): value for IDD Field `relative_humidity`
+                value >= 0
+                value <= 110
+                Missing value: 999
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = int(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type int for field relative_humidity'.format(value))
+                raise ValueError('value {} need to be of type int '
+                                 'for field `relative_humidity`'.format(value))
             if value < 0:
-                raise ValueError(
-                    'value need to be greater or equal 0 for field relative_humidity')
+                raise ValueError('value need to be greater or equal 0 '
+                                 'for field `relative_humidity`')
             if value > 110:
-                raise ValueError(
-                    'value need to be smaller 110 for field relative_humidity')
+                raise ValueError('value need to be smaller 110 '
+                                 'for field `relative_humidity`')
 
         self._relative_humidity = value
 
     @property
     def atmospheric_station_pressure(self):
-        """Get atmospheric_station_pressure."""
+        """Get atmospheric_station_pressure.
+
+        Returns:
+            int: The value of `atmospheric_station_pressure` or None if not set
+
+        """
         return self._atmospheric_station_pressure
 
     @atmospheric_station_pressure.setter
     def atmospheric_station_pressure(self, value=999999):
-        """  Corresponds to IDD Field `atmospheric_station_pressure`
-        Unit: Pa
-        value > 31000
-        value < 120000
-        Missing value: 999999
+        """Corresponds to IDD Field `atmospheric_station_pressure`
+
+        Args:
+            value (int): value for IDD Field `atmospheric_station_pressure`
+                Unit: Pa
+                value > 31000
+                value < 120000
+                Missing value: 999999
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type int for field atmospheric_station_pressure'.format(value))
+                    'value {} need to be of type int '
+                    'for field `atmospheric_station_pressure`'.format(value))
             if value <= 31000:
-                raise ValueError(
-                    'value need to be greater 31000 for field atmospheric_station_pressure')
+                raise ValueError('value need to be greater 31000 '
+                                 'for field `atmospheric_station_pressure`')
             if value >= 120000:
-                raise ValueError(
-                    'value need to be smaller 120000 for field atmospheric_station_pressure')
+                raise ValueError('value need to be smaller 120000 '
+                                 'for field `atmospheric_station_pressure`')
 
         self._atmospheric_station_pressure = value
 
     @property
     def extraterrestrial_horizontal_radiation(self):
-        """Get extraterrestrial_horizontal_radiation."""
+        """Get extraterrestrial_horizontal_radiation.
+
+        Returns:
+            float: The value of `extraterrestrial_horizontal_radiation` or None if not set
+
+        """
         return self._extraterrestrial_horizontal_radiation
 
     @extraterrestrial_horizontal_radiation.setter
     def extraterrestrial_horizontal_radiation(self, value=9999.0):
-        """  Corresponds to IDD Field `extraterrestrial_horizontal_radiation`
-        Unit: Wh/m2
-        value >= 0.0
-        Missing value: 9999.0
+        """Corresponds to IDD Field `extraterrestrial_horizontal_radiation`
+
+        Args:
+            value (float): value for IDD Field `extraterrestrial_horizontal_radiation`
+                Unit: Wh/m2
+                value >= 0.0
+                Missing value: 9999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field extraterrestrial_horizontal_radiation'.format(value))
+                    'value {} need to be of type float '
+                    'for field `extraterrestrial_horizontal_radiation`'.format(value))
             if value < 0.0:
                 raise ValueError(
-                    'value need to be greater or equal 0.0 for field extraterrestrial_horizontal_radiation')
+                    'value need to be greater or equal 0.0 '
+                    'for field `extraterrestrial_horizontal_radiation`')
 
         self._extraterrestrial_horizontal_radiation = value
 
     @property
     def extraterrestrial_direct_normal_radiation(self):
-        """Get extraterrestrial_direct_normal_radiation."""
+        """Get extraterrestrial_direct_normal_radiation.
+
+        Returns:
+            float: The value of `extraterrestrial_direct_normal_radiation` or None if not set
+
+        """
         return self._extraterrestrial_direct_normal_radiation
 
     @extraterrestrial_direct_normal_radiation.setter
     def extraterrestrial_direct_normal_radiation(self, value=9999.0):
-        """  Corresponds to IDD Field `extraterrestrial_direct_normal_radiation`
-        Unit: Wh/m2
-        value >= 0.0
-        Missing value: 9999.0
+        """Corresponds to IDD Field `extraterrestrial_direct_normal_radiation`
+
+        Args:
+            value (float): value for IDD Field `extraterrestrial_direct_normal_radiation`
+                Unit: Wh/m2
+                value >= 0.0
+                Missing value: 9999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field extraterrestrial_direct_normal_radiation'.format(value))
+                    'value {} need to be of type float '
+                    'for field `extraterrestrial_direct_normal_radiation`'.format(value))
             if value < 0.0:
                 raise ValueError(
-                    'value need to be greater or equal 0.0 for field extraterrestrial_direct_normal_radiation')
+                    'value need to be greater or equal 0.0 '
+                    'for field `extraterrestrial_direct_normal_radiation`')
 
         self._extraterrestrial_direct_normal_radiation = value
 
     @property
     def horizontal_infrared_radiation_intensity(self):
-        """Get horizontal_infrared_radiation_intensity."""
+        """Get horizontal_infrared_radiation_intensity.
+
+        Returns:
+            float: The value of `horizontal_infrared_radiation_intensity` or None if not set
+
+        """
         return self._horizontal_infrared_radiation_intensity
 
     @horizontal_infrared_radiation_intensity.setter
     def horizontal_infrared_radiation_intensity(self, value=9999.0):
-        """  Corresponds to IDD Field `horizontal_infrared_radiation_intensity`
-        Unit: Wh/m2
-        value >= 0.0
-        Missing value: 9999.0
+        """Corresponds to IDD Field `horizontal_infrared_radiation_intensity`
+
+        Args:
+            value (float): value for IDD Field `horizontal_infrared_radiation_intensity`
+                Unit: Wh/m2
+                value >= 0.0
+                Missing value: 9999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field horizontal_infrared_radiation_intensity'.format(value))
+                    'value {} need to be of type float '
+                    'for field `horizontal_infrared_radiation_intensity`'.format(value))
             if value < 0.0:
                 raise ValueError(
-                    'value need to be greater or equal 0.0 for field horizontal_infrared_radiation_intensity')
+                    'value need to be greater or equal 0.0 '
+                    'for field `horizontal_infrared_radiation_intensity`')
 
         self._horizontal_infrared_radiation_intensity = value
 
     @property
     def global_horizontal_radiation(self):
-        """Get global_horizontal_radiation."""
+        """Get global_horizontal_radiation.
+
+        Returns:
+            float: The value of `global_horizontal_radiation` or None if not set
+
+        """
         return self._global_horizontal_radiation
 
     @global_horizontal_radiation.setter
     def global_horizontal_radiation(self, value=9999.0):
-        """  Corresponds to IDD Field `global_horizontal_radiation`
-        Unit: Wh/m2
-        value >= 0.0
-        Missing value: 9999.0
+        """Corresponds to IDD Field `global_horizontal_radiation`
+
+        Args:
+            value (float): value for IDD Field `global_horizontal_radiation`
+                Unit: Wh/m2
+                value >= 0.0
+                Missing value: 9999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field global_horizontal_radiation'.format(value))
+                    'value {} need to be of type float '
+                    'for field `global_horizontal_radiation`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field global_horizontal_radiation')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `global_horizontal_radiation`')
 
         self._global_horizontal_radiation = value
 
     @property
     def direct_normal_radiation(self):
-        """Get direct_normal_radiation."""
+        """Get direct_normal_radiation.
+
+        Returns:
+            float: The value of `direct_normal_radiation` or None if not set
+
+        """
         return self._direct_normal_radiation
 
     @direct_normal_radiation.setter
     def direct_normal_radiation(self, value=9999.0):
-        """  Corresponds to IDD Field `direct_normal_radiation`
-        Unit: Wh/m2
-        value >= 0.0
-        Missing value: 9999.0
+        """Corresponds to IDD Field `direct_normal_radiation`
+
+        Args:
+            value (float): value for IDD Field `direct_normal_radiation`
+                Unit: Wh/m2
+                value >= 0.0
+                Missing value: 9999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field direct_normal_radiation'.format(value))
+                    'value {} need to be of type float '
+                    'for field `direct_normal_radiation`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field direct_normal_radiation')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `direct_normal_radiation`')
 
         self._direct_normal_radiation = value
 
     @property
     def diffuse_horizontal_radiation(self):
-        """Get diffuse_horizontal_radiation."""
+        """Get diffuse_horizontal_radiation.
+
+        Returns:
+            float: The value of `diffuse_horizontal_radiation` or None if not set
+
+        """
         return self._diffuse_horizontal_radiation
 
     @diffuse_horizontal_radiation.setter
     def diffuse_horizontal_radiation(self, value=9999.0):
-        """  Corresponds to IDD Field `diffuse_horizontal_radiation`
-        Unit: Wh/m2
-        value >= 0.0
-        Missing value: 9999.0
+        """Corresponds to IDD Field `diffuse_horizontal_radiation`
+
+        Args:
+            value (float): value for IDD Field `diffuse_horizontal_radiation`
+                Unit: Wh/m2
+                value >= 0.0
+                Missing value: 9999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field diffuse_horizontal_radiation'.format(value))
+                    'value {} need to be of type float '
+                    'for field `diffuse_horizontal_radiation`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field diffuse_horizontal_radiation')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `diffuse_horizontal_radiation`')
 
         self._diffuse_horizontal_radiation = value
 
     @property
     def global_horizontal_illuminance(self):
-        """Get global_horizontal_illuminance."""
+        """Get global_horizontal_illuminance.
+
+        Returns:
+            float: The value of `global_horizontal_illuminance` or None if not set
+
+        """
         return self._global_horizontal_illuminance
 
     @global_horizontal_illuminance.setter
     def global_horizontal_illuminance(self, value=999999.0):
         """  Corresponds to IDD Field `global_horizontal_illuminance`
         will be missing if >= 999900
-        Unit: lux
-        value >= 0.0
-        Missing value: 999999.0
+
+        Args:
+            value (float): value for IDD Field `global_horizontal_illuminance`
+                Unit: lux
+                value >= 0.0
+                Missing value: 999999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field global_horizontal_illuminance'.format(value))
+                    'value {} need to be of type float '
+                    'for field `global_horizontal_illuminance`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field global_horizontal_illuminance')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `global_horizontal_illuminance`')
 
         self._global_horizontal_illuminance = value
 
     @property
     def direct_normal_illuminance(self):
-        """Get direct_normal_illuminance."""
+        """Get direct_normal_illuminance.
+
+        Returns:
+            float: The value of `direct_normal_illuminance` or None if not set
+
+        """
         return self._direct_normal_illuminance
 
     @direct_normal_illuminance.setter
     def direct_normal_illuminance(self, value=999999.0):
         """  Corresponds to IDD Field `direct_normal_illuminance`
         will be missing if >= 999900
-        Unit: lux
-        value >= 0.0
-        Missing value: 999999.0
+
+        Args:
+            value (float): value for IDD Field `direct_normal_illuminance`
+                Unit: lux
+                value >= 0.0
+                Missing value: 999999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field direct_normal_illuminance'.format(value))
+                    'value {} need to be of type float '
+                    'for field `direct_normal_illuminance`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field direct_normal_illuminance')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `direct_normal_illuminance`')
 
         self._direct_normal_illuminance = value
 
     @property
     def diffuse_horizontal_illuminance(self):
-        """Get diffuse_horizontal_illuminance."""
+        """Get diffuse_horizontal_illuminance.
+
+        Returns:
+            float: The value of `diffuse_horizontal_illuminance` or None if not set
+
+        """
         return self._diffuse_horizontal_illuminance
 
     @diffuse_horizontal_illuminance.setter
     def diffuse_horizontal_illuminance(self, value=999999.0):
         """  Corresponds to IDD Field `diffuse_horizontal_illuminance`
         will be missing if >= 999900
-        Unit: lux
-        value >= 0.0
-        Missing value: 999999.0
+
+        Args:
+            value (float): value for IDD Field `diffuse_horizontal_illuminance`
+                Unit: lux
+                value >= 0.0
+                Missing value: 999999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field diffuse_horizontal_illuminance'.format(value))
+                    'value {} need to be of type float '
+                    'for field `diffuse_horizontal_illuminance`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field diffuse_horizontal_illuminance')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `diffuse_horizontal_illuminance`')
 
         self._diffuse_horizontal_illuminance = value
 
     @property
     def zenith_luminance(self):
-        """Get zenith_luminance."""
+        """Get zenith_luminance.
+
+        Returns:
+            float: The value of `zenith_luminance` or None if not set
+
+        """
         return self._zenith_luminance
 
     @zenith_luminance.setter
     def zenith_luminance(self, value=9999.0):
         """  Corresponds to IDD Field `zenith_luminance`
         will be missing if >= 9999
-        Unit: Cd/m2
-        value >= 0.0
-        Missing value: 9999.0
+
+        Args:
+            value (float): value for IDD Field `zenith_luminance`
+                Unit: Cd/m2
+                value >= 0.0
+                Missing value: 9999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field zenith_luminance'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `zenith_luminance`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field zenith_luminance')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `zenith_luminance`')
 
         self._zenith_luminance = value
 
     @property
     def wind_direction(self):
-        """Get wind_direction."""
+        """Get wind_direction.
+
+        Returns:
+            float: The value of `wind_direction` or None if not set
+
+        """
         return self._wind_direction
 
     @wind_direction.setter
     def wind_direction(self, value=999.0):
-        """  Corresponds to IDD Field `wind_direction`
-        Unit: degrees
-        value >= 0.0
-        value <= 360.0
-        Missing value: 999.0
+        """Corresponds to IDD Field `wind_direction`
+
+        Args:
+            value (float): value for IDD Field `wind_direction`
+                Unit: degrees
+                value >= 0.0
+                value <= 360.0
+                Missing value: 999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wind_direction'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wind_direction`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field wind_direction')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `wind_direction`')
             if value > 360.0:
-                raise ValueError(
-                    'value need to be smaller 360.0 for field wind_direction')
+                raise ValueError('value need to be smaller 360.0 '
+                                 'for field `wind_direction`')
 
         self._wind_direction = value
 
     @property
     def wind_speed(self):
-        """Get wind_speed."""
+        """Get wind_speed.
+
+        Returns:
+            float: The value of `wind_speed` or None if not set
+
+        """
         return self._wind_speed
 
     @wind_speed.setter
     def wind_speed(self, value=999.0):
-        """  Corresponds to IDD Field `wind_speed`
-        Unit: m/s
-        value >= 0.0
-        value <= 40.0
-        Missing value: 999.0
+        """Corresponds to IDD Field `wind_speed`
+
+        Args:
+            value (float): value for IDD Field `wind_speed`
+                Unit: m/s
+                value >= 0.0
+                value <= 40.0
+                Missing value: 999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field wind_speed'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `wind_speed`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field wind_speed')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `wind_speed`')
             if value > 40.0:
-                raise ValueError(
-                    'value need to be smaller 40.0 for field wind_speed')
+                raise ValueError('value need to be smaller 40.0 '
+                                 'for field `wind_speed`')
 
         self._wind_speed = value
 
     @property
     def total_sky_cover(self):
-        """Get total_sky_cover."""
+        """Get total_sky_cover.
+
+        Returns:
+            float: The value of `total_sky_cover` or None if not set
+
+        """
         return self._total_sky_cover
 
     @total_sky_cover.setter
     def total_sky_cover(self, value=99.0):
         """Corresponds to IDD Field `total_sky_cover` This is the value for
-        total sky cover (tenths of coverage).
+        total sky cover (tenths of coverage). (i.e. 1 is 1/10 covered. 10 is
+        total coverage). (Amount of sky dome in tenths covered by clouds or
+        obscuring phenomena at the  hour indicated at the time indicated.)
 
-        (i.e. 1 is 1/10 covered. 10 is total coverage).
-        (Amount of sky dome in tenths covered by clouds or obscuring phenomena at the  hour indicated at the time indicated.)
-        value >= 0.0
-        value <= 10.0
-        Missing value: 99.0
+        Args:
+            value (float): value for IDD Field `total_sky_cover`
+                value >= 0.0
+                value <= 10.0
+                Missing value: 99.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field total_sky_cover'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `total_sky_cover`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field total_sky_cover')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `total_sky_cover`')
             if value > 10.0:
-                raise ValueError(
-                    'value need to be smaller 10.0 for field total_sky_cover')
+                raise ValueError('value need to be smaller 10.0 '
+                                 'for field `total_sky_cover`')
 
         self._total_sky_cover = value
 
     @property
     def opaque_sky_cover(self):
-        """Get opaque_sky_cover."""
+        """Get opaque_sky_cover.
+
+        Returns:
+            float: The value of `opaque_sky_cover` or None if not set
+
+        """
         return self._opaque_sky_cover
 
     @opaque_sky_cover.setter
     def opaque_sky_cover(self, value=99.0):
         """Corresponds to IDD Field `opaque_sky_cover` This is the value for
-        opaque sky cover (tenths of coverage).
+        opaque sky cover (tenths of coverage). (i.e. 1 is 1/10 covered. 10 is
+        total  coverage). (Amount of sky dome in tenths covered by clouds or
+        obscuring phenomena that  prevent observing the sky or higher cloud
+        layers at the time indicated.) This is not used unless the field for
+        Horizontal Infrared Radiation Intensity is missing and then it is used
+        to  calculate Horizontal Infrared Radiation Intensity.
 
-        (i.e. 1 is 1/10 covered. 10 is total  coverage).
-        (Amount of sky dome in tenths covered by clouds or obscuring phenomena that  prevent observing the sky or higher cloud layers at the time indicated.)
-        This is not used unless the field for Horizontal Infrared Radiation Intensity is missing and then it is used to  calculate Horizontal Infrared Radiation Intensity
-        value >= 0.0
-        value <= 10.0
-        Missing value: 99.0
+        Args:
+            value (float): value for IDD Field `opaque_sky_cover`
+                value >= 0.0
+                value <= 10.0
+                Missing value: 99.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field opaque_sky_cover'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `opaque_sky_cover`'.format(value))
             if value < 0.0:
-                raise ValueError(
-                    'value need to be greater or equal 0.0 for field opaque_sky_cover')
+                raise ValueError('value need to be greater or equal 0.0 '
+                                 'for field `opaque_sky_cover`')
             if value > 10.0:
-                raise ValueError(
-                    'value need to be smaller 10.0 for field opaque_sky_cover')
+                raise ValueError('value need to be smaller 10.0 '
+                                 'for field `opaque_sky_cover`')
 
         self._opaque_sky_cover = value
 
     @property
     def visibility(self):
-        """Get visibility."""
+        """Get visibility.
+
+        Returns:
+            float: The value of `visibility` or None if not set
+
+        """
         return self._visibility
 
     @visibility.setter
     def visibility(self, value=9999.0):
         """Corresponds to IDD Field `visibility` This is the value for
-        visibility in km.
+        visibility in km. (Horizontal visibility at the time indicated.)
 
-        (Horizontal visibility at the time indicated.)
-        Unit: km
-        Missing value: 9999.0
+        Args:
+            value (float): value for IDD Field `visibility`
+                Unit: km
+                Missing value: 9999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field visibility'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `visibility`'.format(value))
 
         self._visibility = value
 
     @property
     def ceiling_height(self):
-        """Get ceiling_height."""
+        """Get ceiling_height.
+
+        Returns:
+            float: The value of `ceiling_height` or None if not set
+
+        """
         return self._ceiling_height
 
     @ceiling_height.setter
     def ceiling_height(self, value=99999.0):
         """Corresponds to IDD Field `ceiling_height` This is the value for
-        ceiling height in m.
+        ceiling height in m. (77777 is unlimited ceiling height. 88888 is
+        cirroform ceiling.) It is not currently used in EnergyPlus
+        calculations.
 
-        (77777 is unlimited ceiling height. 88888 is cirroform ceiling.) It is not currently used in EnergyPlus calculations.
-        Unit: m
-        Missing value: 99999.0
+        Args:
+            value (float): value for IDD Field `ceiling_height`
+                Unit: m
+                Missing value: 99999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field ceiling_height'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `ceiling_height`'.format(value))
 
         self._ceiling_height = value
 
     @property
     def present_weather_observation(self):
-        """Get present_weather_observation."""
+        """Get present_weather_observation.
+
+        Returns:
+            int: The value of `present_weather_observation` or None if not set
+
+        """
         return self._present_weather_observation
 
     @present_weather_observation.setter
     def present_weather_observation(self, value=None):
         """Corresponds to IDD Field `present_weather_observation` If the value
         of the field is 0, then the observed weather codes are taken from the
-        following field.
+        following field. If the value of the field is 9, then "missing" weather
+        is assumed. Since the primary use of these fields (Present Weather
+        Observation and Present Weather Codes) is for rain/wet surfaces, a
+        missing observation field or a missing weather code implies "no rain".
 
-        If the value of the field is 9, then "missing" weather is
-        assumed. Since the primary use of these fields (Present Weather
-        Observation and Present Weather Codes) is for rain/wet surfaces,
-        a missing observation field or a missing weather code implies
-        "no rain".
+        Args:
+            value (int): value for IDD Field `present_weather_observation`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
 
         """
         if value is not None:
@@ -4391,162 +6191,274 @@ class WeatherData(object):
                 value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type int for field present_weather_observation'.format(value))
+                    'value {} need to be of type int '
+                    'for field `present_weather_observation`'.format(value))
 
         self._present_weather_observation = value
 
     @property
     def present_weather_codes(self):
-        """Get present_weather_codes."""
+        """Get present_weather_codes.
+
+        Returns:
+            int: The value of `present_weather_codes` or None if not set
+
+        """
         return self._present_weather_codes
 
     @present_weather_codes.setter
     def present_weather_codes(self, value=None):
-        """Corresponds to IDD Field `present_weather_codes`"""
+        """Corresponds to IDD Field `present_weather_codes`
+
+        Args:
+            value (int): value for IDD Field `present_weather_codes`
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
+        """
         if value is not None:
             try:
                 value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type int for field present_weather_codes'.format(value))
+                    'value {} need to be of type int '
+                    'for field `present_weather_codes`'.format(value))
 
         self._present_weather_codes = value
 
     @property
     def precipitable_water(self):
-        """Get precipitable_water."""
+        """Get precipitable_water.
+
+        Returns:
+            float: The value of `precipitable_water` or None if not set
+
+        """
         return self._precipitable_water
 
     @precipitable_water.setter
     def precipitable_water(self, value=999.0):
-        """  Corresponds to IDD Field `precipitable_water`
-        Unit: mm
-        Missing value: 999.0
+        """Corresponds to IDD Field `precipitable_water`
+
+        Args:
+            value (float): value for IDD Field `precipitable_water`
+                Unit: mm
+                Missing value: 999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field precipitable_water'.format(value))
+                    'value {} need to be of type float '
+                    'for field `precipitable_water`'.format(value))
 
         self._precipitable_water = value
 
     @property
     def aerosol_optical_depth(self):
-        """Get aerosol_optical_depth."""
+        """Get aerosol_optical_depth.
+
+        Returns:
+            float: The value of `aerosol_optical_depth` or None if not set
+
+        """
         return self._aerosol_optical_depth
 
     @aerosol_optical_depth.setter
     def aerosol_optical_depth(self, value=0.999):
-        """  Corresponds to IDD Field `aerosol_optical_depth`
-        Unit: thousandths
-        Missing value: 0.999
+        """Corresponds to IDD Field `aerosol_optical_depth`
+
+        Args:
+            value (float): value for IDD Field `aerosol_optical_depth`
+                Unit: thousandths
+                Missing value: 0.999
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field aerosol_optical_depth'.format(value))
+                    'value {} need to be of type float '
+                    'for field `aerosol_optical_depth`'.format(value))
 
         self._aerosol_optical_depth = value
 
     @property
     def snow_depth(self):
-        """Get snow_depth."""
+        """Get snow_depth.
+
+        Returns:
+            float: The value of `snow_depth` or None if not set
+
+        """
         return self._snow_depth
 
     @snow_depth.setter
     def snow_depth(self, value=999.0):
-        """  Corresponds to IDD Field `snow_depth`
-        Unit: cm
-        Missing value: 999.0
+        """Corresponds to IDD Field `snow_depth`
+
+        Args:
+            value (float): value for IDD Field `snow_depth`
+                Unit: cm
+                Missing value: 999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field snow_depth'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `snow_depth`'.format(value))
 
         self._snow_depth = value
 
     @property
     def days_since_last_snowfall(self):
-        """Get days_since_last_snowfall."""
+        """Get days_since_last_snowfall.
+
+        Returns:
+            int: The value of `days_since_last_snowfall` or None if not set
+
+        """
         return self._days_since_last_snowfall
 
     @days_since_last_snowfall.setter
     def days_since_last_snowfall(self, value=99):
-        """  Corresponds to IDD Field `days_since_last_snowfall`
-        Missing value: 99
+        """Corresponds to IDD Field `days_since_last_snowfall`
+
+        Args:
+            value (int): value for IDD Field `days_since_last_snowfall`
+                Missing value: 99
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = int(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type int for field days_since_last_snowfall'.format(value))
+                    'value {} need to be of type int '
+                    'for field `days_since_last_snowfall`'.format(value))
 
         self._days_since_last_snowfall = value
 
     @property
     def albedo(self):
-        """Get albedo."""
+        """Get albedo.
+
+        Returns:
+            float: The value of `albedo` or None if not set
+
+        """
         return self._albedo
 
     @albedo.setter
     def albedo(self, value=999.0):
-        """  Corresponds to IDD Field `albedo`
-        Missing value: 999.0
+        """Corresponds to IDD Field `albedo`
+
+        Args:
+            value (float): value for IDD Field `albedo`
+                Missing value: 999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
-                raise ValueError(
-                    'value {} need to be of type float for field albedo'.format(value))
+                raise ValueError('value {} need to be of type float '
+                                 'for field `albedo`'.format(value))
 
         self._albedo = value
 
     @property
     def liquid_precipitation_depth(self):
-        """Get liquid_precipitation_depth."""
+        """Get liquid_precipitation_depth.
+
+        Returns:
+            float: The value of `liquid_precipitation_depth` or None if not set
+
+        """
         return self._liquid_precipitation_depth
 
     @liquid_precipitation_depth.setter
     def liquid_precipitation_depth(self, value=999.0):
-        """  Corresponds to IDD Field `liquid_precipitation_depth`
-        Unit: mm
-        Missing value: 999.0
+        """Corresponds to IDD Field `liquid_precipitation_depth`
+
+        Args:
+            value (float): value for IDD Field `liquid_precipitation_depth`
+                Unit: mm
+                Missing value: 999.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field liquid_precipitation_depth'.format(value))
+                    'value {} need to be of type float '
+                    'for field `liquid_precipitation_depth`'.format(value))
 
         self._liquid_precipitation_depth = value
 
     @property
     def liquid_precipitation_quantity(self):
-        """Get liquid_precipitation_quantity."""
+        """Get liquid_precipitation_quantity.
+
+        Returns:
+            float: The value of `liquid_precipitation_quantity` or None if not set
+
+        """
         return self._liquid_precipitation_quantity
 
     @liquid_precipitation_quantity.setter
     def liquid_precipitation_quantity(self, value=99.0):
-        """  Corresponds to IDD Field `liquid_precipitation_quantity`
-        Unit: hr
-        Missing value: 99.0
+        """Corresponds to IDD Field `liquid_precipitation_quantity`
+
+        Args:
+            value (float): value for IDD Field `liquid_precipitation_quantity`
+                Unit: hr
+                Missing value: 99.0
+                 a `value` of None will not be checked against the specification
+
+        Raises:
+            ValueError: if `value` is not a valid value
+
         """
         if value is not None:
             try:
                 value = float(value)
             except:
                 raise ValueError(
-                    'value {} need to be of type float for field liquid_precipitation_quantity'.format(value))
+                    'value {} need to be of type float '
+                    'for field `liquid_precipitation_quantity`'.format(value))
 
         self._liquid_precipitation_quantity = value
 
