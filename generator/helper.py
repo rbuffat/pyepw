@@ -41,6 +41,7 @@ class DataObject:
         self.class_name = normalize_object_name(self.internal_name)
         self.var_name = normalize_object_var_name(internal_name)
         self.fields = []
+        self.is_list_object = False
 
 
 class DataField(object):

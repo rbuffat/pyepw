@@ -114,6 +114,11 @@ class {{ class_name }}(object):
             except:
                 raise ValueError('value {} need to be of type {{ field.attributes.pytype }} '
                                  'for field `{{field.field_name}}`'.format(value))
+            {%- if field.attributes.pytype == "str" %}
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `{{field.field_name}}`')
+            {%- endif %}
             {%- if field.attributes.minimum %}
             if value < {{ field.attributes.minimum }}:
                 raise ValueError('value need to be greater or equal {{ field.attributes.minimum }} '

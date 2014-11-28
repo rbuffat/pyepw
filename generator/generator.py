@@ -1,9 +1,5 @@
 from datetime import date
-import datetime
 from jinja2 import Environment, PackageLoader
-
-from iddparser import IDDParser
-
 
 env = Environment(loader=PackageLoader('generator', 'templates'))
 
@@ -27,7 +23,7 @@ def generate_epw(objs):
                 list_objs.append(field.internal_name)
     not_list_objs = []
     for obj in objs:
-        if not obj.internal_name in list_objs:
+        if obj.internal_name not in list_objs:
             not_list_objs.append(obj)
 
     template = env.get_template('epw.py')
@@ -38,4 +34,15 @@ def generate_epw(objs):
     context["datadicts"] = classes
     context["generation_date"] = date.today()
     context["objs"] = not_list_objs[:-1]
+    return template.render(context)
+
+
+def generate_testclass(obj, objs):
+    _objs = {}
+    for o in objs:
+        _objs[o.class_name] = o
+    template = env.get_template('test_class.py')
+    context = {}
+    context["obj"] = obj
+    context["objs"] = _objs
     return template.render(context)

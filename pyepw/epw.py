@@ -108,6 +108,9 @@ class Location(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `city`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `city`')
 
         self._city = value
 
@@ -141,6 +144,9 @@ class Location(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `state_province_region`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `state_province_region`')
 
         self._state_province_region = value
 
@@ -173,6 +179,9 @@ class Location(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `country`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `country`')
 
         self._country = value
 
@@ -205,6 +214,9 @@ class Location(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `source`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `source`')
 
         self._source = value
 
@@ -238,6 +250,9 @@ class Location(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `wmo`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `wmo`')
 
         self._wmo = value
 
@@ -887,6 +902,9 @@ class DesignCondition(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `title_of_design_condition`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `title_of_design_condition`')
 
         self._title_of_design_condition = value
 
@@ -919,6 +937,9 @@ class DesignCondition(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `unkown_field`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `unkown_field`')
 
         self._unkown_field = value
 
@@ -955,6 +976,9 @@ class DesignCondition(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `design_stat_heating`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `design_stat_heating`')
             vals = set()
             vals.add("Heating")
             if value not in vals:
@@ -1512,6 +1536,9 @@ class DesignCondition(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `design_stat_cooling`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `design_stat_cooling`')
             vals = set()
             vals.add("Cooling")
             if value not in vals:
@@ -2640,6 +2667,9 @@ class DesignCondition(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `design_stat_extremes`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `design_stat_extremes`')
             vals = set()
             vals.add("Extremes")
             if value not in vals:
@@ -3382,6 +3412,9 @@ class TypicalOrExtremePeriod(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `typical_or_extreme_period_name`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `typical_or_extreme_period_name`')
 
         self._typical_or_extreme_period_name = value
 
@@ -3415,6 +3448,9 @@ class TypicalOrExtremePeriod(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `typical_or_extreme_period_type`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `typical_or_extreme_period_type`')
 
         self._typical_or_extreme_period_type = value
 
@@ -3447,6 +3483,9 @@ class TypicalOrExtremePeriod(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `period_start_day`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `period_start_day`')
 
         self._period_start_day = value
 
@@ -3479,6 +3518,9 @@ class TypicalOrExtremePeriod(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `period_end_day`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `period_end_day`')
 
         self._period_end_day = value
 
@@ -4360,6 +4402,9 @@ class Holiday(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `holiday_name`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `holiday_name`')
 
         self._holiday_name = value
 
@@ -4392,6 +4437,9 @@ class Holiday(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `holiday_day`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `holiday_day`')
 
         self._holiday_day = value
 
@@ -4484,6 +4532,9 @@ class HolidaysOrDaylightSavings(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `leapyear_observed`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `leapyear_observed`')
             vals = set()
             vals.add("Yes")
             vals.add("No")
@@ -4523,6 +4574,9 @@ class HolidaysOrDaylightSavings(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `daylight_saving_start_day`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `daylight_saving_start_day`')
 
         self._daylight_saving_start_day = value
 
@@ -4556,6 +4610,9 @@ class HolidaysOrDaylightSavings(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `daylight_saving_end_day`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `daylight_saving_end_day`')
 
         self._daylight_saving_end_day = value
 
@@ -4646,6 +4703,9 @@ class Comments1(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `comments_1`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `comments_1`')
 
         self._comments_1 = value
 
@@ -4712,6 +4772,9 @@ class Comments2(object):
             except:
                 raise ValueError('value {} need to be of type str '
                                  'for field `comments_2`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `comments_2`')
 
         self._comments_2 = value
 
@@ -4836,6 +4899,9 @@ class DataPeriod(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_period_name_or_description`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `data_period_name_or_description`')
 
         self._data_period_name_or_description = value
 
@@ -4877,6 +4943,9 @@ class DataPeriod(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_period_start_day_of_week`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `data_period_start_day_of_week`')
             vals = set()
             vals.add("Sunday")
             vals.add("Monday")
@@ -4922,6 +4991,9 @@ class DataPeriod(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_period_start_day`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `data_period_start_day`')
 
         self._data_period_start_day = value
 
@@ -4955,6 +5027,9 @@ class DataPeriod(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_period_end_day`'.format(value))
+            if ',' in value:
+                raise ValueError('value should not contain a comma '
+                                 'for field `data_period_end_day`')
 
         self._data_period_end_day = value
 
@@ -5482,6 +5557,10 @@ class WeatherData(object):
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_source_and_uncertainty_flags`'.format(value))
+            if ',' in value:
+                raise ValueError(
+                    'value should not contain a comma '
+                    'for field `data_source_and_uncertainty_flags`')
 
         self._data_source_and_uncertainty_flags = value
 
@@ -6917,6 +6996,9 @@ class EPW(object):
 
         Args:
             internal_name (str): IDD name
+
+        Raises:
+            ValueError: if `internal_name` cannot be matched to a data dictionary object
 
         """
         if internal_name == "LOCATION":

@@ -130,9 +130,17 @@ class IDDParser():
         if self.current_object is not None:
             self.objects.append(self.current_object)
 
+        list_objs = []
         for obj in self.objects:
             for field in obj.fields:
                 field.conv_vals()
+                if field.is_list:
+                    list_objs.append(field.internal_name)
+
+        for obj in self.objects:
+            if obj.internal_name in list_objs:
+                obj.is_list_object = True
+
         return self.objects
 #
 #         for o in self.objects:

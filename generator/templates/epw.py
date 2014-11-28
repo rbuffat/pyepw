@@ -103,6 +103,9 @@ class EPW(object):
         
             Args:
                 internal_name (str): IDD name
+                
+            Raises:
+                ValueError: if `internal_name` cannot be matched to a data dictionary object
         """
         {%- for obj in objs %}
         if internal_name == "{{ obj.internal_name }}":
