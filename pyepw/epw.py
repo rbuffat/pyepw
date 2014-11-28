@@ -84,7 +84,7 @@ class Location(object):
         """Get city.
 
         Returns:
-            str: The value of `city` or None if not set
+            str: the value of `city` or None if not set
 
         """
         return self._city
@@ -95,7 +95,8 @@ class Location(object):
 
         Args:
             value (str): value for IDD Field `city`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -115,7 +116,7 @@ class Location(object):
         """Get state_province_region.
 
         Returns:
-            str: The value of `state_province_region` or None if not set
+            str: the value of `state_province_region` or None if not set
 
         """
         return self._state_province_region
@@ -126,7 +127,8 @@ class Location(object):
 
         Args:
             value (str): value for IDD Field `state_province_region`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -147,7 +149,7 @@ class Location(object):
         """Get country.
 
         Returns:
-            str: The value of `country` or None if not set
+            str: the value of `country` or None if not set
 
         """
         return self._country
@@ -158,7 +160,8 @@ class Location(object):
 
         Args:
             value (str): value for IDD Field `country`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -178,7 +181,7 @@ class Location(object):
         """Get source.
 
         Returns:
-            str: The value of `source` or None if not set
+            str: the value of `source` or None if not set
 
         """
         return self._source
@@ -189,7 +192,8 @@ class Location(object):
 
         Args:
             value (str): value for IDD Field `source`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -209,7 +213,7 @@ class Location(object):
         """Get wmo.
 
         Returns:
-            str: The value of `wmo` or None if not set
+            str: the value of `wmo` or None if not set
 
         """
         return self._wmo
@@ -221,7 +225,8 @@ class Location(object):
 
         Args:
             value (str): value for IDD Field `wmo`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -241,7 +246,7 @@ class Location(object):
         """Get latitude.
 
         Returns:
-            float: The value of `latitude` or None if not set
+            float: the value of `latitude` or None if not set
 
         """
         return self._latitude
@@ -258,7 +263,8 @@ class Location(object):
                 Default value: 0.0
                 value >= -90.0
                 value <= 90.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -284,7 +290,7 @@ class Location(object):
         """Get longitude.
 
         Returns:
-            float: The value of `longitude` or None if not set
+            float: the value of `longitude` or None if not set
 
         """
         return self._longitude
@@ -301,7 +307,8 @@ class Location(object):
                 Default value: 0.0
                 value >= -180.0
                 value <= 180.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -327,7 +334,7 @@ class Location(object):
         """Get timezone.
 
         Returns:
-            float: The value of `timezone` or None if not set
+            float: the value of `timezone` or None if not set
 
         """
         return self._timezone
@@ -342,7 +349,8 @@ class Location(object):
                 Default value: 0.0
                 value >= -12.0
                 value <= 12.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -368,7 +376,7 @@ class Location(object):
         """Get elevation.
 
         Returns:
-            float: The value of `elevation` or None if not set
+            float: the value of `elevation` or None if not set
 
         """
         return self._elevation
@@ -383,7 +391,8 @@ class Location(object):
                 Default value: 0.0
                 value >= -1000.0
                 value < 9999.9
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -853,7 +862,7 @@ class DesignCondition(object):
         """Get title_of_design_condition.
 
         Returns:
-            str: The value of `title_of_design_condition` or None if not set
+            str: the value of `title_of_design_condition` or None if not set
 
         """
         return self._title_of_design_condition
@@ -864,7 +873,8 @@ class DesignCondition(object):
 
         Args:
             value (str): value for IDD Field `title_of_design_condition`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -885,7 +895,7 @@ class DesignCondition(object):
         """Get unkown_field.
 
         Returns:
-            str: The value of `unkown_field` or None if not set
+            str: the value of `unkown_field` or None if not set
 
         """
         return self._unkown_field
@@ -896,7 +906,8 @@ class DesignCondition(object):
 
         Args:
             value (str): value for IDD Field `unkown_field`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -916,7 +927,7 @@ class DesignCondition(object):
         """Get design_stat_heating.
 
         Returns:
-            str: The value of `design_stat_heating` or None if not set
+            str: the value of `design_stat_heating` or None if not set
 
         """
         return self._design_stat_heating
@@ -930,7 +941,8 @@ class DesignCondition(object):
                 Accepted values are:
                       - Heating
                 Default value: Heating
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -956,7 +968,7 @@ class DesignCondition(object):
         """Get coldestmonth.
 
         Returns:
-            int: The value of `coldestmonth` or None if not set
+            int: the value of `coldestmonth` or None if not set
 
         """
         return self._coldestmonth
@@ -969,7 +981,8 @@ class DesignCondition(object):
             value (int): value for IDD Field `coldestmonth`
                 value >= 1
                 value <= 12
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -995,7 +1008,7 @@ class DesignCondition(object):
         """Get db996.
 
         Returns:
-            float: The value of `db996` or None if not set
+            float: the value of `db996` or None if not set
 
         """
         return self._db996
@@ -1009,7 +1022,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db996`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1028,7 +1042,7 @@ class DesignCondition(object):
         """Get db990.
 
         Returns:
-            float: The value of `db990` or None if not set
+            float: the value of `db990` or None if not set
 
         """
         return self._db990
@@ -1042,7 +1056,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db990`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1061,7 +1076,7 @@ class DesignCondition(object):
         """Get dp996.
 
         Returns:
-            float: The value of `dp996` or None if not set
+            float: the value of `dp996` or None if not set
 
         """
         return self._dp996
@@ -1075,7 +1090,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dp996`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1094,7 +1110,7 @@ class DesignCondition(object):
         """Get hr_dp996.
 
         Returns:
-            float: The value of `hr_dp996` or None if not set
+            float: the value of `hr_dp996` or None if not set
 
         """
         return self._hr_dp996
@@ -1109,7 +1125,8 @@ class DesignCondition(object):
 
         Args:
             value (float): value for IDD Field `hr_dp996`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1128,7 +1145,7 @@ class DesignCondition(object):
         """Get db_dp996.
 
         Returns:
-            float: The value of `db_dp996` or None if not set
+            float: the value of `db_dp996` or None if not set
 
         """
         return self._db_dp996
@@ -1143,7 +1160,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_dp996`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1162,7 +1180,7 @@ class DesignCondition(object):
         """Get dp990.
 
         Returns:
-            float: The value of `dp990` or None if not set
+            float: the value of `dp990` or None if not set
 
         """
         return self._dp990
@@ -1176,7 +1194,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dp990`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1195,7 +1214,7 @@ class DesignCondition(object):
         """Get hr_dp990.
 
         Returns:
-            float: The value of `hr_dp990` or None if not set
+            float: the value of `hr_dp990` or None if not set
 
         """
         return self._hr_dp990
@@ -1210,7 +1229,8 @@ class DesignCondition(object):
 
         Args:
             value (float): value for IDD Field `hr_dp990`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1229,7 +1249,7 @@ class DesignCondition(object):
         """Get db_dp990.
 
         Returns:
-            float: The value of `db_dp990` or None if not set
+            float: the value of `db_dp990` or None if not set
 
         """
         return self._db_dp990
@@ -1244,7 +1264,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_dp990`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1263,7 +1284,7 @@ class DesignCondition(object):
         """Get ws004c.
 
         Returns:
-            float: The value of `ws004c` or None if not set
+            float: the value of `ws004c` or None if not set
 
         """
         return self._ws004c
@@ -1275,7 +1296,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `ws004c`
                 Unit: m/s
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1295,7 +1317,7 @@ class DesignCondition(object):
         """Get db_ws004c.
 
         Returns:
-            float: The value of `db_ws004c` or None if not set
+            float: the value of `db_ws004c` or None if not set
 
         """
         return self._db_ws004c
@@ -1308,7 +1330,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_ws004c`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1327,7 +1350,7 @@ class DesignCondition(object):
         """Get ws010c.
 
         Returns:
-            float: The value of `ws010c` or None if not set
+            float: the value of `ws010c` or None if not set
 
         """
         return self._ws010c
@@ -1341,7 +1364,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `ws010c`
                 Unit: m/s
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1360,7 +1384,7 @@ class DesignCondition(object):
         """Get db_ws010c.
 
         Returns:
-            float: The value of `db_ws010c` or None if not set
+            float: the value of `db_ws010c` or None if not set
 
         """
         return self._db_ws010c
@@ -1373,7 +1397,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_ws010c`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1392,7 +1417,7 @@ class DesignCondition(object):
         """Get ws_db996.
 
         Returns:
-            float: The value of `ws_db996` or None if not set
+            float: the value of `ws_db996` or None if not set
 
         """
         return self._ws_db996
@@ -1405,7 +1430,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `ws_db996`
                 Unit: m/s
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1424,7 +1450,7 @@ class DesignCondition(object):
         """Get wd_db996.
 
         Returns:
-            float: The value of `wd_db996` or None if not set
+            float: the value of `wd_db996` or None if not set
 
         """
         return self._wd_db996
@@ -1438,7 +1464,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `wd_db996`
                 Unit: deg
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1457,7 +1484,7 @@ class DesignCondition(object):
         """Get design_stat_cooling.
 
         Returns:
-            str: The value of `design_stat_cooling` or None if not set
+            str: the value of `design_stat_cooling` or None if not set
 
         """
         return self._design_stat_cooling
@@ -1471,7 +1498,8 @@ class DesignCondition(object):
                 Accepted values are:
                       - Cooling
                 Default value: Cooling
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1497,7 +1525,7 @@ class DesignCondition(object):
         """Get hottestmonth.
 
         Returns:
-            int: The value of `hottestmonth` or None if not set
+            int: the value of `hottestmonth` or None if not set
 
         """
         return self._hottestmonth
@@ -1510,7 +1538,8 @@ class DesignCondition(object):
             value (int): value for IDD Field `hottestmonth`
                 value >= 1
                 value <= 12
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1536,7 +1565,7 @@ class DesignCondition(object):
         """Get dbr.
 
         Returns:
-            float: The value of `dbr` or None if not set
+            float: the value of `dbr` or None if not set
 
         """
         return self._dbr
@@ -1552,7 +1581,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbr`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1572,7 +1602,7 @@ class DesignCondition(object):
         """Get db004.
 
         Returns:
-            float: The value of `db004` or None if not set
+            float: the value of `db004` or None if not set
 
         """
         return self._db004
@@ -1585,7 +1615,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db004`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1604,7 +1635,7 @@ class DesignCondition(object):
         """Get wb_db004.
 
         Returns:
-            float: The value of `wb_db004` or None if not set
+            float: the value of `wb_db004` or None if not set
 
         """
         return self._wb_db004
@@ -1618,7 +1649,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `wb_db004`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1637,7 +1669,7 @@ class DesignCondition(object):
         """Get db010.
 
         Returns:
-            float: The value of `db010` or None if not set
+            float: the value of `db010` or None if not set
 
         """
         return self._db010
@@ -1650,7 +1682,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db010`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1669,7 +1702,7 @@ class DesignCondition(object):
         """Get wb_db010.
 
         Returns:
-            float: The value of `wb_db010` or None if not set
+            float: the value of `wb_db010` or None if not set
 
         """
         return self._wb_db010
@@ -1683,7 +1716,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `wb_db010`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1702,7 +1736,7 @@ class DesignCondition(object):
         """Get db020.
 
         Returns:
-            float: The value of `db020` or None if not set
+            float: the value of `db020` or None if not set
 
         """
         return self._db020
@@ -1716,7 +1750,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db020`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1735,7 +1770,7 @@ class DesignCondition(object):
         """Get wb_db020.
 
         Returns:
-            float: The value of `wb_db020` or None if not set
+            float: the value of `wb_db020` or None if not set
 
         """
         return self._wb_db020
@@ -1749,7 +1784,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `wb_db020`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1768,7 +1804,7 @@ class DesignCondition(object):
         """Get wb004.
 
         Returns:
-            float: The value of `wb004` or None if not set
+            float: the value of `wb004` or None if not set
 
         """
         return self._wb004
@@ -1781,7 +1817,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `wb004`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1800,7 +1837,7 @@ class DesignCondition(object):
         """Get db_wb004.
 
         Returns:
-            float: The value of `db_wb004` or None if not set
+            float: the value of `db_wb004` or None if not set
 
         """
         return self._db_wb004
@@ -1814,7 +1851,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_wb004`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1833,7 +1871,7 @@ class DesignCondition(object):
         """Get wb010.
 
         Returns:
-            float: The value of `wb010` or None if not set
+            float: the value of `wb010` or None if not set
 
         """
         return self._wb010
@@ -1846,7 +1884,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `wb010`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1865,7 +1904,7 @@ class DesignCondition(object):
         """Get db_wb010.
 
         Returns:
-            float: The value of `db_wb010` or None if not set
+            float: the value of `db_wb010` or None if not set
 
         """
         return self._db_wb010
@@ -1879,7 +1918,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_wb010`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1898,7 +1938,7 @@ class DesignCondition(object):
         """Get wb020.
 
         Returns:
-            float: The value of `wb020` or None if not set
+            float: the value of `wb020` or None if not set
 
         """
         return self._wb020
@@ -1911,7 +1951,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `wb020`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1930,7 +1971,7 @@ class DesignCondition(object):
         """Get db_wb020.
 
         Returns:
-            float: The value of `db_wb020` or None if not set
+            float: the value of `db_wb020` or None if not set
 
         """
         return self._db_wb020
@@ -1944,7 +1985,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_wb020`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1963,7 +2005,7 @@ class DesignCondition(object):
         """Get ws_db004.
 
         Returns:
-            float: The value of `ws_db004` or None if not set
+            float: the value of `ws_db004` or None if not set
 
         """
         return self._ws_db004
@@ -1976,7 +2018,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `ws_db004`
                 Unit: m/s
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -1995,7 +2038,7 @@ class DesignCondition(object):
         """Get wd_db004.
 
         Returns:
-            float: The value of `wd_db004` or None if not set
+            float: the value of `wd_db004` or None if not set
 
         """
         return self._wd_db004
@@ -2010,7 +2053,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `wd_db004`
                 Unit: deg
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2029,7 +2073,7 @@ class DesignCondition(object):
         """Get dp004.
 
         Returns:
-            float: The value of `dp004` or None if not set
+            float: the value of `dp004` or None if not set
 
         """
         return self._dp004
@@ -2042,7 +2086,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dp004`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2061,7 +2106,7 @@ class DesignCondition(object):
         """Get hr_dp004.
 
         Returns:
-            float: The value of `hr_dp004` or None if not set
+            float: the value of `hr_dp004` or None if not set
 
         """
         return self._hr_dp004
@@ -2074,7 +2119,8 @@ class DesignCondition(object):
 
         Args:
             value (float): value for IDD Field `hr_dp004`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2093,7 +2139,7 @@ class DesignCondition(object):
         """Get db_dp004.
 
         Returns:
-            float: The value of `db_dp004` or None if not set
+            float: the value of `db_dp004` or None if not set
 
         """
         return self._db_dp004
@@ -2107,7 +2153,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_dp004`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2126,7 +2173,7 @@ class DesignCondition(object):
         """Get dp010.
 
         Returns:
-            float: The value of `dp010` or None if not set
+            float: the value of `dp010` or None if not set
 
         """
         return self._dp010
@@ -2139,7 +2186,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dp010`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2158,7 +2206,7 @@ class DesignCondition(object):
         """Get hr_dp010.
 
         Returns:
-            float: The value of `hr_dp010` or None if not set
+            float: the value of `hr_dp010` or None if not set
 
         """
         return self._hr_dp010
@@ -2172,7 +2220,8 @@ class DesignCondition(object):
 
         Args:
             value (float): value for IDD Field `hr_dp010`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2191,7 +2240,7 @@ class DesignCondition(object):
         """Get db_dp010.
 
         Returns:
-            float: The value of `db_dp010` or None if not set
+            float: the value of `db_dp010` or None if not set
 
         """
         return self._db_dp010
@@ -2205,7 +2254,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_dp010`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2224,7 +2274,7 @@ class DesignCondition(object):
         """Get dp020.
 
         Returns:
-            float: The value of `dp020` or None if not set
+            float: the value of `dp020` or None if not set
 
         """
         return self._dp020
@@ -2237,7 +2287,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dp020`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2256,7 +2307,7 @@ class DesignCondition(object):
         """Get hr_dp020.
 
         Returns:
-            float: The value of `hr_dp020` or None if not set
+            float: the value of `hr_dp020` or None if not set
 
         """
         return self._hr_dp020
@@ -2270,7 +2321,8 @@ class DesignCondition(object):
 
         Args:
             value (float): value for IDD Field `hr_dp020`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2289,7 +2341,7 @@ class DesignCondition(object):
         """Get db_dp020.
 
         Returns:
-            float: The value of `db_dp020` or None if not set
+            float: the value of `db_dp020` or None if not set
 
         """
         return self._db_dp020
@@ -2303,7 +2355,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_dp020`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2322,7 +2375,7 @@ class DesignCondition(object):
         """Get en004.
 
         Returns:
-            float: The value of `en004` or None if not set
+            float: the value of `en004` or None if not set
 
         """
         return self._en004
@@ -2336,7 +2389,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `en004`
                 Unit: kJ/kg
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2355,7 +2409,7 @@ class DesignCondition(object):
         """Get db_en004.
 
         Returns:
-            float: The value of `db_en004` or None if not set
+            float: the value of `db_en004` or None if not set
 
         """
         return self._db_en004
@@ -2369,7 +2423,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_en004`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2388,7 +2443,7 @@ class DesignCondition(object):
         """Get en010.
 
         Returns:
-            float: The value of `en010` or None if not set
+            float: the value of `en010` or None if not set
 
         """
         return self._en010
@@ -2402,7 +2457,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `en010`
                 Unit: kJ/kg
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2421,7 +2477,7 @@ class DesignCondition(object):
         """Get db_en010.
 
         Returns:
-            float: The value of `db_en010` or None if not set
+            float: the value of `db_en010` or None if not set
 
         """
         return self._db_en010
@@ -2435,7 +2491,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_en010`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2454,7 +2511,7 @@ class DesignCondition(object):
         """Get en020.
 
         Returns:
-            float: The value of `en020` or None if not set
+            float: the value of `en020` or None if not set
 
         """
         return self._en020
@@ -2468,7 +2525,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `en020`
                 Unit: kJ/kg
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2487,7 +2545,7 @@ class DesignCondition(object):
         """Get db_en020.
 
         Returns:
-            float: The value of `db_en020` or None if not set
+            float: the value of `db_en020` or None if not set
 
         """
         return self._db_en020
@@ -2501,7 +2559,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `db_en020`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2520,7 +2579,7 @@ class DesignCondition(object):
         """Get hrs_84_and_db12_8_or_20_6.
 
         Returns:
-            float: The value of `hrs_84_and_db12_8_or_20_6` or None if not set
+            float: the value of `hrs_84_and_db12_8_or_20_6` or None if not set
 
         """
         return self._hrs_84_and_db12_8_or_20_6
@@ -2532,7 +2591,8 @@ class DesignCondition(object):
 
         Args:
             value (float): value for IDD Field `hrs_84_and_db12_8_or_20_6`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2552,7 +2612,7 @@ class DesignCondition(object):
         """Get design_stat_extremes.
 
         Returns:
-            str: The value of `design_stat_extremes` or None if not set
+            str: the value of `design_stat_extremes` or None if not set
 
         """
         return self._design_stat_extremes
@@ -2566,7 +2626,8 @@ class DesignCondition(object):
                 Accepted values are:
                       - Extremes
                 Default value: Extremes
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2592,7 +2653,7 @@ class DesignCondition(object):
         """Get ws010.
 
         Returns:
-            float: The value of `ws010` or None if not set
+            float: the value of `ws010` or None if not set
 
         """
         return self._ws010
@@ -2605,7 +2666,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `ws010`
                 Unit: m/s
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2624,7 +2686,7 @@ class DesignCondition(object):
         """Get ws025.
 
         Returns:
-            float: The value of `ws025` or None if not set
+            float: the value of `ws025` or None if not set
 
         """
         return self._ws025
@@ -2637,7 +2699,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `ws025`
                 Unit: m/s
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2656,7 +2719,7 @@ class DesignCondition(object):
         """Get ws050.
 
         Returns:
-            float: The value of `ws050` or None if not set
+            float: the value of `ws050` or None if not set
 
         """
         return self._ws050
@@ -2669,7 +2732,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `ws050`
                 Unit: m/s
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2688,7 +2752,7 @@ class DesignCondition(object):
         """Get wbmax.
 
         Returns:
-            float: The value of `wbmax` or None if not set
+            float: the value of `wbmax` or None if not set
 
         """
         return self._wbmax
@@ -2701,7 +2765,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `wbmax`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2720,7 +2785,7 @@ class DesignCondition(object):
         """Get dbmin_mean.
 
         Returns:
-            float: The value of `dbmin_mean` or None if not set
+            float: the value of `dbmin_mean` or None if not set
 
         """
         return self._dbmin_mean
@@ -2733,7 +2798,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmin_mean`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2752,7 +2818,7 @@ class DesignCondition(object):
         """Get dbmax_mean.
 
         Returns:
-            float: The value of `dbmax_mean` or None if not set
+            float: the value of `dbmax_mean` or None if not set
 
         """
         return self._dbmax_mean
@@ -2765,7 +2831,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmax_mean`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2784,7 +2851,7 @@ class DesignCondition(object):
         """Get dbmin_stddev.
 
         Returns:
-            float: The value of `dbmin_stddev` or None if not set
+            float: the value of `dbmin_stddev` or None if not set
 
         """
         return self._dbmin_stddev
@@ -2797,7 +2864,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmin_stddev`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2816,7 +2884,7 @@ class DesignCondition(object):
         """Get dbmax_stddev.
 
         Returns:
-            float: The value of `dbmax_stddev` or None if not set
+            float: the value of `dbmax_stddev` or None if not set
 
         """
         return self._dbmax_stddev
@@ -2829,7 +2897,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmax_stddev`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2848,7 +2917,7 @@ class DesignCondition(object):
         """Get dbmin05years.
 
         Returns:
-            float: The value of `dbmin05years` or None if not set
+            float: the value of `dbmin05years` or None if not set
 
         """
         return self._dbmin05years
@@ -2861,7 +2930,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmin05years`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2880,7 +2950,7 @@ class DesignCondition(object):
         """Get dbmax05years.
 
         Returns:
-            float: The value of `dbmax05years` or None if not set
+            float: the value of `dbmax05years` or None if not set
 
         """
         return self._dbmax05years
@@ -2893,7 +2963,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmax05years`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2912,7 +2983,7 @@ class DesignCondition(object):
         """Get dbmin10years.
 
         Returns:
-            float: The value of `dbmin10years` or None if not set
+            float: the value of `dbmin10years` or None if not set
 
         """
         return self._dbmin10years
@@ -2925,7 +2996,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmin10years`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2944,7 +3016,7 @@ class DesignCondition(object):
         """Get dbmax10years.
 
         Returns:
-            float: The value of `dbmax10years` or None if not set
+            float: the value of `dbmax10years` or None if not set
 
         """
         return self._dbmax10years
@@ -2957,7 +3029,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmax10years`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -2976,7 +3049,7 @@ class DesignCondition(object):
         """Get dbmin20years.
 
         Returns:
-            float: The value of `dbmin20years` or None if not set
+            float: the value of `dbmin20years` or None if not set
 
         """
         return self._dbmin20years
@@ -2989,7 +3062,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmin20years`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3008,7 +3082,7 @@ class DesignCondition(object):
         """Get dbmax20years.
 
         Returns:
-            float: The value of `dbmax20years` or None if not set
+            float: the value of `dbmax20years` or None if not set
 
         """
         return self._dbmax20years
@@ -3021,7 +3095,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmax20years`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3040,7 +3115,7 @@ class DesignCondition(object):
         """Get dbmin50years.
 
         Returns:
-            float: The value of `dbmin50years` or None if not set
+            float: the value of `dbmin50years` or None if not set
 
         """
         return self._dbmin50years
@@ -3053,7 +3128,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmin50years`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3072,7 +3148,7 @@ class DesignCondition(object):
         """Get dbmax50years.
 
         Returns:
-            float: The value of `dbmax50years` or None if not set
+            float: the value of `dbmax50years` or None if not set
 
         """
         return self._dbmax50years
@@ -3085,7 +3161,8 @@ class DesignCondition(object):
         Args:
             value (float): value for IDD Field `dbmax50years`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3216,7 +3293,7 @@ class DesignConditions(object):
         """Add design_condition.
 
         Args:
-            DesignCondition: New value to add to `design_conditions`
+            DesignCondition: new value to add to `design_conditions`
 
         """
         self._design_conditions.append(value)
@@ -3280,7 +3357,7 @@ class TypicalOrExtremePeriod(object):
         """Get typical_or_extreme_period_name.
 
         Returns:
-            str: The value of `typical_or_extreme_period_name` or None if not set
+            str: the value of `typical_or_extreme_period_name` or None if not set
 
         """
         return self._typical_or_extreme_period_name
@@ -3291,7 +3368,8 @@ class TypicalOrExtremePeriod(object):
 
         Args:
             value (str): value for IDD Field `typical_or_extreme_period_name`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3312,7 +3390,7 @@ class TypicalOrExtremePeriod(object):
         """Get typical_or_extreme_period_type.
 
         Returns:
-            str: The value of `typical_or_extreme_period_type` or None if not set
+            str: the value of `typical_or_extreme_period_type` or None if not set
 
         """
         return self._typical_or_extreme_period_type
@@ -3323,7 +3401,8 @@ class TypicalOrExtremePeriod(object):
 
         Args:
             value (str): value for IDD Field `typical_or_extreme_period_type`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3344,7 +3423,7 @@ class TypicalOrExtremePeriod(object):
         """Get period_start_day.
 
         Returns:
-            str: The value of `period_start_day` or None if not set
+            str: the value of `period_start_day` or None if not set
 
         """
         return self._period_start_day
@@ -3355,7 +3434,8 @@ class TypicalOrExtremePeriod(object):
 
         Args:
             value (str): value for IDD Field `period_start_day`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3375,7 +3455,7 @@ class TypicalOrExtremePeriod(object):
         """Get period_end_day.
 
         Returns:
-            str: The value of `period_end_day` or None if not set
+            str: the value of `period_end_day` or None if not set
 
         """
         return self._period_end_day
@@ -3386,7 +3466,8 @@ class TypicalOrExtremePeriod(object):
 
         Args:
             value (str): value for IDD Field `period_end_day`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3454,7 +3535,7 @@ class TypicalOrExtremePeriods(object):
         """Add typical_or_extreme_period.
 
         Args:
-            TypicalOrExtremePeriod: New value to add to `typical_or_extreme_periods`
+            TypicalOrExtremePeriod: new value to add to `typical_or_extreme_periods`
 
         """
         self._typical_or_extreme_periods.append(value)
@@ -3590,7 +3671,7 @@ class GroundTemperature(object):
         """Get ground_temperature_depth.
 
         Returns:
-            float: The value of `ground_temperature_depth` or None if not set
+            float: the value of `ground_temperature_depth` or None if not set
 
         """
         return self._ground_temperature_depth
@@ -3602,7 +3683,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `ground_temperature_depth`
                 Unit: m
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3623,7 +3705,7 @@ class GroundTemperature(object):
         """Get depth_soil_conductivity.
 
         Returns:
-            float: The value of `depth_soil_conductivity` or None if not set
+            float: the value of `depth_soil_conductivity` or None if not set
 
         """
         return self._depth_soil_conductivity
@@ -3635,7 +3717,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_soil_conductivity`
                 Unit: W/m-K,
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3656,7 +3739,7 @@ class GroundTemperature(object):
         """Get depth_soil_density.
 
         Returns:
-            float: The value of `depth_soil_density` or None if not set
+            float: the value of `depth_soil_density` or None if not set
 
         """
         return self._depth_soil_density
@@ -3668,7 +3751,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_soil_density`
                 Unit: kg/m3
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3689,7 +3773,7 @@ class GroundTemperature(object):
         """Get depth_soil_specific_heat.
 
         Returns:
-            float: The value of `depth_soil_specific_heat` or None if not set
+            float: the value of `depth_soil_specific_heat` or None if not set
 
         """
         return self._depth_soil_specific_heat
@@ -3701,7 +3785,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_soil_specific_heat`
                 Unit: J/kg-K,
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3722,7 +3807,7 @@ class GroundTemperature(object):
         """Get depth_january_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_january_average_ground_temperature` or None if not set
+            float: the value of `depth_january_average_ground_temperature` or None if not set
 
         """
         return self._depth_january_average_ground_temperature
@@ -3734,7 +3819,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_january_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3755,7 +3841,7 @@ class GroundTemperature(object):
         """Get depth_february_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_february_average_ground_temperature` or None if not set
+            float: the value of `depth_february_average_ground_temperature` or None if not set
 
         """
         return self._depth_february_average_ground_temperature
@@ -3767,7 +3853,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_february_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3788,7 +3875,7 @@ class GroundTemperature(object):
         """Get depth_march_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_march_average_ground_temperature` or None if not set
+            float: the value of `depth_march_average_ground_temperature` or None if not set
 
         """
         return self._depth_march_average_ground_temperature
@@ -3800,7 +3887,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_march_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3821,7 +3909,7 @@ class GroundTemperature(object):
         """Get depth_april_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_april_average_ground_temperature` or None if not set
+            float: the value of `depth_april_average_ground_temperature` or None if not set
 
         """
         return self._depth_april_average_ground_temperature
@@ -3833,7 +3921,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_april_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3854,7 +3943,7 @@ class GroundTemperature(object):
         """Get depth_may_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_may_average_ground_temperature` or None if not set
+            float: the value of `depth_may_average_ground_temperature` or None if not set
 
         """
         return self._depth_may_average_ground_temperature
@@ -3866,7 +3955,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_may_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3887,7 +3977,7 @@ class GroundTemperature(object):
         """Get depth_june_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_june_average_ground_temperature` or None if not set
+            float: the value of `depth_june_average_ground_temperature` or None if not set
 
         """
         return self._depth_june_average_ground_temperature
@@ -3899,7 +3989,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_june_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3920,7 +4011,7 @@ class GroundTemperature(object):
         """Get depth_july_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_july_average_ground_temperature` or None if not set
+            float: the value of `depth_july_average_ground_temperature` or None if not set
 
         """
         return self._depth_july_average_ground_temperature
@@ -3932,7 +4023,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_july_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3953,7 +4045,7 @@ class GroundTemperature(object):
         """Get depth_august_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_august_average_ground_temperature` or None if not set
+            float: the value of `depth_august_average_ground_temperature` or None if not set
 
         """
         return self._depth_august_average_ground_temperature
@@ -3965,7 +4057,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_august_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -3986,7 +4079,7 @@ class GroundTemperature(object):
         """Get depth_september_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_september_average_ground_temperature` or None if not set
+            float: the value of `depth_september_average_ground_temperature` or None if not set
 
         """
         return self._depth_september_average_ground_temperature
@@ -3999,7 +4092,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_september_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4020,7 +4114,7 @@ class GroundTemperature(object):
         """Get depth_october_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_october_average_ground_temperature` or None if not set
+            float: the value of `depth_october_average_ground_temperature` or None if not set
 
         """
         return self._depth_october_average_ground_temperature
@@ -4032,7 +4126,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_october_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4053,7 +4148,7 @@ class GroundTemperature(object):
         """Get depth_november_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_november_average_ground_temperature` or None if not set
+            float: the value of `depth_november_average_ground_temperature` or None if not set
 
         """
         return self._depth_november_average_ground_temperature
@@ -4065,7 +4160,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_november_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4086,7 +4182,7 @@ class GroundTemperature(object):
         """Get depth_december_average_ground_temperature.
 
         Returns:
-            float: The value of `depth_december_average_ground_temperature` or None if not set
+            float: the value of `depth_december_average_ground_temperature` or None if not set
 
         """
         return self._depth_december_average_ground_temperature
@@ -4098,7 +4194,8 @@ class GroundTemperature(object):
         Args:
             value (float): value for IDD Field `depth_december_average_ground_temperature`
                 Unit: C
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4187,7 +4284,7 @@ class GroundTemperatures(object):
         """Add ground_temperature.
 
         Args:
-            GroundTemperature: New value to add to `ground_temperatures`
+            GroundTemperature: new value to add to `ground_temperatures`
 
         """
         self._ground_temperatures.append(value)
@@ -4239,7 +4336,7 @@ class Holiday(object):
         """Get holiday_name.
 
         Returns:
-            str: The value of `holiday_name` or None if not set
+            str: the value of `holiday_name` or None if not set
 
         """
         return self._holiday_name
@@ -4250,7 +4347,8 @@ class Holiday(object):
 
         Args:
             value (str): value for IDD Field `holiday_name`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4270,7 +4368,7 @@ class Holiday(object):
         """Get holiday_day.
 
         Returns:
-            str: The value of `holiday_day` or None if not set
+            str: the value of `holiday_day` or None if not set
 
         """
         return self._holiday_day
@@ -4281,7 +4379,8 @@ class Holiday(object):
 
         Args:
             value (str): value for IDD Field `holiday_day`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4356,7 +4455,7 @@ class HolidaysOrDaylightSavings(object):
         """Get leapyear_observed.
 
         Returns:
-            str: The value of `leapyear_observed` or None if not set
+            str: the value of `leapyear_observed` or None if not set
 
         """
         return self._leapyear_observed
@@ -4372,7 +4471,8 @@ class HolidaysOrDaylightSavings(object):
                 Accepted values are:
                       - Yes
                       - No
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4398,7 +4498,7 @@ class HolidaysOrDaylightSavings(object):
         """Get daylight_saving_start_day.
 
         Returns:
-            str: The value of `daylight_saving_start_day` or None if not set
+            str: the value of `daylight_saving_start_day` or None if not set
 
         """
         return self._daylight_saving_start_day
@@ -4409,7 +4509,8 @@ class HolidaysOrDaylightSavings(object):
 
         Args:
             value (str): value for IDD Field `daylight_saving_start_day`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4430,7 +4531,7 @@ class HolidaysOrDaylightSavings(object):
         """Get daylight_saving_end_day.
 
         Returns:
-            str: The value of `daylight_saving_end_day` or None if not set
+            str: the value of `daylight_saving_end_day` or None if not set
 
         """
         return self._daylight_saving_end_day
@@ -4441,7 +4542,8 @@ class HolidaysOrDaylightSavings(object):
 
         Args:
             value (str): value for IDD Field `daylight_saving_end_day`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4471,7 +4573,7 @@ class HolidaysOrDaylightSavings(object):
         """Add holiday.
 
         Args:
-            Holiday: New value to add to `holidays`
+            Holiday: new value to add to `holidays`
 
         """
         self._holidays.append(value)
@@ -4520,7 +4622,7 @@ class Comments1(object):
         """Get comments_1.
 
         Returns:
-            str: The value of `comments_1` or None if not set
+            str: the value of `comments_1` or None if not set
 
         """
         return self._comments_1
@@ -4531,7 +4633,8 @@ class Comments1(object):
 
         Args:
             value (str): value for IDD Field `comments_1`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4585,7 +4688,7 @@ class Comments2(object):
         """Get comments_2.
 
         Returns:
-            str: The value of `comments_2` or None if not set
+            str: the value of `comments_2` or None if not set
 
         """
         return self._comments_2
@@ -4596,7 +4699,8 @@ class Comments2(object):
 
         Args:
             value (str): value for IDD Field `comments_2`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4674,7 +4778,7 @@ class DataPeriod(object):
         """Get number_of_records_per_hour.
 
         Returns:
-            int: The value of `number_of_records_per_hour` or None if not set
+            int: the value of `number_of_records_per_hour` or None if not set
 
         """
         return self._number_of_records_per_hour
@@ -4685,7 +4789,8 @@ class DataPeriod(object):
 
         Args:
             value (int): value for IDD Field `number_of_records_per_hour`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4706,7 +4811,7 @@ class DataPeriod(object):
         """Get data_period_name_or_description.
 
         Returns:
-            str: The value of `data_period_name_or_description` or None if not set
+            str: the value of `data_period_name_or_description` or None if not set
 
         """
         return self._data_period_name_or_description
@@ -4717,7 +4822,8 @@ class DataPeriod(object):
 
         Args:
             value (str): value for IDD Field `data_period_name_or_description`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4738,7 +4844,7 @@ class DataPeriod(object):
         """Get data_period_start_day_of_week.
 
         Returns:
-            str: The value of `data_period_start_day_of_week` or None if not set
+            str: the value of `data_period_start_day_of_week` or None if not set
 
         """
         return self._data_period_start_day_of_week
@@ -4757,7 +4863,8 @@ class DataPeriod(object):
                       - Thursday
                       - Friday
                       - Saturday
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4790,7 +4897,7 @@ class DataPeriod(object):
         """Get data_period_start_day.
 
         Returns:
-            str: The value of `data_period_start_day` or None if not set
+            str: the value of `data_period_start_day` or None if not set
 
         """
         return self._data_period_start_day
@@ -4801,7 +4908,8 @@ class DataPeriod(object):
 
         Args:
             value (str): value for IDD Field `data_period_start_day`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4822,7 +4930,7 @@ class DataPeriod(object):
         """Get data_period_end_day.
 
         Returns:
-            str: The value of `data_period_end_day` or None if not set
+            str: the value of `data_period_end_day` or None if not set
 
         """
         return self._data_period_end_day
@@ -4833,7 +4941,8 @@ class DataPeriod(object):
 
         Args:
             value (str): value for IDD Field `data_period_end_day`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -4903,7 +5012,7 @@ class DataPeriods(object):
         """Add data_period.
 
         Args:
-            DataPeriod: New value to add to `data_periods`
+            DataPeriod: new value to add to `data_periods`
 
         """
         self._data_periods.append(value)
@@ -5153,7 +5262,7 @@ class WeatherData(object):
         """Get year.
 
         Returns:
-            int: The value of `year` or None if not set
+            int: the value of `year` or None if not set
 
         """
         return self._year
@@ -5164,7 +5273,8 @@ class WeatherData(object):
 
         Args:
             value (int): value for IDD Field `year`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5184,7 +5294,7 @@ class WeatherData(object):
         """Get month.
 
         Returns:
-            int: The value of `month` or None if not set
+            int: the value of `month` or None if not set
 
         """
         return self._month
@@ -5197,7 +5307,8 @@ class WeatherData(object):
             value (int): value for IDD Field `month`
                 value >= 1
                 value <= 12
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5223,7 +5334,7 @@ class WeatherData(object):
         """Get day.
 
         Returns:
-            int: The value of `day` or None if not set
+            int: the value of `day` or None if not set
 
         """
         return self._day
@@ -5236,7 +5347,8 @@ class WeatherData(object):
             value (int): value for IDD Field `day`
                 value >= 1
                 value <= 31
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5262,7 +5374,7 @@ class WeatherData(object):
         """Get hour.
 
         Returns:
-            int: The value of `hour` or None if not set
+            int: the value of `hour` or None if not set
 
         """
         return self._hour
@@ -5275,7 +5387,8 @@ class WeatherData(object):
             value (int): value for IDD Field `hour`
                 value >= 1
                 value <= 24
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5301,7 +5414,7 @@ class WeatherData(object):
         """Get minute.
 
         Returns:
-            int: The value of `minute` or None if not set
+            int: the value of `minute` or None if not set
 
         """
         return self._minute
@@ -5314,7 +5427,8 @@ class WeatherData(object):
             value (int): value for IDD Field `minute`
                 value >= 0
                 value <= 60
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5340,7 +5454,7 @@ class WeatherData(object):
         """Get data_source_and_uncertainty_flags.
 
         Returns:
-            str: The value of `data_source_and_uncertainty_flags` or None if not set
+            str: the value of `data_source_and_uncertainty_flags` or None if not set
 
         """
         return self._data_source_and_uncertainty_flags
@@ -5354,7 +5468,8 @@ class WeatherData(object):
 
         Args:
             value (str): value for IDD Field `data_source_and_uncertainty_flags`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5375,7 +5490,7 @@ class WeatherData(object):
         """Get dry_bulb_temperature.
 
         Returns:
-            float: The value of `dry_bulb_temperature` or None if not set
+            float: the value of `dry_bulb_temperature` or None if not set
 
         """
         return self._dry_bulb_temperature
@@ -5390,7 +5505,8 @@ class WeatherData(object):
                 value > -70.0
                 value < 70.0
                 Missing value: 99.9
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5417,7 +5533,7 @@ class WeatherData(object):
         """Get dew_point_temperature.
 
         Returns:
-            float: The value of `dew_point_temperature` or None if not set
+            float: the value of `dew_point_temperature` or None if not set
 
         """
         return self._dew_point_temperature
@@ -5432,7 +5548,8 @@ class WeatherData(object):
                 value > -70.0
                 value < 70.0
                 Missing value: 99.9
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5459,7 +5576,7 @@ class WeatherData(object):
         """Get relative_humidity.
 
         Returns:
-            int: The value of `relative_humidity` or None if not set
+            int: the value of `relative_humidity` or None if not set
 
         """
         return self._relative_humidity
@@ -5473,7 +5590,8 @@ class WeatherData(object):
                 value >= 0
                 value <= 110
                 Missing value: 999
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5499,7 +5617,7 @@ class WeatherData(object):
         """Get atmospheric_station_pressure.
 
         Returns:
-            int: The value of `atmospheric_station_pressure` or None if not set
+            int: the value of `atmospheric_station_pressure` or None if not set
 
         """
         return self._atmospheric_station_pressure
@@ -5514,7 +5632,8 @@ class WeatherData(object):
                 value > 31000
                 value < 120000
                 Missing value: 999999
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5541,7 +5660,7 @@ class WeatherData(object):
         """Get extraterrestrial_horizontal_radiation.
 
         Returns:
-            float: The value of `extraterrestrial_horizontal_radiation` or None if not set
+            float: the value of `extraterrestrial_horizontal_radiation` or None if not set
 
         """
         return self._extraterrestrial_horizontal_radiation
@@ -5555,7 +5674,8 @@ class WeatherData(object):
                 Unit: Wh/m2
                 value >= 0.0
                 Missing value: 9999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5580,7 +5700,7 @@ class WeatherData(object):
         """Get extraterrestrial_direct_normal_radiation.
 
         Returns:
-            float: The value of `extraterrestrial_direct_normal_radiation` or None if not set
+            float: the value of `extraterrestrial_direct_normal_radiation` or None if not set
 
         """
         return self._extraterrestrial_direct_normal_radiation
@@ -5594,7 +5714,8 @@ class WeatherData(object):
                 Unit: Wh/m2
                 value >= 0.0
                 Missing value: 9999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5619,7 +5740,7 @@ class WeatherData(object):
         """Get horizontal_infrared_radiation_intensity.
 
         Returns:
-            float: The value of `horizontal_infrared_radiation_intensity` or None if not set
+            float: the value of `horizontal_infrared_radiation_intensity` or None if not set
 
         """
         return self._horizontal_infrared_radiation_intensity
@@ -5633,7 +5754,8 @@ class WeatherData(object):
                 Unit: Wh/m2
                 value >= 0.0
                 Missing value: 9999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5658,7 +5780,7 @@ class WeatherData(object):
         """Get global_horizontal_radiation.
 
         Returns:
-            float: The value of `global_horizontal_radiation` or None if not set
+            float: the value of `global_horizontal_radiation` or None if not set
 
         """
         return self._global_horizontal_radiation
@@ -5672,7 +5794,8 @@ class WeatherData(object):
                 Unit: Wh/m2
                 value >= 0.0
                 Missing value: 9999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5696,7 +5819,7 @@ class WeatherData(object):
         """Get direct_normal_radiation.
 
         Returns:
-            float: The value of `direct_normal_radiation` or None if not set
+            float: the value of `direct_normal_radiation` or None if not set
 
         """
         return self._direct_normal_radiation
@@ -5710,7 +5833,8 @@ class WeatherData(object):
                 Unit: Wh/m2
                 value >= 0.0
                 Missing value: 9999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5734,7 +5858,7 @@ class WeatherData(object):
         """Get diffuse_horizontal_radiation.
 
         Returns:
-            float: The value of `diffuse_horizontal_radiation` or None if not set
+            float: the value of `diffuse_horizontal_radiation` or None if not set
 
         """
         return self._diffuse_horizontal_radiation
@@ -5748,7 +5872,8 @@ class WeatherData(object):
                 Unit: Wh/m2
                 value >= 0.0
                 Missing value: 9999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5772,7 +5897,7 @@ class WeatherData(object):
         """Get global_horizontal_illuminance.
 
         Returns:
-            float: The value of `global_horizontal_illuminance` or None if not set
+            float: the value of `global_horizontal_illuminance` or None if not set
 
         """
         return self._global_horizontal_illuminance
@@ -5787,7 +5912,8 @@ class WeatherData(object):
                 Unit: lux
                 value >= 0.0
                 Missing value: 999999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5810,7 +5936,7 @@ class WeatherData(object):
         """Get direct_normal_illuminance.
 
         Returns:
-            float: The value of `direct_normal_illuminance` or None if not set
+            float: the value of `direct_normal_illuminance` or None if not set
 
         """
         return self._direct_normal_illuminance
@@ -5825,7 +5951,8 @@ class WeatherData(object):
                 Unit: lux
                 value >= 0.0
                 Missing value: 999999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5848,7 +5975,7 @@ class WeatherData(object):
         """Get diffuse_horizontal_illuminance.
 
         Returns:
-            float: The value of `diffuse_horizontal_illuminance` or None if not set
+            float: the value of `diffuse_horizontal_illuminance` or None if not set
 
         """
         return self._diffuse_horizontal_illuminance
@@ -5863,7 +5990,8 @@ class WeatherData(object):
                 Unit: lux
                 value >= 0.0
                 Missing value: 999999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5886,7 +6014,7 @@ class WeatherData(object):
         """Get zenith_luminance.
 
         Returns:
-            float: The value of `zenith_luminance` or None if not set
+            float: the value of `zenith_luminance` or None if not set
 
         """
         return self._zenith_luminance
@@ -5901,7 +6029,8 @@ class WeatherData(object):
                 Unit: Cd/m2
                 value >= 0.0
                 Missing value: 9999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5923,7 +6052,7 @@ class WeatherData(object):
         """Get wind_direction.
 
         Returns:
-            float: The value of `wind_direction` or None if not set
+            float: the value of `wind_direction` or None if not set
 
         """
         return self._wind_direction
@@ -5938,7 +6067,8 @@ class WeatherData(object):
                 value >= 0.0
                 value <= 360.0
                 Missing value: 999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -5964,7 +6094,7 @@ class WeatherData(object):
         """Get wind_speed.
 
         Returns:
-            float: The value of `wind_speed` or None if not set
+            float: the value of `wind_speed` or None if not set
 
         """
         return self._wind_speed
@@ -5979,7 +6109,8 @@ class WeatherData(object):
                 value >= 0.0
                 value <= 40.0
                 Missing value: 999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6005,7 +6136,7 @@ class WeatherData(object):
         """Get total_sky_cover.
 
         Returns:
-            float: The value of `total_sky_cover` or None if not set
+            float: the value of `total_sky_cover` or None if not set
 
         """
         return self._total_sky_cover
@@ -6022,7 +6153,8 @@ class WeatherData(object):
                 value >= 0.0
                 value <= 10.0
                 Missing value: 99.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6048,7 +6180,7 @@ class WeatherData(object):
         """Get opaque_sky_cover.
 
         Returns:
-            float: The value of `opaque_sky_cover` or None if not set
+            float: the value of `opaque_sky_cover` or None if not set
 
         """
         return self._opaque_sky_cover
@@ -6068,7 +6200,8 @@ class WeatherData(object):
                 value >= 0.0
                 value <= 10.0
                 Missing value: 99.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6094,7 +6227,7 @@ class WeatherData(object):
         """Get visibility.
 
         Returns:
-            float: The value of `visibility` or None if not set
+            float: the value of `visibility` or None if not set
 
         """
         return self._visibility
@@ -6108,7 +6241,8 @@ class WeatherData(object):
             value (float): value for IDD Field `visibility`
                 Unit: km
                 Missing value: 9999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6128,7 +6262,7 @@ class WeatherData(object):
         """Get ceiling_height.
 
         Returns:
-            float: The value of `ceiling_height` or None if not set
+            float: the value of `ceiling_height` or None if not set
 
         """
         return self._ceiling_height
@@ -6144,7 +6278,8 @@ class WeatherData(object):
             value (float): value for IDD Field `ceiling_height`
                 Unit: m
                 Missing value: 99999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6164,7 +6299,7 @@ class WeatherData(object):
         """Get present_weather_observation.
 
         Returns:
-            int: The value of `present_weather_observation` or None if not set
+            int: the value of `present_weather_observation` or None if not set
 
         """
         return self._present_weather_observation
@@ -6180,7 +6315,8 @@ class WeatherData(object):
 
         Args:
             value (int): value for IDD Field `present_weather_observation`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6201,7 +6337,7 @@ class WeatherData(object):
         """Get present_weather_codes.
 
         Returns:
-            int: The value of `present_weather_codes` or None if not set
+            int: the value of `present_weather_codes` or None if not set
 
         """
         return self._present_weather_codes
@@ -6212,7 +6348,8 @@ class WeatherData(object):
 
         Args:
             value (int): value for IDD Field `present_weather_codes`
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6233,7 +6370,7 @@ class WeatherData(object):
         """Get precipitable_water.
 
         Returns:
-            float: The value of `precipitable_water` or None if not set
+            float: the value of `precipitable_water` or None if not set
 
         """
         return self._precipitable_water
@@ -6246,7 +6383,8 @@ class WeatherData(object):
             value (float): value for IDD Field `precipitable_water`
                 Unit: mm
                 Missing value: 999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6267,7 +6405,7 @@ class WeatherData(object):
         """Get aerosol_optical_depth.
 
         Returns:
-            float: The value of `aerosol_optical_depth` or None if not set
+            float: the value of `aerosol_optical_depth` or None if not set
 
         """
         return self._aerosol_optical_depth
@@ -6280,7 +6418,8 @@ class WeatherData(object):
             value (float): value for IDD Field `aerosol_optical_depth`
                 Unit: thousandths
                 Missing value: 0.999
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6301,7 +6440,7 @@ class WeatherData(object):
         """Get snow_depth.
 
         Returns:
-            float: The value of `snow_depth` or None if not set
+            float: the value of `snow_depth` or None if not set
 
         """
         return self._snow_depth
@@ -6314,7 +6453,8 @@ class WeatherData(object):
             value (float): value for IDD Field `snow_depth`
                 Unit: cm
                 Missing value: 999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6334,7 +6474,7 @@ class WeatherData(object):
         """Get days_since_last_snowfall.
 
         Returns:
-            int: The value of `days_since_last_snowfall` or None if not set
+            int: the value of `days_since_last_snowfall` or None if not set
 
         """
         return self._days_since_last_snowfall
@@ -6346,7 +6486,8 @@ class WeatherData(object):
         Args:
             value (int): value for IDD Field `days_since_last_snowfall`
                 Missing value: 99
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6367,7 +6508,7 @@ class WeatherData(object):
         """Get albedo.
 
         Returns:
-            float: The value of `albedo` or None if not set
+            float: the value of `albedo` or None if not set
 
         """
         return self._albedo
@@ -6379,7 +6520,8 @@ class WeatherData(object):
         Args:
             value (float): value for IDD Field `albedo`
                 Missing value: 999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6399,7 +6541,7 @@ class WeatherData(object):
         """Get liquid_precipitation_depth.
 
         Returns:
-            float: The value of `liquid_precipitation_depth` or None if not set
+            float: the value of `liquid_precipitation_depth` or None if not set
 
         """
         return self._liquid_precipitation_depth
@@ -6412,7 +6554,8 @@ class WeatherData(object):
             value (float): value for IDD Field `liquid_precipitation_depth`
                 Unit: mm
                 Missing value: 999.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6433,7 +6576,7 @@ class WeatherData(object):
         """Get liquid_precipitation_quantity.
 
         Returns:
-            float: The value of `liquid_precipitation_quantity` or None if not set
+            float: the value of `liquid_precipitation_quantity` or None if not set
 
         """
         return self._liquid_precipitation_quantity
@@ -6446,7 +6589,8 @@ class WeatherData(object):
             value (float): value for IDD Field `liquid_precipitation_quantity`
                 Unit: hr
                 Missing value: 99.0
-                 a `value` of None will not be checked against the specification
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
 
         Raises:
             ValueError: if `value` is not a valid value
@@ -6515,6 +6659,8 @@ class WeatherData(object):
 
 class EPW(object):
 
+    """Represens a EnergyPlus EPW weather data file."""
+
     def __init__(
             self,
             location=None,
@@ -6526,6 +6672,7 @@ class EPW(object):
             comments_2=None,
             data_periods=None,
             weatherdata=[]):
+        """Inits EPW with no data dictionary set."""
         self._data = OrderedDict()
         self._data["LOCATION"] = location
         self._data["DESIGN CONDITIONS"] = design_conditions
@@ -6539,115 +6686,239 @@ class EPW(object):
 
     @property
     def location(self):
-        """Get location data dictionary object."""
+        """Get location data dictionary object.
+
+        Returns:
+            Object of type Location or None if not yet set
+
+        """
         return self._data["LOCATION"]
 
     @location.setter
-    def location(self, data_dictionary):
-        """Set location data dictionary object."""
-        self._data["LOCATION"] = data_dictionary
+    def location(self, value):
+        """Set location data dictionary object.
+
+        Args:
+            value (Location): sets data dictionary for IDD LOCATION
+
+        """
+        self._data["LOCATION"] = value
 
     @property
     def design_conditions(self):
-        """Get design_conditions data dictionary object."""
+        """Get design_conditions data dictionary object.
+
+        Returns:
+            Object of type DesignConditions or None if not yet set
+
+        """
         return self._data["DESIGN CONDITIONS"]
 
     @design_conditions.setter
-    def design_conditions(self, data_dictionary):
-        """Set design_conditions data dictionary object."""
-        self._data["DESIGN CONDITIONS"] = data_dictionary
+    def design_conditions(self, value):
+        """Set design_conditions data dictionary object.
+
+        Args:
+            value (DesignConditions): sets data dictionary for IDD DESIGN CONDITIONS
+
+        """
+        self._data["DESIGN CONDITIONS"] = value
 
     @property
     def typical_or_extreme_periods(self):
-        """Get typical_or_extreme_periods data dictionary object."""
+        """Get typical_or_extreme_periods data dictionary object.
+
+        Returns:
+            Object of type TypicalOrExtremePeriods or None if not yet set
+
+        """
         return self._data["TYPICAL/EXTREME PERIODS"]
 
     @typical_or_extreme_periods.setter
-    def typical_or_extreme_periods(self, data_dictionary):
-        """Set typical_or_extreme_periods data dictionary object."""
-        self._data["TYPICAL/EXTREME PERIODS"] = data_dictionary
+    def typical_or_extreme_periods(self, value):
+        """Set typical_or_extreme_periods data dictionary object.
+
+        Args:
+            value (TypicalOrExtremePeriods): sets data dictionary for IDD TYPICAL/EXTREME PERIODS
+
+        """
+        self._data["TYPICAL/EXTREME PERIODS"] = value
 
     @property
     def ground_temperatures(self):
-        """Get ground_temperatures data dictionary object."""
+        """Get ground_temperatures data dictionary object.
+
+        Returns:
+            Object of type GroundTemperatures or None if not yet set
+
+        """
         return self._data["GROUND TEMPERATURES"]
 
     @ground_temperatures.setter
-    def ground_temperatures(self, data_dictionary):
-        """Set ground_temperatures data dictionary object."""
-        self._data["GROUND TEMPERATURES"] = data_dictionary
+    def ground_temperatures(self, value):
+        """Set ground_temperatures data dictionary object.
+
+        Args:
+            value (GroundTemperatures): sets data dictionary for IDD GROUND TEMPERATURES
+
+        """
+        self._data["GROUND TEMPERATURES"] = value
 
     @property
     def holidays_or_daylight_savings(self):
-        """Get holidays_or_daylight_savings data dictionary object."""
+        """Get holidays_or_daylight_savings data dictionary object.
+
+        Returns:
+            Object of type HolidaysOrDaylightSavings or None if not yet set
+
+        """
         return self._data["HOLIDAYS/DAYLIGHT SAVINGS"]
 
     @holidays_or_daylight_savings.setter
-    def holidays_or_daylight_savings(self, data_dictionary):
-        """Set holidays_or_daylight_savings data dictionary object."""
-        self._data["HOLIDAYS/DAYLIGHT SAVINGS"] = data_dictionary
+    def holidays_or_daylight_savings(self, value):
+        """Set holidays_or_daylight_savings data dictionary object.
+
+        Args:
+            value (HolidaysOrDaylightSavings): sets data dictionary for IDD HOLIDAYS/DAYLIGHT SAVINGS
+
+        """
+        self._data["HOLIDAYS/DAYLIGHT SAVINGS"] = value
 
     @property
     def comments_1(self):
-        """Get comments_1 data dictionary object."""
+        """Get comments_1 data dictionary object.
+
+        Returns:
+            Object of type Comments1 or None if not yet set
+
+        """
         return self._data["COMMENTS 1"]
 
     @comments_1.setter
-    def comments_1(self, data_dictionary):
-        """Set comments_1 data dictionary object."""
-        self._data["COMMENTS 1"] = data_dictionary
+    def comments_1(self, value):
+        """Set comments_1 data dictionary object.
+
+        Args:
+            value (Comments1): sets data dictionary for IDD COMMENTS 1
+
+        """
+        self._data["COMMENTS 1"] = value
 
     @property
     def comments_2(self):
-        """Get comments_2 data dictionary object."""
+        """Get comments_2 data dictionary object.
+
+        Returns:
+            Object of type Comments2 or None if not yet set
+
+        """
         return self._data["COMMENTS 2"]
 
     @comments_2.setter
-    def comments_2(self, data_dictionary):
-        """Set comments_2 data dictionary object."""
-        self._data["COMMENTS 2"] = data_dictionary
+    def comments_2(self, value):
+        """Set comments_2 data dictionary object.
+
+        Args:
+            value (Comments2): sets data dictionary for IDD COMMENTS 2
+
+        """
+        self._data["COMMENTS 2"] = value
 
     @property
     def data_periods(self):
-        """Get data_periods data dictionary object."""
+        """Get data_periods data dictionary object.
+
+        Returns:
+            Object of type DataPeriods or None if not yet set
+
+        """
         return self._data["DATA PERIODS"]
 
     @data_periods.setter
-    def data_periods(self, data_dictionary):
-        """Set data_periods data dictionary object."""
-        self._data["DATA PERIODS"] = data_dictionary
+    def data_periods(self, value):
+        """Set data_periods data dictionary object.
+
+        Args:
+            value (DataPeriods): sets data dictionary for IDD DATA PERIODS
+
+        """
+        self._data["DATA PERIODS"] = value
 
     @property
     def weatherdata(self):
-        """Get list of WeatherData data dictionary objects."""
+        """Get list of WeatherData data dictionary objects.
+
+        Returns:
+            list of WeatherData objects
+
+        """
         return self._data["WEATHER DATA"]
 
     @weatherdata.setter
     def weatherdata(self, weatherdata):
-        """Set list of WeatherData data dictionary objects."""
+        """Set list of WeatherData data dictionary objects.
+
+        Args:
+            weatherdata (list): list of WeatherData objects
+
+        """
         self._data["WEATHER DATA"] = weatherdata
 
     def add_weatherdata(self, data):
-        """Add weather data, data need to be of type WeatherData."""
+        """Appends weather data.
+
+        Args:
+            data (WeatherData): weather data object
+
+        """
         if not isinstance(data, WeatherData):
             raise ValueError('Weather data need to be of type WeatherData')
         self._data["WEATHER DATA"].append(data)
 
     def save(self, path):
-        """Save WeatherData in EPW format to path."""
+        """Save WeatherData in EPW format to path.
+
+        Args:
+            path (str): path where EPW file should be saved
+
+        """
         with open(path, 'w') as f:
-            f.write(self._data["LOCATION"].export() + "\n")
-            f.write(self._data["DESIGN CONDITIONS"].export() + "\n")
-            f.write(self._data["TYPICAL/EXTREME PERIODS"].export() + "\n")
-            f.write(self._data["GROUND TEMPERATURES"].export() + "\n")
-            f.write(self._data["HOLIDAYS/DAYLIGHT SAVINGS"].export() + "\n")
-            f.write(self._data["COMMENTS 1"].export() + "\n")
-            f.write(self._data["COMMENTS 2"].export() + "\n")
-            f.write(self._data["DATA PERIODS"].export() + "\n")
+            if ("LOCATION" in self._data and
+                    self._data["LOCATION"] is not None):
+                f.write(self._data["LOCATION"].export() + "\n")
+            if ("DESIGN CONDITIONS" in self._data and
+                    self._data["DESIGN CONDITIONS"] is not None):
+                f.write(self._data["DESIGN CONDITIONS"].export() + "\n")
+            if ("TYPICAL/EXTREME PERIODS" in self._data and
+                    self._data["TYPICAL/EXTREME PERIODS"] is not None):
+                f.write(self._data["TYPICAL/EXTREME PERIODS"].export() + "\n")
+            if ("GROUND TEMPERATURES" in self._data and
+                    self._data["GROUND TEMPERATURES"] is not None):
+                f.write(self._data["GROUND TEMPERATURES"].export() + "\n")
+            if ("HOLIDAYS/DAYLIGHT SAVINGS" in self._data and
+                    self._data["HOLIDAYS/DAYLIGHT SAVINGS"] is not None):
+                f.write(
+                    self._data["HOLIDAYS/DAYLIGHT SAVINGS"].export() +
+                    "\n")
+            if ("COMMENTS 1" in self._data and
+                    self._data["COMMENTS 1"] is not None):
+                f.write(self._data["COMMENTS 1"].export() + "\n")
+            if ("COMMENTS 2" in self._data and
+                    self._data["COMMENTS 2"] is not None):
+                f.write(self._data["COMMENTS 2"].export() + "\n")
+            if ("DATA PERIODS" in self._data and
+                    self._data["DATA PERIODS"] is not None):
+                f.write(self._data["DATA PERIODS"].export() + "\n")
             for item in self._data["WEATHER DATA"]:
                 f.write(item.export(False) + "\n")
 
     def _create_datadict(self, internal_name):
+        """Creates an object depending on `internal_name`
+
+        Args:
+            internal_name (str): IDD name
+
+        """
         if internal_name == "LOCATION":
             return Location()
         if internal_name == "DESIGN CONDITIONS":
@@ -6668,7 +6939,12 @@ class EPW(object):
             "No DataDictionary known for {}".format(internal_name))
 
     def read(self, path):
-        """Read EPW weather data from path."""
+        """Read EPW weather data from path.
+
+        Args:
+            path (str): path to read weather data from
+
+        """
         with open(path, "r") as f:
             for line in f:
                 line = line.strip()

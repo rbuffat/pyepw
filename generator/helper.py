@@ -76,7 +76,7 @@ class DataField(object):
 
     def conv_vals(self):
         # Update type if not other specified
-        if not "type" in self.attributes:
+        if "type" not in self.attributes:
             if self.ftype == "A":
                 self.attributes["type"] = "alpha"
             elif self.ftype == "N":
@@ -85,11 +85,11 @@ class DataField(object):
         # Convert some values to python representation
         for attribute_name in list(self.attributes):
             if attribute_name in ["default",
-                             "minimum",
-                             "minimum>",
-                             "maximum",
-                             "maximum<",
-                             "missing"]:
+                                  "minimum",
+                                  "minimum>",
+                                  "maximum",
+                                  "maximum<",
+                                  "missing"]:
                 value = self.attributes[attribute_name]
                 self.attributes[attribute_name] = self.value2py(value,
                                                                 self.attributes["type"])

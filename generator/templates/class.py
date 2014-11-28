@@ -1,5 +1,4 @@
 class {{ class_name }}(object):
-
     """ Corresponds to EPW IDD object `{{ internal_name }}`
     """
     _internal_name = "{{ internal_name }}"
@@ -39,20 +38,28 @@ class {{ class_name }}(object):
 
     @property
     def {{field.field_name}}s(self):
-        """Get {{field.field_name}}s"""
+        """Get {{field.field_name}}s
+
+        Returns:
+            A list of {{ field.object_name }} objects
+        """
         return self._{{field.field_name}}s
 
     def add_{{field.field_name}}(self, value):
-        """Add TypicalOrExtremePeriod"""
+        """Add {{field.field_name}}
+
+        Args:
+            {{ field.object_name }}: new value to add to `{{field.field_name}}s`
+        """
         self._{{field.field_name}}s.append(value)
     {%- else %}
 
     @property
     def {{field.field_name}}(self):
-        """Get {{field.field_name}}
+        """Get {{ field.field_name }}
 
         Returns:
-            The value of {{field.field_name}}
+            {{ field.attributes.pytype }}: the value of `{{field.field_name}}` or None if not set
         """
         return self._{{field.field_name}}
 
@@ -63,34 +70,41 @@ class {{ class_name }}(object):
         {%- for comment in field.attributes.note %}
         {{comment}}
         {%- endfor %}
-        {%- if field.attributes.type == "choice" %}
 
-        Accepted values:
-        {%- for k in field.attributes.key %}
-          - {{ k }}
-        {%- endfor %}
-        {%- endif %}
-        {%- if field.attributes.units %}
-        Unit: {{ field.attributes.units }}
-        {%- endif %}
-        {%- if field.attributes.default %}
-        Default value: {{ field.attributes.default }}
-        {%- endif %}
-        {%- if field.attributes.minimum %}
-        value >= {{ field.attributes.minimum }}
-        {%- endif %}
-        {%- if field.attributes['minimum>'] %}
-        value > {{ field.attributes['minimum>'] }}
-        {%- endif %}
-        {%- if field.attributes.maximum %}
-        value <= {{ field.attributes.maximum }}
-        {%- endif %}
-        {%- if field.attributes['maximum<'] %}
-        value < {{ field.attributes['maximum<'] }}
-        {%- endif %}
-        {%- if field.attributes.missing %}
-        Missing value: {{ field.attributes.missing }}
-        {%- endif %}
+        Args:
+            value ({{ field.attributes.pytype }}): value for IDD Field `{{field.field_name}}`
+                {%- if field.attributes.type == "choice" %}
+                Accepted values are:
+                    {%- for k in field.attributes.key %}
+                      - {{ k }}
+                    {%- endfor %}
+                    {%- endif %}
+                {%- if field.attributes.units %}
+                Unit: {{ field.attributes.units }}
+                {%- endif %}
+                {%- if field.attributes.default %}
+                Default value: {{ field.attributes.default }}
+                {%- endif %}
+                {%- if field.attributes.minimum %}
+                value >= {{ field.attributes.minimum }}
+                {%- endif %}
+                {%- if field.attributes['minimum>'] %}
+                value > {{ field.attributes['minimum>'] }}
+                {%- endif %}
+                {%- if field.attributes.maximum %}
+                value <= {{ field.attributes.maximum }}
+                {%- endif %}
+                {%- if field.attributes['maximum<'] %}
+                value < {{ field.attributes['maximum<'] }}
+                {%- endif %}
+                {%- if field.attributes.missing %}
+                Missing value: {{ field.attributes.missing }}
+                {%- endif %}
+                if `value` is None it will not be checked against the
+                specification and is assumed to be a missing value
+
+        Raises:
+            ValueError: if `value` is not a valid value
         """
         {%- if field.attributes|length > 0  %}
         if value is not None:
@@ -98,30 +112,36 @@ class {{ class_name }}(object):
             try:
                 value = {{ field.attributes.pytype }}(value)
             except:
-                raise ValueError('value {} need to be of type {{ field.attributes.pytype }} for field {{field.field_name}}'.format(value))
+                raise ValueError('value {} need to be of type {{ field.attributes.pytype }} '
+                                 'for field `{{field.field_name}}`'.format(value))
             {%- if field.attributes.minimum %}
             if value < {{ field.attributes.minimum }}:
-                raise ValueError('value need to be greater or equal {{ field.attributes.minimum }} for field {{field.field_name}}')
+                raise ValueError('value need to be greater or equal {{ field.attributes.minimum }} '
+                                 'for field `{{field.field_name}}`')
             {%- endif %}
             {%- if field.attributes['minimum>'] %}
             if value <= {{ field.attributes['minimum>'] }}:
-                raise ValueError('value need to be greater {{ field.attributes["minimum>"] }} for field {{field.field_name}}')
+                raise ValueError('value need to be greater {{ field.attributes["minimum>"] }} '
+                                 'for field `{{field.field_name}}`')
             {%- endif %}
             {%- if field.attributes.maximum %}
             if value > {{ field.attributes.maximum }}:
-                raise ValueError('value need to be smaller {{ field.attributes.maximum }} for field {{field.field_name}}')
+                raise ValueError('value need to be smaller {{ field.attributes.maximum }} '
+                                 'for field `{{field.field_name}}`')
             {%- endif %}
             {%- if field.attributes['maximum<'] %}
             if value >= {{ field.attributes['maximum<'] }}:
-                raise ValueError('value need to be smaller {{ field.attributes["maximum<"] }} for field {{field.field_name}}')
+                raise ValueError('value need to be smaller {{ field.attributes["maximum<"] }} '
+                                 'for field `{{field.field_name}}`')
             {%- endif %}
             {%- if field.attributes.type == "choice" %}
             vals = set()
             {%- for k in field.attributes.key %}
             vals.add("{{k}}")
             {%- endfor %}
-            if not value in vals:
-                raise ValueError('value {} is not an accepted value for field {{field.field_name}}'.format(value))
+            if value not in vals:
+                raise ValueError('value {} is not an accepted value for '
+                                 'field `{{field.field_name}}`'.format(value))
             {%- endif %}
 
         self._{{field.field_name}} = value

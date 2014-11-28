@@ -2,7 +2,8 @@
 """
 WARNING: This is an automatically generated file.
 It is based on the EPW IDD specification given in the document
-Auxiliary EnergyPlus Programs - Extra programs for EnergyPlus, Date: November 22 2013
+Auxiliary EnergyPlus Programs - Extra programs for EnergyPlus,
+Date: November 22 2013
 
 Do not expect that it actually works!
 
@@ -17,6 +18,8 @@ import re
 {% endfor %}
 
 class EPW(object):
+    """ Represens a EnergyPlus EPW weather data file
+    """
 
     def __init__(
             self,
@@ -24,6 +27,7 @@ class EPW(object):
             {{obj.var_name}}=None,
             {%- endfor %}
             weatherdata=[]):
+        """ Inits EPW with no data dictionary set."""
         self._data = OrderedDict()
         {%- for obj in objs %}
         self._data["{{obj.internal_name}}"] = {{ obj.var_name }}
@@ -33,42 +37,73 @@ class EPW(object):
     {%- for obj in objs %}
     @property
     def {{obj.var_name}}(self):
-        """Get {{obj.var_name}} data dictionary object"""
+        """Get {{obj.var_name}} data dictionary object
+        
+           Returns:
+               Object of type {{obj.class_name}} or None if not yet set
+        """
         return self._data["{{obj.internal_name}}"]
     
     @{{obj.var_name}}.setter
-    def {{obj.var_name}}(self, data_dictionary):
-        """Set {{obj.var_name}} data dictionary object"""
-        self._data["{{obj.internal_name}}"] = data_dictionary
+    def {{obj.var_name}}(self, value):
+        """Set {{obj.var_name}} data dictionary object
+        
+           Args:
+               value ({{obj.class_name}}): sets data dictionary for IDD {{obj.internal_name}}
+        """
+        self._data["{{obj.internal_name}}"] = value
      
     {%- endfor %}
     
     @property
     def weatherdata(self):
-        """Get list of WeatherData data dictionary objects"""
+        """Get list of WeatherData data dictionary objects
+        
+           Returns:
+               list of WeatherData objects
+        """
         return self._data["WEATHER DATA"]
     
     @weatherdata.setter
     def weatherdata(self, weatherdata):
-        """Set list of WeatherData data dictionary objects"""
+        """Set list of WeatherData data dictionary objects
+        
+        Args:
+            weatherdata (list): list of WeatherData objects
+        """
         self._data["WEATHER DATA"] = weatherdata
 
     def add_weatherdata(self, data):
-        """ Add weather data, data need to be of type WeatherData"""
+        """ Appends weather data
+        
+        Args:
+            data (WeatherData): weather data object
+        """
         if not isinstance(data, WeatherData):
             raise ValueError('Weather data need to be of type WeatherData')
         self._data["WEATHER DATA"].append(data)
 
     def save(self, path):
-        """ Save WeatherData in EPW format to path"""
+        """ Save WeatherData in EPW format to path
+        
+            Args:
+                path (str): path where EPW file should be saved
+        """
         with open(path, 'w') as f:
             {%- for obj in objs %}
-            f.write(self._data["{{obj.internal_name}}"].export() + "\n")
+            if ("{{obj.internal_name}}" in self._data and 
+                self._data["{{obj.internal_name}}"] is not None):
+                f.write(self._data["{{obj.internal_name}}"].export() + "\n")
             {%- endfor %}
             for item in self._data["WEATHER DATA"]:
                 f.write(item.export(False) + "\n")
 
     def _create_datadict(self, internal_name):
+        """ Creates an object depending on `internal_name`
+        
+            Args:
+                internal_name (str): IDD name
+        """
         {%- for obj in objs %}
         if internal_name == "{{ obj.internal_name }}":
             return {{ obj.class_name }}()
@@ -76,7 +111,11 @@ class EPW(object):
         raise ValueError("No DataDictionary known for {}".format(internal_name))
 
     def read(self, path):
-        """Read EPW weather data from path"""
+        """Read EPW weather data from path
+        
+           Args:
+               path (str): path to read weather data from
+        """
         with open(path, "r") as f:
             for line in f:
                 line = line.strip()
