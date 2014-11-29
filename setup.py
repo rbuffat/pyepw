@@ -12,5 +12,4 @@ setup(name='pyepw',
       license='Apache License 2.0',
       classifiers=['Development Status :: 2 - Pre-Alpha'],
       packages=['pyepw'],
-      keywords = ['EnergyPlus', 'EPW'], # arbitrary keywords
-      classifiers = [])
+      keywords = ['EnergyPlus', 'EPW'])
