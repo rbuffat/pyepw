@@ -16,7 +16,7 @@ class TestReadEPW(unittest.TestCase):
 
         epw = EPW()
         epw.read(r"tests/data/USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw")
-        print epw.holidays_or_daylight_savings
+
         epw.save(self.path)
         epw2 = EPW()
         epw2.read(self.path)
