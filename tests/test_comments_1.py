@@ -19,7 +19,7 @@ class TestComments1(unittest.TestCase):
         obj.comments_1 = var_comments_1
 
         epw = EPW(comments_1=obj)
-        epw.save(self.path)
+        epw.save(self.path, check=False)
 
         epw2 = EPW()
         epw2.read(self.path)

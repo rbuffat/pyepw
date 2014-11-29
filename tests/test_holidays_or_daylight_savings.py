@@ -29,7 +29,7 @@ class TestHolidaysOrDaylightSavings(unittest.TestCase):
         obj.add_holiday(holiday_obj)
 
         epw = EPW(holidays_or_daylight_savings=obj)
-        epw.save(self.path)
+        epw.save(self.path, check=False)
 
         epw2 = EPW()
         epw2.read(self.path)

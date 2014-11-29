@@ -29,7 +29,7 @@ class TestDataPeriods(unittest.TestCase):
         obj.add_data_period(data_period_obj)
 
         epw = EPW(data_periods=obj)
-        epw.save(self.path)
+        epw.save(self.path, check=False)
 
         epw2 = EPW()
         epw2.read(self.path)

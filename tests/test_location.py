@@ -35,7 +35,7 @@ class TestLocation(unittest.TestCase):
         obj.elevation = var_elevation
 
         epw = EPW(location=obj)
-        epw.save(self.path)
+        epw.save(self.path, check=False)
 
         epw2 = EPW()
         epw2.read(self.path)

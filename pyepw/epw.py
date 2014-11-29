@@ -7,7 +7,7 @@ Date: November 22 2013
 
 Do not expect that it actually works!
 
-Generation date: 2014-11-28
+Generation date: 2014-11-29
 
 """
 from collections import OrderedDict
@@ -18,9 +18,10 @@ class Location(object):
 
     """Corresponds to EPW IDD object `LOCATION`"""
     _internal_name = "LOCATION"
-    _field_count = 9
+    field_count = 9
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `LOCATION`"""
         self._city = None
         self._state_province_region = None
         self._country = None
@@ -32,6 +33,12 @@ class Location(object):
         self._elevation = None
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.city = None
@@ -428,13 +435,32 @@ class Location(object):
 
         self._elevation = value
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -457,9 +483,10 @@ class DesignCondition(object):
 
     """Corresponds to EPW IDD object `DESIGN CONDITION`"""
     _internal_name = "DESIGN CONDITION"
-    _field_count = 68
+    field_count = 68
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `DESIGN CONDITION`"""
         self._title_of_design_condition = None
         self._unkown_field = None
         self._design_stat_heating = None
@@ -530,6 +557,12 @@ class DesignCondition(object):
         self._dbmax50years = None
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.title_of_design_condition = None
@@ -3206,13 +3239,32 @@ class DesignCondition(object):
 
         self._dbmax50years = value
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -3294,20 +3346,27 @@ class DesignConditions(object):
 
     """Corresponds to EPW IDD object `DESIGN CONDITIONS`"""
     _internal_name = "DESIGN CONDITIONS"
-    _field_count = 1
+    field_count = 1
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `DESIGN CONDITIONS`"""
         self._design_conditions = []
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         count = int(vals[i])
         i += 1
         for _ in range(count):
             obj = DesignCondition()
-            obj.read(vals[i:i + obj._field_count])
+            obj.read(vals[i:i + obj.field_count])
             self.add_design_condition(obj)
-            i += obj._field_count
+            i += obj.field_count
 
     @property
     def design_conditions(self):
@@ -3328,13 +3387,32 @@ class DesignConditions(object):
         """
         self._design_conditions.append(value)
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -3351,15 +3429,22 @@ class TypicalOrExtremePeriod(object):
 
     """Corresponds to EPW IDD object `TYPICAL/EXTREME PERIOD`"""
     _internal_name = "TYPICAL/EXTREME PERIOD"
-    _field_count = 4
+    field_count = 4
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `TYPICAL/EXTREME PERIOD`"""
         self._typical_or_extreme_period_name = None
         self._typical_or_extreme_period_type = None
         self._period_start_day = None
         self._period_end_day = None
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.typical_or_extreme_period_name = None
@@ -3524,13 +3609,32 @@ class TypicalOrExtremePeriod(object):
 
         self._period_end_day = value
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -3548,20 +3652,28 @@ class TypicalOrExtremePeriods(object):
 
     """Corresponds to EPW IDD object `TYPICAL/EXTREME PERIODS`"""
     _internal_name = "TYPICAL/EXTREME PERIODS"
-    _field_count = 1
+    field_count = 1
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `TYPICAL/EXTREME
+        PERIODS`"""
         self._typical_or_extreme_periods = []
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         count = int(vals[i])
         i += 1
         for _ in range(count):
             obj = TypicalOrExtremePeriod()
-            obj.read(vals[i:i + obj._field_count])
+            obj.read(vals[i:i + obj.field_count])
             self.add_typical_or_extreme_period(obj)
-            i += obj._field_count
+            i += obj.field_count
 
     @property
     def typical_or_extreme_periods(self):
@@ -3582,13 +3694,32 @@ class TypicalOrExtremePeriods(object):
         """
         self._typical_or_extreme_periods.append(value)
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -3605,9 +3736,10 @@ class GroundTemperature(object):
 
     """Corresponds to EPW IDD object `GROUND TEMPERATURE`"""
     _internal_name = "GROUND TEMPERATURE"
-    _field_count = 16
+    field_count = 16
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `GROUND TEMPERATURE`"""
         self._ground_temperature_depth = None
         self._depth_soil_conductivity = None
         self._depth_soil_density = None
@@ -3626,6 +3758,12 @@ class GroundTemperature(object):
         self._depth_december_average_ground_temperature = None
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.ground_temperature_depth = None
@@ -4253,13 +4391,32 @@ class GroundTemperature(object):
 
         self._depth_december_average_ground_temperature = value
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -4297,20 +4454,27 @@ class GroundTemperatures(object):
 
     """Corresponds to EPW IDD object `GROUND TEMPERATURES`"""
     _internal_name = "GROUND TEMPERATURES"
-    _field_count = 1
+    field_count = 1
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `GROUND TEMPERATURES`"""
         self._ground_temperatures = []
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         count = int(vals[i])
         i += 1
         for _ in range(count):
             obj = GroundTemperature()
-            obj.read(vals[i:i + obj._field_count])
+            obj.read(vals[i:i + obj.field_count])
             self.add_ground_temperature(obj)
-            i += obj._field_count
+            i += obj.field_count
 
     @property
     def ground_temperatures(self):
@@ -4331,13 +4495,32 @@ class GroundTemperatures(object):
         """
         self._ground_temperatures.append(value)
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -4354,13 +4537,20 @@ class Holiday(object):
 
     """Corresponds to EPW IDD object `HOLIDAY`"""
     _internal_name = "HOLIDAY"
-    _field_count = 2
+    field_count = 2
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `HOLIDAY`"""
         self._holiday_name = None
         self._holiday_day = None
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.holiday_name = None
@@ -4443,13 +4633,32 @@ class Holiday(object):
 
         self._holiday_day = value
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -4465,15 +4674,23 @@ class HolidaysOrDaylightSavings(object):
 
     """Corresponds to EPW IDD object `HOLIDAYS/DAYLIGHT SAVINGS`"""
     _internal_name = "HOLIDAYS/DAYLIGHT SAVINGS"
-    _field_count = 4
+    field_count = 4
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `HOLIDAYS/DAYLIGHT
+        SAVINGS`"""
         self._leapyear_observed = None
         self._daylight_saving_start_day = None
         self._daylight_saving_end_day = None
         self._holidays = []
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.leapyear_observed = None
@@ -4494,9 +4711,9 @@ class HolidaysOrDaylightSavings(object):
         i += 1
         for _ in range(count):
             obj = Holiday()
-            obj.read(vals[i:i + obj._field_count])
+            obj.read(vals[i:i + obj.field_count])
             self.add_holiday(obj)
-            i += obj._field_count
+            i += obj.field_count
 
     @property
     def leapyear_observed(self):
@@ -4635,13 +4852,32 @@ class HolidaysOrDaylightSavings(object):
         """
         self._holidays.append(value)
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -4661,12 +4897,19 @@ class Comments1(object):
 
     """Corresponds to EPW IDD object `COMMENTS 1`"""
     _internal_name = "COMMENTS 1"
-    _field_count = 1
+    field_count = 1
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `COMMENTS 1`"""
         self._comments_1 = None
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.comments_1 = None
@@ -4709,13 +4952,32 @@ class Comments1(object):
 
         self._comments_1 = value
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -4730,12 +4992,19 @@ class Comments2(object):
 
     """Corresponds to EPW IDD object `COMMENTS 2`"""
     _internal_name = "COMMENTS 2"
-    _field_count = 1
+    field_count = 1
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `COMMENTS 2`"""
         self._comments_2 = None
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.comments_2 = None
@@ -4778,13 +5047,32 @@ class Comments2(object):
 
         self._comments_2 = value
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -4799,9 +5087,10 @@ class DataPeriod(object):
 
     """Corresponds to EPW IDD object `DATA PERIOD`"""
     _internal_name = "DATA PERIOD"
-    _field_count = 5
+    field_count = 5
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `DATA PERIOD`"""
         self._number_of_records_per_hour = None
         self._data_period_name_or_description = None
         self._data_period_start_day_of_week = None
@@ -4809,6 +5098,12 @@ class DataPeriod(object):
         self._data_period_end_day = None
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.number_of_records_per_hour = None
@@ -5033,13 +5328,32 @@ class DataPeriod(object):
 
         self._data_period_end_day = value
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -5058,20 +5372,27 @@ class DataPeriods(object):
 
     """Corresponds to EPW IDD object `DATA PERIODS`"""
     _internal_name = "DATA PERIODS"
-    _field_count = 1
+    field_count = 1
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `DATA PERIODS`"""
         self._data_periods = []
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         count = int(vals[i])
         i += 1
         for _ in range(count):
             obj = DataPeriod()
-            obj.read(vals[i:i + obj._field_count])
+            obj.read(vals[i:i + obj.field_count])
             self.add_data_period(obj)
-            i += obj._field_count
+            i += obj.field_count
 
     @property
     def data_periods(self):
@@ -5092,13 +5413,32 @@ class DataPeriods(object):
         """
         self._data_periods.append(value)
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -5115,9 +5455,10 @@ class WeatherData(object):
 
     """Corresponds to EPW IDD object `WEATHER DATA`"""
     _internal_name = "WEATHER DATA"
-    _field_count = 35
+    field_count = 35
 
     def __init__(self):
+        """Init data dictionary object for EPW IDD  `WEATHER DATA`"""
         self._year = None
         self._month = None
         self._day = None
@@ -5155,6 +5496,12 @@ class WeatherData(object):
         self._liquid_precipitation_quantity = None
 
     def read(self, vals):
+        """Read values.
+
+        Args:
+            vals (list): list of strings representing values
+
+        """
         i = 0
         if len(vals[i]) == 0:
             self.year = None
@@ -6685,13 +7032,32 @@ class WeatherData(object):
 
         self._liquid_precipitation_quantity = value
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """Represents values either as string or None values as empty string.
+
+        Args:
+            value: a value
+
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """Exports object to its string representation.
+
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+
+        Returns:
+            str: The objects string representation
+
+        """
         out = []
         if top:
             out.append(self._internal_name)
@@ -6750,7 +7116,7 @@ class EPW(object):
             comments_1=None,
             comments_2=None,
             data_periods=None,
-            weatherdata=[]):
+            weatherdata=None):
         """Inits EPW with no data dictionary set."""
         self._data = OrderedDict()
         self._data["LOCATION"] = location
@@ -6761,6 +7127,9 @@ class EPW(object):
         self._data["COMMENTS 1"] = comments_1
         self._data["COMMENTS 2"] = comments_2
         self._data["DATA PERIODS"] = data_periods
+        if weatherdata is None:
+            weatherdata = []
+
         self._data["WEATHER DATA"] = weatherdata
 
     @property
@@ -6954,7 +7323,7 @@ class EPW(object):
             raise ValueError('Weather data need to be of type WeatherData')
         self._data["WEATHER DATA"].append(data)
 
-    def save(self, path):
+    def save(self, path, check=True):
         """Save WeatherData in EPW format to path.
 
         Args:
@@ -6962,6 +7331,33 @@ class EPW(object):
 
         """
         with open(path, 'w') as f:
+            if check:
+                if (not "LOCATION" in self._data or
+                        self._data["LOCATION"] is None):
+                    raise ValueError('location is not valid.')
+                if (not "DESIGN CONDITIONS" in self._data or
+                        self._data["DESIGN CONDITIONS"] is None):
+                    raise ValueError('design_conditions is not valid.')
+                if (not "TYPICAL/EXTREME PERIODS" in self._data or
+                        self._data["TYPICAL/EXTREME PERIODS"] is None):
+                    raise ValueError(
+                        'typical_or_extreme_periods is not valid.')
+                if (not "GROUND TEMPERATURES" in self._data or
+                        self._data["GROUND TEMPERATURES"] is None):
+                    raise ValueError('ground_temperatures is not valid.')
+                if (not "HOLIDAYS/DAYLIGHT SAVINGS" in self._data or
+                        self._data["HOLIDAYS/DAYLIGHT SAVINGS"] is None):
+                    raise ValueError(
+                        'holidays_or_daylight_savings is not valid.')
+                if (not "COMMENTS 1" in self._data or
+                        self._data["COMMENTS 1"] is None):
+                    raise ValueError('comments_1 is not valid.')
+                if (not "COMMENTS 2" in self._data or
+                        self._data["COMMENTS 2"] is None):
+                    raise ValueError('comments_2 is not valid.')
+                if (not "DATA PERIODS" in self._data or
+                        self._data["DATA PERIODS"] is None):
+                    raise ValueError('data_periods is not valid.')
             if ("LOCATION" in self._data and
                     self._data["LOCATION"] is not None):
                 f.write(self._data["LOCATION"].export() + "\n")
@@ -6991,7 +7387,8 @@ class EPW(object):
             for item in self._data["WEATHER DATA"]:
                 f.write(item.export(False) + "\n")
 
-    def _create_datadict(self, internal_name):
+    @classmethod
+    def _create_datadict(cls, internal_name):
         """Creates an object depending on `internal_name`
 
         Args:

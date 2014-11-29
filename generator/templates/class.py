@@ -2,9 +2,11 @@ class {{ class_name }}(object):
     """ Corresponds to EPW IDD object `{{ internal_name }}`
     """
     _internal_name = "{{ internal_name }}"
-    _field_count = {{ field_count}}
+    field_count = {{ field_count}}
 
     def __init__(self):
+        """ Init data dictionary object for EPW IDD  `{{ internal_name }}`
+        """
     {%- for field in fields %}
     {%- if field.is_list %}
         self._{{field.field_name}}s = []
@@ -14,6 +16,11 @@ class {{ class_name }}(object):
     {%- endfor %}
 
     def read(self, vals):
+        """ Read values
+    
+        Args:
+            vals (list): list of strings representing values
+        """
         i = 0
         {%- for field in fields %}
         {%- if field.is_list %}
@@ -21,9 +28,9 @@ class {{ class_name }}(object):
         i += 1
         for _ in range(count):
             obj = {{field.object_name}}()
-            obj.read(vals[i:i + obj._field_count])
+            obj.read(vals[i:i + obj.field_count])
             self.add_{{field.field_name}}(obj)
-            i += obj._field_count
+            i += obj.field_count
         {%- else %}
         if len(vals[i]) == 0:
             self.{{field.field_name}} = None
@@ -153,13 +160,30 @@ class {{ class_name }}(object):
     {%- endif %}
     {%- endfor %}
 
-    def _to_str(self, value):
+    @classmethod
+    def _to_str(cls, value):
+        """ Represents values either as string or None values as empty string
+    
+        Args:
+            value: a value
+        """
         if value is None:
             return ''
         else:
             return str(value)
 
     def export(self, top=True):
+        """ Exports object to its string representation
+    
+        Args:
+            top (bool):  if True appends `internal_name` before values.
+                All non list objects should be exported with value top=True,
+                all list objects, that are embedded in as fields inlist objects
+                should be exported with `top`=False
+    
+        Returns:
+            str: The objects string representation
+        """
         out = []
         if top:
             out.append(self._internal_name)

@@ -155,7 +155,7 @@ class TestDesignConditions(unittest.TestCase):
         obj.add_design_condition(design_condition_obj)
 
         epw = EPW(design_conditions=obj)
-        epw.save(self.path)
+        epw.save(self.path, check=False)
 
         epw2 = EPW()
         epw2.read(self.path)

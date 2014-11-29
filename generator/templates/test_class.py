@@ -75,7 +75,7 @@ class Test{{ obj.class_name }}(unittest.TestCase):
         {%- endfor %}
 
         epw = EPW({{ obj.var_name }}=obj)
-        epw.save(self.path)
+        epw.save(self.path, check=False)
 
         epw2 = EPW()
         epw2.read(self.path)

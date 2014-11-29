@@ -26,12 +26,15 @@ class EPW(object):
             {%- for obj in objs %}
             {{obj.var_name}}=None,
             {%- endfor %}
-            weatherdata=[]):
+            weatherdata=None):
         """ Inits EPW with no data dictionary set."""
         self._data = OrderedDict()
         {%- for obj in objs %}
         self._data["{{obj.internal_name}}"] = {{ obj.var_name }}
         {%- endfor %}
+        if weatherdata is None:
+            weatherdata = []
+        
         self._data["WEATHER DATA"] = weatherdata
 
     {%- for obj in objs %}
@@ -83,13 +86,19 @@ class EPW(object):
             raise ValueError('Weather data need to be of type WeatherData')
         self._data["WEATHER DATA"].append(data)
 
-    def save(self, path):
+    def save(self, path, check=True):
         """ Save WeatherData in EPW format to path
         
             Args:
                 path (str): path where EPW file should be saved
         """
         with open(path, 'w') as f:
+            if check:
+                {%- for obj in objs %}
+                if (not "{{obj.internal_name}}" in self._data or 
+                    self._data["{{obj.internal_name}}"] is None):
+                    raise ValueError('{{ obj.var_name }} is not valid.')
+                {%- endfor %}
             {%- for obj in objs %}
             if ("{{obj.internal_name}}" in self._data and 
                 self._data["{{obj.internal_name}}"] is not None):
@@ -98,7 +107,8 @@ class EPW(object):
             for item in self._data["WEATHER DATA"]:
                 f.write(item.export(False) + "\n")
 
-    def _create_datadict(self, internal_name):
+    @classmethod
+    def _create_datadict(cls, internal_name):
         """ Creates an object depending on `internal_name`
         
             Args:

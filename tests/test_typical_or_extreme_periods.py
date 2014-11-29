@@ -27,7 +27,7 @@ class TestTypicalOrExtremePeriods(unittest.TestCase):
         obj.add_typical_or_extreme_period(typical_or_extreme_period_obj)
 
         epw = EPW(typical_or_extreme_periods=obj)
-        epw.save(self.path)
+        epw.save(self.path, check=False)
 
         epw2 = EPW()
         epw2.read(self.path)

@@ -51,7 +51,7 @@ class TestGroundTemperatures(unittest.TestCase):
         obj.add_ground_temperature(ground_temperature_obj)
 
         epw = EPW(ground_temperatures=obj)
-        epw.save(self.path)
+        epw.save(self.path, check=False)
 
         epw2 = EPW()
         epw2.read(self.path)
