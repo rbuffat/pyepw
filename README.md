@@ -4,6 +4,7 @@ pyepw
 
 Python EnergyPlus Weather File (EPW) Generator
 
+[![Build Status](https://travis-ci.org/rbuffat/pyepw.svg?branch=master)](https://travis-ci.org/rbuffat/pyepw)
 
 **This is a work in progress, do NOT expect it to actually work! As this is an early work, changes in the API are very likely.**
 
