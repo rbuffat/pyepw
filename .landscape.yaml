@@ -1,0 +1,4 @@
+doc-warnings: yes
+ignore-paths: 
+    - generator
+    - tests
