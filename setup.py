@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(name='pyepw',
-      version='0.1',
-      description='Python EPW file reader and generator',
+      version='0.2-dev',
+      description='Python library to read, modify and create EnergyPlus Weather (EPW) files',
       url='https://github.com/rbuffat/pyepw',
       download_url='https://github.com/rbuffat/pyepw/tarball/0.1',
       author='Rene Buffat',

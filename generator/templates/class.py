@@ -118,7 +118,7 @@ class {{ class_name }}(object):
         {%- endif %}
             try:
                 value = {{ field.attributes.pytype }}(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type {{ field.attributes.pytype }} '
                                  'for field `{{field.field_name}}`'.format(value))
             {%- if field.attributes.pytype == "str" %}

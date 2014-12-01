@@ -95,7 +95,7 @@ class EPW(object):
         with open(path, 'w') as f:
             if check:
                 {%- for obj in objs %}
-                if (not "{{obj.internal_name}}" in self._data or 
+                if ("{{obj.internal_name}}" not in self._data or 
                     self._data["{{obj.internal_name}}"] is None):
                     raise ValueError('{{ obj.var_name }} is not valid.')
                 {%- endfor %}

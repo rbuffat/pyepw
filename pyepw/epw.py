@@ -7,7 +7,7 @@ Date: November 22 2013
 
 Do not expect that it actually works!
 
-Generation date: 2014-11-29
+Generation date: 2014-12-01
 
 """
 from collections import OrderedDict
@@ -112,7 +112,7 @@ class Location(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `city`'.format(value))
             if ',' in value:
@@ -147,7 +147,7 @@ class Location(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `state_province_region`'.format(value))
@@ -183,7 +183,7 @@ class Location(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `country`'.format(value))
             if ',' in value:
@@ -218,7 +218,7 @@ class Location(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `source`'.format(value))
             if ',' in value:
@@ -254,7 +254,7 @@ class Location(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `wmo`'.format(value))
             if ',' in value:
@@ -295,7 +295,7 @@ class Location(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `latitude`'.format(value))
             if value < -90.0:
@@ -339,7 +339,7 @@ class Location(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `longitude`'.format(value))
             if value < -180.0:
@@ -381,7 +381,7 @@ class Location(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `timezone`'.format(value))
             if value < -12.0:
@@ -423,7 +423,7 @@ class Location(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `elevation`'.format(value))
             if value < -1000.0:
@@ -931,7 +931,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `title_of_design_condition`'.format(value))
@@ -967,7 +967,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `unkown_field`'.format(value))
             if ',' in value:
@@ -1005,7 +1005,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `design_stat_heating`'.format(value))
@@ -1048,7 +1048,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type int '
                                  'for field `coldestmonth`'.format(value))
             if value < 1:
@@ -1088,7 +1088,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db996`'.format(value))
 
@@ -1122,7 +1122,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db990`'.format(value))
 
@@ -1156,7 +1156,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dp996`'.format(value))
 
@@ -1191,7 +1191,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `hr_dp996`'.format(value))
 
@@ -1226,7 +1226,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_dp996`'.format(value))
 
@@ -1260,7 +1260,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dp990`'.format(value))
 
@@ -1295,7 +1295,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `hr_dp990`'.format(value))
 
@@ -1330,7 +1330,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_dp990`'.format(value))
 
@@ -1363,7 +1363,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `ws004c`'.format(value))
 
@@ -1396,7 +1396,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_ws004c`'.format(value))
 
@@ -1430,7 +1430,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `ws010c`'.format(value))
 
@@ -1463,7 +1463,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_ws010c`'.format(value))
 
@@ -1496,7 +1496,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `ws_db996`'.format(value))
 
@@ -1530,7 +1530,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wd_db996`'.format(value))
 
@@ -1565,7 +1565,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `design_stat_cooling`'.format(value))
@@ -1608,7 +1608,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type int '
                                  'for field `hottestmonth`'.format(value))
             if value < 1:
@@ -1651,7 +1651,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbr`'.format(value))
 
@@ -1684,7 +1684,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db004`'.format(value))
 
@@ -1718,7 +1718,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wb_db004`'.format(value))
 
@@ -1751,7 +1751,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db010`'.format(value))
 
@@ -1785,7 +1785,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wb_db010`'.format(value))
 
@@ -1819,7 +1819,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db020`'.format(value))
 
@@ -1853,7 +1853,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wb_db020`'.format(value))
 
@@ -1886,7 +1886,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wb004`'.format(value))
 
@@ -1920,7 +1920,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_wb004`'.format(value))
 
@@ -1953,7 +1953,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wb010`'.format(value))
 
@@ -1987,7 +1987,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_wb010`'.format(value))
 
@@ -2020,7 +2020,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wb020`'.format(value))
 
@@ -2054,7 +2054,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_wb020`'.format(value))
 
@@ -2087,7 +2087,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `ws_db004`'.format(value))
 
@@ -2122,7 +2122,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wd_db004`'.format(value))
 
@@ -2155,7 +2155,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dp004`'.format(value))
 
@@ -2188,7 +2188,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `hr_dp004`'.format(value))
 
@@ -2222,7 +2222,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_dp004`'.format(value))
 
@@ -2255,7 +2255,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dp010`'.format(value))
 
@@ -2289,7 +2289,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `hr_dp010`'.format(value))
 
@@ -2323,7 +2323,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_dp010`'.format(value))
 
@@ -2356,7 +2356,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dp020`'.format(value))
 
@@ -2390,7 +2390,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `hr_dp020`'.format(value))
 
@@ -2424,7 +2424,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_dp020`'.format(value))
 
@@ -2458,7 +2458,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `en004`'.format(value))
 
@@ -2492,7 +2492,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_en004`'.format(value))
 
@@ -2526,7 +2526,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `en010`'.format(value))
 
@@ -2560,7 +2560,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_en010`'.format(value))
 
@@ -2594,7 +2594,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `en020`'.format(value))
 
@@ -2628,7 +2628,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `db_en020`'.format(value))
 
@@ -2660,7 +2660,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `hrs_84_and_db12_8_or_20_6`'.format(value))
@@ -2696,7 +2696,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `design_stat_extremes`'.format(value))
@@ -2738,7 +2738,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `ws010`'.format(value))
 
@@ -2771,7 +2771,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `ws025`'.format(value))
 
@@ -2804,7 +2804,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `ws050`'.format(value))
 
@@ -2837,7 +2837,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wbmax`'.format(value))
 
@@ -2870,7 +2870,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmin_mean`'.format(value))
 
@@ -2903,7 +2903,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmax_mean`'.format(value))
 
@@ -2936,7 +2936,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmin_stddev`'.format(value))
 
@@ -2969,7 +2969,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmax_stddev`'.format(value))
 
@@ -3002,7 +3002,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmin05years`'.format(value))
 
@@ -3035,7 +3035,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmax05years`'.format(value))
 
@@ -3068,7 +3068,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmin10years`'.format(value))
 
@@ -3101,7 +3101,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmax10years`'.format(value))
 
@@ -3134,7 +3134,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmin20years`'.format(value))
 
@@ -3167,7 +3167,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmax20years`'.format(value))
 
@@ -3200,7 +3200,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmin50years`'.format(value))
 
@@ -3233,7 +3233,7 @@ class DesignCondition(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `dbmax50years`'.format(value))
 
@@ -3493,7 +3493,7 @@ class TypicalOrExtremePeriod(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `typical_or_extreme_period_name`'.format(value))
@@ -3529,7 +3529,7 @@ class TypicalOrExtremePeriod(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `typical_or_extreme_period_type`'.format(value))
@@ -3565,7 +3565,7 @@ class TypicalOrExtremePeriod(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `period_start_day`'.format(value))
             if ',' in value:
@@ -3600,7 +3600,7 @@ class TypicalOrExtremePeriod(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `period_end_day`'.format(value))
             if ',' in value:
@@ -3873,7 +3873,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `ground_temperature_depth`'.format(value))
@@ -3907,7 +3907,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_soil_conductivity`'.format(value))
@@ -3941,7 +3941,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_soil_density`'.format(value))
@@ -3975,7 +3975,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_soil_specific_heat`'.format(value))
@@ -4009,7 +4009,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_january_average_ground_temperature`'.format(value))
@@ -4043,7 +4043,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_february_average_ground_temperature`'.format(value))
@@ -4077,7 +4077,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_march_average_ground_temperature`'.format(value))
@@ -4111,7 +4111,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_april_average_ground_temperature`'.format(value))
@@ -4145,7 +4145,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_may_average_ground_temperature`'.format(value))
@@ -4179,7 +4179,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_june_average_ground_temperature`'.format(value))
@@ -4213,7 +4213,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_july_average_ground_temperature`'.format(value))
@@ -4247,7 +4247,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_august_average_ground_temperature`'.format(value))
@@ -4282,7 +4282,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_september_average_ground_temperature`'.format(value))
@@ -4316,7 +4316,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_october_average_ground_temperature`'.format(value))
@@ -4350,7 +4350,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_november_average_ground_temperature`'.format(value))
@@ -4384,7 +4384,7 @@ class GroundTemperature(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `depth_december_average_ground_temperature`'.format(value))
@@ -4589,7 +4589,7 @@ class Holiday(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `holiday_name`'.format(value))
             if ',' in value:
@@ -4624,7 +4624,7 @@ class Holiday(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `holiday_day`'.format(value))
             if ',' in value:
@@ -4746,7 +4746,7 @@ class HolidaysOrDaylightSavings(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `leapyear_observed`'.format(value))
             if ',' in value:
@@ -4787,7 +4787,7 @@ class HolidaysOrDaylightSavings(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `daylight_saving_start_day`'.format(value))
@@ -4823,7 +4823,7 @@ class HolidaysOrDaylightSavings(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `daylight_saving_end_day`'.format(value))
@@ -4943,7 +4943,7 @@ class Comments1(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `comments_1`'.format(value))
             if ',' in value:
@@ -5038,7 +5038,7 @@ class Comments2(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type str '
                                  'for field `comments_2`'.format(value))
             if ',' in value:
@@ -5157,7 +5157,7 @@ class DataPeriod(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type int '
                     'for field `number_of_records_per_hour`'.format(value))
@@ -5190,7 +5190,7 @@ class DataPeriod(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_period_name_or_description`'.format(value))
@@ -5234,7 +5234,7 @@ class DataPeriod(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_period_start_day_of_week`'.format(value))
@@ -5282,7 +5282,7 @@ class DataPeriod(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_period_start_day`'.format(value))
@@ -5318,7 +5318,7 @@ class DataPeriod(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_period_end_day`'.format(value))
@@ -5705,7 +5705,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type int '
                                  'for field `year`'.format(value))
 
@@ -5739,7 +5739,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type int '
                                  'for field `month`'.format(value))
             if value < 1:
@@ -5779,7 +5779,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type int '
                                  'for field `day`'.format(value))
             if value < 1:
@@ -5819,7 +5819,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type int '
                                  'for field `hour`'.format(value))
             if value < 1:
@@ -5859,7 +5859,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type int '
                                  'for field `minute`'.format(value))
             if value < 0:
@@ -5900,7 +5900,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = str(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type str '
                     'for field `data_source_and_uncertainty_flags`'.format(value))
@@ -5941,7 +5941,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `dry_bulb_temperature`'.format(value))
@@ -5984,7 +5984,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `dew_point_temperature`'.format(value))
@@ -6026,7 +6026,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type int '
                                  'for field `relative_humidity`'.format(value))
             if value < 0:
@@ -6068,7 +6068,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type int '
                     'for field `atmospheric_station_pressure`'.format(value))
@@ -6110,7 +6110,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `extraterrestrial_horizontal_radiation`'.format(value))
@@ -6150,7 +6150,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `extraterrestrial_direct_normal_radiation`'.format(value))
@@ -6190,7 +6190,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `horizontal_infrared_radiation_intensity`'.format(value))
@@ -6230,7 +6230,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `global_horizontal_radiation`'.format(value))
@@ -6269,7 +6269,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `direct_normal_radiation`'.format(value))
@@ -6308,7 +6308,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `diffuse_horizontal_radiation`'.format(value))
@@ -6347,7 +6347,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `global_horizontal_illuminance`'.format(value))
@@ -6386,7 +6386,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `direct_normal_illuminance`'.format(value))
@@ -6425,7 +6425,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `diffuse_horizontal_illuminance`'.format(value))
@@ -6464,7 +6464,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `zenith_luminance`'.format(value))
             if value < 0.0:
@@ -6503,7 +6503,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wind_direction`'.format(value))
             if value < 0.0:
@@ -6545,7 +6545,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `wind_speed`'.format(value))
             if value < 0.0:
@@ -6589,7 +6589,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `total_sky_cover`'.format(value))
             if value < 0.0:
@@ -6636,7 +6636,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `opaque_sky_cover`'.format(value))
             if value < 0.0:
@@ -6677,7 +6677,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `visibility`'.format(value))
 
@@ -6714,7 +6714,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `ceiling_height`'.format(value))
 
@@ -6751,7 +6751,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type int '
                     'for field `present_weather_observation`'.format(value))
@@ -6784,7 +6784,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type int '
                     'for field `present_weather_codes`'.format(value))
@@ -6819,7 +6819,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `precipitable_water`'.format(value))
@@ -6854,7 +6854,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `aerosol_optical_depth`'.format(value))
@@ -6889,7 +6889,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `snow_depth`'.format(value))
 
@@ -6922,7 +6922,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = int(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type int '
                     'for field `days_since_last_snowfall`'.format(value))
@@ -6956,7 +6956,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError('value {} need to be of type float '
                                  'for field `albedo`'.format(value))
 
@@ -6990,7 +6990,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `liquid_precipitation_depth`'.format(value))
@@ -7025,7 +7025,7 @@ class WeatherData(object):
         if value is not None:
             try:
                 value = float(value)
-            except:
+            except ValueError:
                 raise ValueError(
                     'value {} need to be of type float '
                     'for field `liquid_precipitation_quantity`'.format(value))
@@ -7332,30 +7332,30 @@ class EPW(object):
         """
         with open(path, 'w') as f:
             if check:
-                if (not "LOCATION" in self._data or
+                if ("LOCATION" not in self._data or
                         self._data["LOCATION"] is None):
                     raise ValueError('location is not valid.')
-                if (not "DESIGN CONDITIONS" in self._data or
+                if ("DESIGN CONDITIONS" not in self._data or
                         self._data["DESIGN CONDITIONS"] is None):
                     raise ValueError('design_conditions is not valid.')
-                if (not "TYPICAL/EXTREME PERIODS" in self._data or
+                if ("TYPICAL/EXTREME PERIODS" not in self._data or
                         self._data["TYPICAL/EXTREME PERIODS"] is None):
                     raise ValueError(
                         'typical_or_extreme_periods is not valid.')
-                if (not "GROUND TEMPERATURES" in self._data or
+                if ("GROUND TEMPERATURES" not in self._data or
                         self._data["GROUND TEMPERATURES"] is None):
                     raise ValueError('ground_temperatures is not valid.')
-                if (not "HOLIDAYS/DAYLIGHT SAVINGS" in self._data or
+                if ("HOLIDAYS/DAYLIGHT SAVINGS" not in self._data or
                         self._data["HOLIDAYS/DAYLIGHT SAVINGS"] is None):
                     raise ValueError(
                         'holidays_or_daylight_savings is not valid.')
-                if (not "COMMENTS 1" in self._data or
+                if ("COMMENTS 1" not in self._data or
                         self._data["COMMENTS 1"] is None):
                     raise ValueError('comments_1 is not valid.')
-                if (not "COMMENTS 2" in self._data or
+                if ("COMMENTS 2" not in self._data or
                         self._data["COMMENTS 2"] is None):
                     raise ValueError('comments_2 is not valid.')
-                if (not "DATA PERIODS" in self._data or
+                if ("DATA PERIODS" not in self._data or
                         self._data["DATA PERIODS"] is None):
                     raise ValueError('data_periods is not valid.')
             if ("LOCATION" in self._data and
