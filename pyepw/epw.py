@@ -7417,15 +7417,14 @@ class EPW(object):
         raise ValueError(
             "No DataDictionary known for {}".format(internal_name))
 
-    def read(self, path):
-        """Read EPW weather data from path.
+    def read_string_io(self, string_io):
+        """Read EPW weather data from StringIO object.
 
         Args:
-            path (str): path to read weather data from
+            string_io (StringIO): stringio to read weather data from
 
         """
-        with open(path, "r") as f:
-            for line in f:
+        for line in string_io:
                 line = line.strip()
                 match_obj_name = re.search(r"^([A-Z][A-Z/ \d]+),", line)
                 if match_obj_name is not None:
@@ -7440,3 +7439,15 @@ class EPW(object):
                     wd = WeatherData()
                     wd.read(line.strip().split(','))
                     self.add_weatherdata(wd)
+
+
+    def read(self, path):
+        """Read EPW weather data from file at path.
+
+        Args:
+            path (str): path to read weather data from
+
+        """
+        with open(path, "r") as f:
+            self.read_string_io(f)
+            
